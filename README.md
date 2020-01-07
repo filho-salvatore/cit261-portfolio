@@ -6,6 +6,7 @@ Git portfolio for CIT 261 Mobile Application Development.
 # Purpose:
 
 01 - Show my Fluency level in the topics bellow
+
 02 - Records study topic information obtained from research, study and application.
 
 # Topics
