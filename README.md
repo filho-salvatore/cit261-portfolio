@@ -3,8 +3,10 @@ portfolio to my class cit 261 at byui
 
 Git portfolio for CIT 261 Mobile Application Development.
 
-Purpose:
-This portfolio contains study topic information obtained from research, study and application.
+# Purpose:
+
+01 - Show my Fluency level in the topics bellow
+02 - Records study topic information obtained from research, study and application.
 
 # Topics
 
