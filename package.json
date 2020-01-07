@@ -1,0 +1,26 @@
+{
+  "name": "cit261-portfolio",
+  "version": "1.0.0",
+  "description": "portfolio for the cit261 2020 class at byui",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filho-salvatore/cit261-portfolio.git"
+  },
+  "keywords": [
+    "cit261"
+  ],
+  "author": "Salvatore Giannotta Filho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/filho-salvatore/cit261-portfolio/issues"
+  },
+  "homepage": "https://github.com/filho-salvatore/cit261-portfolio#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1"
+  }
+}
