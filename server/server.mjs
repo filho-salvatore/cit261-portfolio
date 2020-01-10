@@ -39,8 +39,9 @@ this.express.get('/dashboard', (req, res) => {
   }
 
   start() {
+    const PORT = process.env.PORT || 8000;
     return new Promise((resolve) => {
-      const http = this.express.listen(8000, () => {
+      const http = this.express.listen(PORT, () => {
         const { port } = http.address();
         console.info(`[p ${process.pid}] Listening at port ${port}`);
         resolve();
