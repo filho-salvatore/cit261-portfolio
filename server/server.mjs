@@ -1,5 +1,7 @@
 import express from 'express';
 import cookieParser from 'cookie-parser';
+import path from 'path';
+import fs from 'fs';
 
 export class Server {
   constructor() {
@@ -7,11 +9,14 @@ export class Server {
     this.express.disable('x-powered-by');
 
     this.express.use(cookieParser());
-        
+   
+    //let viewsFolder = path.resolve()+'/views';   
+    //let publicFolder = path.resolve()+'/public';   
+    
     //the public_html folder
-    this.express.use(express.static("public"));
+    this.express.use(express.static('public'));
     // set the view engine to ejs
-    this.express.set('views', 'views'); //folder to look for the ejs templetes
+    this.express.set('views', 'vies'); //folder to look for the ejs templetes
     this.express.set('view engine', 'ejs');
     
 
@@ -27,9 +32,8 @@ this.express.get('/dashboard', (req, res) => {
       res.render('index', {
         'currentLocale': res.locale,
         'name': name || 'Theo',
-        'hello': req.__('Hello'),
         'messageCount': 5,
-        'message': req.__('How are you?')
+        
       });
     });
   }
