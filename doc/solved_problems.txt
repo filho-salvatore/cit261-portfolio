@@ -1,0 +1,63 @@
+(1) Start Heroku with ES6 support
+
+add the following in the package.json file
+
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --experimental-modules index.mjs "
+  },
+
+  more detail see topic "Specifying a start script" in : https://devcenter.heroku.com/articles/deploying-nodejs#specifying-a-start-script
+
+  
+  -----------------
+  debug javascript in VSCode
+  
+  https://medium.com/young-coder/setting-up-javascript-debugging-in-visual-studio-code-6c5005529987
+  
+  setup chromiun debug
+  https://askubuntu.com/questions/1048540/using-vs-code-with-chromium-snap
+  
+  the lauch.json :
+  
+  //this configuration you must launch the debug from the html file.
+  //the html file must load the .js file in order to allow breakpoints. otherwise VS do not allow brakpoints in the html file
+  
+  {
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch js inside html file",
+            "runtimeExecutable": "/usr/bin/chromium-browser",
+            "runtimeArgs": [
+                "--new-window",
+                "-user-data-dir=\"/${workspaceFolder}/DevProfile\"",
+                "--remote-debugging-port=9222",
+                "--disable-background-networking"
+                ],
+            "file": "${file}"
+        }
+    ]
+}
+
+//using npm http server
+
+{
+            "type": "chrome",
+            "request": "launch",
+            "name": "server-p 8080 Chromium (npm serve mod. ",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceRoot}/arrays.html",
+            "runtimeExecutable": "/usr/bin/chromium-browser",
+            "runtimeArgs": [
+                "--new-window",
+                "-user-data-dir=\"/${workspaceFolder}/DevProfile\"",
+                "--remote-debugging-port=9222",
+                "--disable-background-networking"
+                ]
+        },
