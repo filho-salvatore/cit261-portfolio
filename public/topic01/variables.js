@@ -15,9 +15,9 @@ let myArray = [];
 let i, sum;
 //It is a good programming practice to assign an initial value to yourvariables when you first declare them:
 let message = "hello";
-let i = 0, j = 0, k = 0;
+let ii = 0, j = 0, k = 0;
 // Initializers can use previously declared variables
-let x = 2, y = x*x; 
+let xx = 2, yy = xx*xx; 
 
 //If you don’t specify an initial value for a variable with the let statement,the variable is declared, 
 //but its value is undefined until your code stores avalue into it.
