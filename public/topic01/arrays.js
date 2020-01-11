@@ -27,7 +27,7 @@ let aaaa = new Array(1,2,3,4,5,"this is my array"); // add elements into array w
 
 
 // (4) Creating with the Array.of
-let bb = Array.of(10)      // create arrays with a single numeric argument. 10 here is not the size of the array, it is the first element.
+let bb = Array.of(10);      // create arrays with a single numeric argument. 10 here is not the size of the array, it is the first element.
 
 // ES6 (4) Creating with the Array.from
 //creates an array is the elements of the passed object
@@ -69,14 +69,14 @@ console.log("Adding elements to the end of the array with push()");
 
 fa = [];              // Start with an empty array
       // Add a value at the end.  fa = ["zero"]
-fa.push("one", "two") // Add two more values.  fa = [ "one", "two"]
+fa.push("one", "two"); // Add two more values.  fa = [ "one", "two"]
 
 console.log("Array after pushing element: " + fa);
 
 console.log("==================================================================");
 console.log("Adding elements to the beggining of the array with unshift()");
 
-fa.unshift("zero");fa = ["zero", "one", "two"]
+fa.unshift("zero");//fa = ["zero", "one", "two"]
 console.log("Array after unshifting  element: " + fa);
 
 
@@ -106,7 +106,7 @@ elements with higher indexesdown to fill in the gap that is left by the deleted 
 m = [1,2,3];
 console.log("The length of the array before deleting: " + m.length);  
 delete m[2];   // a now has no element at index 2
-2 in m         // => false: no array index 2 is defined
+2 in m;         // => false: no array index 2 is defined
 console.log("The value odf the deleted element: "+ m[2]);
 console.log("The length of the array after deleting: " + m.length);       // => 3: delete does not affect array length
 
@@ -133,7 +133,7 @@ for(let [index, letter] of letters.entries()) {
 //using forEach()
 //foreach is not a loop. it is an array method;
 
-let uppercase = ""
+let uppercase = "";
 letters.forEach(letter => {  
     uppercase += letter.toUpperCase();
 });
@@ -142,7 +142,7 @@ console.log("The array looped with foreach: " +  uppercase);
 
 //using the for loop
 
-let vowels = ""
+let vowels = "";
 for(let i = 0; i < letters.length; i++) { // For each index in the array
     let letter = letters[i];              // Get the element at that index
     if (/[aeiou]/.test(letter)) {         // Use a regular expression test

@@ -19,12 +19,12 @@ let myDistance = (x1, y1, x2, y2)=>{
  let dx = x2 - x1;    
     let dy = y2 - y1;    
     return Math.sqrt(dx*dx + dy*dy);
-}
+};
 
 let myFactorial = (x) => {    
     if (x <= 1) return 1;    
     return x * myFactorial(x-1);
-}
+};
 //defining functions with the Function() constructor,
 
 /*
@@ -32,9 +32,9 @@ The Function() constructor expects any number of stringarguments.
 The last argument is the text of the function body; i
 */
 
-let functionbody = 'let dx = x2 - x1;'    
-functionbody += 'let dy = y2 - y1;'    
-functionbody += 'return Math.sqrt(dx*dx + dy*dy);'
+let functionbody = 'let dx = x2 - x1;';    
+functionbody += 'let dy = y2 - y1;'    ;
+functionbody += 'return Math.sqrt(dx*dx + dy*dy);';
 
 const fdistance = new Function("x1", "y1", "x2", "y2",functionbody);
 
@@ -130,7 +130,7 @@ let maxValue = first; // Start by assuming the first arg is biggest
 let dx = x2 - x1;    
 let dy = y2 - y1;    
 let result =  Math.sqrt(dx*dx + dy*dy);
-console.log("Testing declaring and calling a function in the same statement. The distance is: " +result)
+console.log("Testing declaring and calling a function in the same statement. The distance is: " +result);
 }(x1, y1, x2, y2));  
 
 
@@ -153,7 +153,7 @@ console.log("Passing all arguments with default=> the properties of object are: 
 
 //testing rest parameters and arguments
 
-let theMax1 = max(10, 101, 1004, 29, 13, 11000, 94, 995, 46)  // => 11000
-let theMax2 = max_with_rest(10, 101, 1004, 29, 13, 11000, 94, 995, 46)  // => 11000
+let theMax1 = max(10, 101, 1004, 29, 13, 11000, 94, 995, 46);  // => 11000
+let theMax2 = max_with_rest(10, 101, 1004, 29, 13, 11000, 94, 995, 46);  // => 11000
 console.log("calling function with Argument object - the max is: "+ theMax1);
 console.log("calling function with rest parametes - the max is: "+ theMax2);
