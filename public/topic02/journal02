@@ -1,0 +1,5 @@
+TOPIC02 - Object Creation Functions, Inheritance, Properties, Methods, Instantiation 
+
+Start studying the topics reading the book chapter 5.2 Creating Objects.
+
+Objects can be created with object literals "{}" , with the new keyword,and with the Object.create() function.
