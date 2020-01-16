@@ -153,19 +153,20 @@ Conditional statements execute or skip other statements depending onthe value of
 //else if
 
 //switch
+let n = 3;
 
 switch(n) {
 case 1:                        // Start here if n === 1
-    // Execute code block #1.
+    console.log("Block of code 1 executed");
     break;                     // Stop here
 case 2:                        // Start here if n === 2
-    // Execute code block #2.
+    console.log("Block of code 2 executed");
     break;                     // Stop here
 case 3:                        // Start here if n === 3
-    // Execute code block #3.
+    console.log("Block of code 3 executed");
     break;                     // Stop here
 default:                       // If all else fails...
-    // Execute code block #4.
+    console.log("Block of code 4 executed");
     break;                     // stop here
 }
 
