@@ -3,3 +3,23 @@ TOPIC02 - Object Creation Functions, Inheritance, Properties, Methods, Instantia
 Start studying the topics reading the book chapter 5.2 Creating Objects.
 
 Objects can be created with object literals "{}" , with the new keyword,and with the Object.create() function.
+
+Created a function to list all properties of an object and noice that using the ['key'] operator it is possible to create the key by program.
+
+Start studing and creating Fluency evidence for Object Properties
+
+Read the chapter 5.3.3 Property Access Errors of the book
+
+Errors when getting or setting properties
+
+Read the chapter 5.4 Deleting properties
+
+Read the chapter 5.5 Testing Properties - We can test if an object has some property with hasOwnProperty() and propertyIsEnumerable() methods.
+learned about the in operator: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in
+
+It took 6 hours to study Object Creation and properties.
+
+Methods-
+I watch this video: https://www.youtube.com/watch?v=uLmdvseykQM
+Read the chapter 5.9 Object Methods
+

@@ -25,9 +25,25 @@ let aa = new Array(); //emty array with no elements
 let aaa = new Array(10);  //preallocates the array with 10 elements
 let aaaa = new Array(1,2,3,4,5,"this is my array"); // add elements into array with the constructor
 
-
+console.log("===============================");
+console.log("The created arrays are:");
+console.log("empty" + empty);
+console.log("primes: " + primes);
+console.log("misc: "+ misc);
+console.log("table: "+ table);
+console.log("count: "+ count);
+console.log("undefs: "+ undefs);
+console.log("a: "+ a);
+console.log("b: " + b);
+console.log("aa: "+ aa);
+console.log("aaa: " + aaa);
+console.log("aaaa: " + aaaa);
 // (4) Creating with the Array.of
+console.log("==================================================================");
+console.log("Creating with the Array.of");
+
 let bb = Array.of(10);      // create arrays with a single numeric argument. 10 here is not the size of the array, it is the first element.
+console.log("bb: " + bb);
 
 // ES6 (4) Creating with the Array.from
 //creates an array is the elements of the passed object
@@ -38,6 +54,7 @@ function getFruits() {
     }
     return results;
 }
+
 var fruits = getFruits('Apple', 'Banana', 'Orange',"GrapeFruit");
 console.log("Array created with Array.of: " + fruits);
 
@@ -101,7 +118,7 @@ console.log("=================================================================="
 console.log("Deleting elements from the array with delete()");
 /*
 using delete on an array element does not alter the length property and does not shift 
-elements with higher indexesdown to fill in the gap that is left by the deleted property
+elements with higher indexes down to fill in the gap that is left by the deleted property
 */
 m = [1,2,3];
 console.log("The length of the array before deleting: " + m.length);  
@@ -193,10 +210,6 @@ let title = book["main title"]; // Get the "main title" property of the book.
 console.log("Quering author with \".\" operator: "+ JSON.stringify(author));
 console.log("Quering surname with \".\" operator: "+ surname);
 console.log("Quering title with \"[]\" operator: "+ title);
-
-//(2) Proterties getter and setter
-
-
 
 //To interact with Objects see the loops.html page
 
