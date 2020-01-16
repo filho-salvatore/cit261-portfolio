@@ -174,9 +174,9 @@ let switchVar = 100;
 
 switch(typeof switchVar) {
     case "number":            // Convert the number to a hexadecimal integer
-        console.log("Switch statement evaluated to Number: " + x.toString(16));
+        console.log("Switch statement evaluated to Number: " + switchVar.toString(16));
     case "string":            // Return the string enclosed in quotes
-        console.log("Switch statement evaluated to a String: " + x );
+        console.log("Switch statement evaluated to a String: " + switchVar );
     default:                  // Convert any other type in the usual way
-        console.log("Switch statement default to a String: " + String(x));
+        console.log("Switch statement default to a String: " + String(switchVar));
     }
