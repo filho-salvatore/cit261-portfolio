@@ -26,6 +26,15 @@ this.express.get('/dashboard', (req, res) => {
       res.render('dashboard');
  
 });
+
+
+
+    this.express.get('/api/name', (req, res) => {
+      let name = "TEST API CIT-261 Salvatore";
+      res.status(200).json(name);
+      
+    });
+
     this.express.get('/:name?', (req, res) => {
       const name = req.params.name;
 
