@@ -1,1 +1,11 @@
  TOPIC04 -  Using XMLHTTPRequest to Consume a JSON Web Service
+ 
+ 
+ when tried to use the  function I received the error:
+ 
+ Access to XMLHttpRequest at 'https://cit261-portfolio.herokuapp.com/api/name' from origin 'null' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. [file:///home/dono/projetos/cit261/cit261-portfolio/public/topic04/request.html]
+ 
+ To solve it I had to add cors header to my response in express:
+ I used both answers (https://stackoverflow.com/questions/55229677/blocked-by-cors-policy-no-access-control-allow-origin-header-is-present-node , 
+ https://stackoverflow.com/questions/43871637/no-access-control-allow-origin-header-is-present-on-the-requested-resource-whe/43881141#43881141
+ )to create a solution

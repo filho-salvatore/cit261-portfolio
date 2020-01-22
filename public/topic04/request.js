@@ -37,7 +37,9 @@ function getAPIName(theCallback) {
     };
 }
 
-getAPIName((error,theAPIName)=>{
+function onGetAPIName(){ 
+    
+    getAPIName((error,theAPIName)=>{
 
     if(theAPIName){
         console.log("The API NAME is: " + theAPIName);
@@ -46,4 +48,6 @@ getAPIName((error,theAPIName)=>{
         console.log("The Error is: "+ error);
     }
 
-});
+    });
+
+}

@@ -27,7 +27,35 @@ this.express.get('/dashboard', (req, res) => {
  
 });
 
+const whitelist = [
+  'http://localhost:8080',
+  'http://localhost:8081'
+];
 
+const corsOptions =  (origin) => {
+    return whitelist.some(wl=> wl.localeCompare(origin) === 0);
+};
+
+app.use( (req, res, next) => {
+  
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
+  /*
+  if(!corsOptions(req.headers.origin)){
+    const error = {
+      erro : "This aren't a public API."
+    };
+    res.sendStatus(500).json(error);
+    next();
+  }*/
+  if ('OPTIONS' == req.method) {
+    res.sendStatus(200);
+  } else {
+    next();
+  }
+});
 
     this.express.get('/api/name', (req, res) => {
       let name = "TEST API CIT-261 Salvatore";
