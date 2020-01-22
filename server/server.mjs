@@ -36,7 +36,7 @@ const corsOptions =  (origin) => {
     return whitelist.some(wl=> wl.localeCompare(origin) === 0);
 };
 
-app.use( (req, res, next) => {
+this.express.use( (req, res, next) => {
   
   res.setHeader('Access-Control-Allow-Credentials', true);
   res.setHeader('Access-Control-Allow-Origin', '*');
