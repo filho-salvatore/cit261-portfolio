@@ -24,7 +24,7 @@ function getAPIName(theCallback) {
     request.onload = () => {        if (request.status === 200) 
         {            
             // If HTTP status is good, get version number and call callback.            
-            let apiName = parseString(request.responseText);            
+            let apiName = JSON.stringify(request.responseText);            
             theCallback(null, apiName);        
         } else {            
             // Otherwise report an error to the callback            
@@ -43,8 +43,10 @@ function onGetAPIName(){
 
     if(theAPIName){
         console.log("The API NAME is: " + theAPIName);
+        document.write("The API NAME is: " + theAPIName);
     }
     if(error){
+        document.write("The Error is: "+ error);
         console.log("The Error is: "+ error);
     }
 

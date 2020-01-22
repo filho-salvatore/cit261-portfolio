@@ -8,4 +8,19 @@
  To solve it I had to add cors header to my response in express:
  I used both answers (https://stackoverflow.com/questions/55229677/blocked-by-cors-policy-no-access-control-allow-origin-header-is-present-node , 
  https://stackoverflow.com/questions/43871637/no-access-control-allow-origin-header-is-present-on-the-requested-resource-whe/43881141#43881141
- )to create a solution
+ )to create a solution.
+ The middleware adding CORS Header:
+ 
+ this.express.use( (req, res, next) => {
+  
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
+  
+  if ('OPTIONS' == req.method) {
+    res.sendStatus(200);
+  } else {
+    next();
+  }
+});
