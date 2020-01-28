@@ -9,10 +9,10 @@ const consumerSecret = process.env.COSUMERSECRET;
 //const rapidAPIkey = process.env.RAPIDAPIID;
 
 const config = {
-   consumer_key:         consumerKey,
-   consumer_secret:      consumerSecret,
-   access_token:         accessTokenKey,
-   access_token_secret:  accessTokenSecret
+   consumer_key:         'yDLiuoaJuqxFF0DMkoH9CSyKH',
+   consumer_secret:      'LwXgxR98wAToAbWw6hRjXGFgvEzjssscFtcJmAm35c4rpKb9Ys',
+   access_token:         '994282545746456578-5heHP6UxfS7Y1SEqdrQJeYjHCzc0YnQ',
+   access_token_secret:  'u9NUwbXwJiocg7P1uBCbjxUOCbRMbAOetm4NgU8S0YZb5'
  };
 
  var params = {
