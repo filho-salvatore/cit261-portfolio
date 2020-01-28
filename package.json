@@ -22,7 +22,9 @@
   "homepage": "https://github.com/filho-salvatore/cit261-portfolio#readme",
   "dependencies": {
     "cookie-parser": "^1.4.4",
+    "dotenv-safe": "^8.2.0",
     "ejs": "^3.0.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "twit": "^2.2.11"
   }
 }

@@ -2,6 +2,14 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import path from 'path';
 import fs from 'fs';
+import dotenvSafe from 'dotenv-safe';
+
+
+import { TwitterRoute } from './routes/twitter.route.mjs';
+
+dotenvSafe.config();
+
+
 
 export class Server {
   constructor() {
@@ -56,6 +64,9 @@ this.express.use( (req, res, next) => {
     next();
   }
 });
+
+    //to access the twitter API
+    TwitterRoute(this.express);
 
     this.express.get('/api/name', (req, res) => {
       let name = "TEST API CIT-261 Salvatore";
