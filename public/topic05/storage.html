@@ -2,22 +2,77 @@
 
 <html>
 <head>
-<meta charset="UTF-8" /> 
+<meta charset="UTF-8" />
+<link href="./mystyle.css" type="text/css" rel="stylesheet" /> 
 </head>
-<body>
+<body >
+
 <a href="helpConsole.html" target="_blank">Help To open the Web Console:</a>
 
 
 <p>
 <h2>Javascript Code For Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects</h2>
 
-<script type="text/javascript">
-   //Print to screen
-   document.write("Hello World!<br>"); // newline with <br>
-</script>
+   <!--LOCAL STORAGE -->
+	<div id="localStorage">
+   <h2>USE LOCAL STORAGE</h2>
+		         <label for="localkey">Key</label>
+		         <input type="text" class="mytextinput" name="key" id= "localkey" size="21" maxlength="120">
+               <label for="localvalue">Value</label>
+               <input type="text" class="mytextinput" name="value" id= "localvalue" size="21" maxlength="120">
+               <p><input id="Save" type="button" class="mybutton" value="Save" onclick="localStorePair();" />
+               <input id="clear" type="button" class="mybutton" value="Clear" onclick="localStorageClear();" />  
+
+		
+      <p> Get Value
+     
+     
+		        <input type="text" class="mytextinput" name="key" id= "localkeyget" size="21" maxlength="120">
+              <input id="Get" type="button" class="mybutton" value="Get" onclick="localGetValue();" />
+
+              <p><label for="localkeyvalue">Value</label>
+              <input type="text" class="mytextinput" name="value" id= "localkeyvalue" size="21" maxlength="120" disabled>
+             
+              
+		
+	<div class="myclear"></div>
+	</div>
+    <div id="mylocalStorage">
+    </div>
+
+<!--SESSION STORAGE -->
+	<div id="sessionStorage">
+   <h2>USE SESSION STORAGE</h2>
+		        <label for="sessionkey">Key</label>
+		        <input type="text" class="mytextinput" name="key" id= "sessionkey" size="21" maxlength="120">
+               <label for="sessionvalue">Value</label>
+              <input type="text" class="mytextinput" name="value" id= "sessionvalue" size="21" maxlength="120">
+             
+              <p>
+              <input id="Save2" type="button" class="mybutton" value="Save" onclick="sessionStorePair();" />
+              <input id="clear2" type="button" class="mybutton" value="Clear" onclick="sessionStorageClear();" />  
+
+		
+      <p> Get Value
+      <p>
+               <label for="sessionkeyget">Key</label>
+		         <input type="text" class="mytextinput" name="key" id= "sessionkeyget" size="21" maxlength="120">
+               
+               <input id="Get2" type="button" class="mybutton" value="Get" onclick="sessionGetValue();" />
+               <p><label for="sessionkeyvalue">Value</label>
+               <input type="text" class="mytextinput" name="value" id= "sessionkeyvalue" size="21" maxlength="120" disabled>
+             
+              
+		
+	<div class="myclear"></div>
+	</div>
+    <div id="mysessionStorage">
+    </div>
+
 <!-- prefer to load the .js file, instead addind the code embeded here, 
 to allow debugging inside the VSCode. 
 Otherwise it is not possible to debug -->
 <script src="storage.js"></script>
+
 </body>
 </html>

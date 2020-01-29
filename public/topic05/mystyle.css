@@ -1,13 +1,23 @@
-<!DOCTYPE html>
 
-<html>
-<head>
-<meta charset="UTF-8" /> 
-<style type="text/css">
-	#searchHeader{
+	#localStorage{
 		background-color:#c3dfef;
 	}
-	#theSearch{
+	#sessionStorage{
+		background-color:#f3ffef;
+	}
+	#theSession1{
+		float:right;
+		padding:20px;
+	}
+	#theSession2{
+		float:right;
+		padding:20px;
+	}
+	#theLocal1{
+		float:right;
+		padding:20px;
+	}
+	#theLocal2{
 		float:right;
 		padding:20px;
 	}
@@ -50,31 +60,3 @@
 	.myclear{
 		clear:both;
 	}
-</style>
-</head>
-<body>
-<a href="helpConsole.html" target="_blank">Help To open the Web Console:</a>
-
-
-<p>
-<h1>USE 3rd Part REST API to get JSON data</h1>
-
-<h2>USE Twitter API to serach Twittes</h2>
-
-<!-- HTML for SEARCH BAR -->
-	<div id="searchHeader">
-		<form id="theSearch" method="get" action="#">
-		        <input type="text" class="mytextinput" name="q" id= "queryText" size="21" maxlength="120">
-                <input id="getAPIName" type="button" class="mybutton" value="search" onclick="getTwitterData();" />
-                
-		</form>
-	<div class="myclear"></div>
-	</div>
-    <div id="response">
-    </div>
-<!-- prefer to load the .js file, instead addind the code embeded here, 
-to allow debugging inside the VSCode. 
-Otherwise it is not possible to debug -->
-<script src="twitter.js"></script>
-</body>
-</html>
