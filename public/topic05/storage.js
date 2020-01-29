@@ -95,7 +95,7 @@ function updateLocalStorageView(){
   myDiv.innerHTML =  "";
   if (isStorageEnabled()) {
   let htmlTable = '<table border="1">';
-  htmlTable += '<thead><tr><th>Key</th><th>Value</th></tr>  </thead>';
+  htmlTable += '<thead style="background-color:lightblue" ><tr><th>Key</th><th>Value</th></tr>  </thead>';
             
   for (var i = 0; i < localStorage.length; i++) {
     var key   = localStorage.key(i);
@@ -191,7 +191,7 @@ function updateSessionStorageView(){
   myDiv.innerHTML =  "";
   if (isStorageEnabled()) {
   let htmlTable = '<table border="1">';
-  htmlTable += '<thead><tr><th>Key</th><th>Value</th></tr>  </thead>';
+  htmlTable += '<thead style="background-color:lightgreen" ><tr><th>Key</th><th>Value</th></tr>  </thead>';
             
   for (var i = 0; i < sessionStorage.length; i++) {
     var key   = sessionStorage.key(i);
