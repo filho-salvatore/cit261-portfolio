@@ -1,1 +1,9 @@
 TOPIC05 - Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects. 
+
+studied local storage and session storage.
+used w3 data to study and created two html pages to show the results
+page 1 - only works with simple strings
+page adv works with arrays and objects
+
+it is simple to work with local and session storage. the methoods are the same, only changing the name from local to session and vice versa.
+in order to get objects and arrays in and out from the storage we have to use JSON strigify and parse methods.
