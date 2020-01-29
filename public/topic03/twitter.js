@@ -22,9 +22,18 @@ The server sid express route
 
 
 function callTwitterAPI(theCallback) {
+    var qValue = document.getElementById('queryText').value;
+    var params = "querytext="+qValue;
+    let url = 'https://cit261-portfolio.herokuapp.com/twitter';
+    let completeURL = url+"?"+params;
+    
+    var http = new XMLHttpRequest();
+    
+    http.open("GET", url+"?"+params, true);
     // Make a scripted HTTP request to a backend version API    
     request = new XMLHttpRequest();    
-    request.open('GET', ' https://cit261-portfolio.herokuapp.com/twitter');    
+    //request.open('GET', completeURL);    
+    request.open('GET', completeURL,true);    
     request.send();    
     
     // Register a callback that will be invoked when the response arrives    
@@ -45,8 +54,7 @@ function callTwitterAPI(theCallback) {
 }
 
 function getTwitterData(){ 
-    
-    callTwitterAPI((error,theTwitterData)=>{
+     callTwitterAPI((error,theTwitterData)=>{
 
     if(theTwitterData){
         console.log("The API NAME is: " + theTwitterData);

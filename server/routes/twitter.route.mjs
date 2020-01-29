@@ -15,13 +15,7 @@ const config = {
    access_token_secret:  'u9NUwbXwJiocg7P1uBCbjxUOCbRMbAOetm4NgU8S0YZb5'
  };
 
- var params = {
-
-  q: 'brazil',
-  
-  count: 100
-  
-  }; // this is the param variable which will have key and value 
+ 
 
 var T = new Twit(config); //this is the object of twit which will help us to call functions inside it
 
@@ -30,7 +24,14 @@ var T = new Twit(config); //this is the object of twit which will help us to cal
 export const TwitterRoute =  function(app) {   //to access the twitter API
 
   app.get('/twitter',(req,res)=>{
-  
+     let QueryText = req.query.querytext || '';
+     let params = {
+
+      q: QueryText,
+      
+      count: 2
+      
+      }
   T.get('search/tweets', params,(err, data, response)=>{
     if(err){
 
