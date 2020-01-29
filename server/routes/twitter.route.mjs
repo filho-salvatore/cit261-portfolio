@@ -29,7 +29,7 @@ export const TwitterRoute =  function(app) {   //to access the twitter API
 
       q: QueryText,
       
-      count: 2
+      count: 10
       
       }
   T.get('search/tweets', params,(err, data, response)=>{
@@ -39,7 +39,11 @@ export const TwitterRoute =  function(app) {   //to access the twitter API
       
       }
 
-    console.log(JSON.stringify(data));
+    //console.log(JSON.stringify(data));
+    let teste = data.statuses;
+    let metadata = data.search_metadata;
+    let parsed = JSON.stringify(data);
+    
     res.status(200).json(data);
   }); // get is the function to search the tweet which three paramaters 'search/tweets' ,params and a callback function.
 
