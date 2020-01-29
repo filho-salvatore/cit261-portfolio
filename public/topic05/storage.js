@@ -163,7 +163,7 @@ return value;
 
  function sessionStorageClear(){
     if (isStorageEnabled()) {
-        sessionStorage.clear();;
+        sessionStorage.clear();
         updateSessionStorageView();
     }else{
         alert("sessionStorage not enabled in this browser");
