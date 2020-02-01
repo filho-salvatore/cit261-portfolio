@@ -3,6 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8" /> 
+<link href="./mystyle.css" type="text/css" rel="stylesheet" /> 
 </head>
 <body>
 <a href="helpConsole.html" target="_blank">Help To open the Web Console:</a>
@@ -11,10 +12,15 @@
 <p>
 <h2>Javascript Code For the DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc, Lesson</h2>
 
-<script type="text/javascript">
-   //Print to screen
-   document.write("Hello World!<br>"); // newline with <br>
-</script>
+
+<input id="showDOM" type="button" class="mybutton" value="show DOM TREE"  />
+<p><label for="startPointInTree">TAG NAME of the Starting Point (HTML, BODY, etc) </label>
+ <input type="text" class="mytextinput" name="startPoint" id= "startPointInTree" size="21" maxlength="120">
+ <input id="show_DOM_TREE_Element" type="button" class="mybutton" value="Show"  />
+               
+               
+
+<div id="result"></div>
 <!-- prefer to load the .js file, instead addind the code embeded here, 
 to allow debugging inside the VSCode. 
 Otherwise it is not possible to debug -->

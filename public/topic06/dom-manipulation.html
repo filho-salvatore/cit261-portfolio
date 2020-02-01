@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="./mystyle.css" type="text/css" rel="stylesheet" /> 
+</head>
+<body>
+
+<div id="myDIV" class="header">
+  <h2 style="margin:5px">Add Emails to list</h2>
+  <p> Click [x] to remove </p>
+  <input class="mytextinput" type="text" id="myCCEmail" placeholder="CC:">
+  <input class="mybutton" id="show_DOM_TREE_Element" type="button" class="mybutton" value="Add CC" onclick="newCCEmail()" />
+  
+  <p>
+  <input class="mytextinput" type="text" id="myCCOEmail" placeholder="CCO:">
+  <input class="mybutton" id="show_DOM_TREE_Element" type="button" class="mybutton" value="Add CCO" onclick="newCCOEmail()" />
+  
+</div>
+<div id="myCCDIV" class="header">
+    <p> CC:
+    <ul id="myCC">
+    <li>john@gmail.com</li>
+    <li>lydia.scott@hotmail.com</li>
+    </ul>
+</div>
+<p>
+<div id="myCCODIV" class="header">
+    <p> CCO:
+    <ul id="myCCO">
+    <li>gia72728@byui.edu</li>
+    <li>company@gmx.com</li>
+    
+    </ul>
+</div>
+<divid="myEmailDIV" class="header">
+    <p> E-mail Body
+         <br>
+         <textarea rows = "5" cols = "60" name = "description">
+            Enter details here...
+         </textarea><br>
+         <input type = "submit" value = "Send" />
+</div>
+<script src="dom-manipulation.js"></script>
+
+</body>
+</html>

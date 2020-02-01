@@ -1,5 +1,26 @@
 
-	
+	#localStorage{
+		background-color:#c3dfef;
+	}
+	#sessionStorage{
+		background-color:#f3ffef;
+	}
+	#theSession1{
+		float:right;
+		padding:20px;
+	}
+	#theSession2{
+		float:right;
+		padding:20px;
+	}
+	#theLocal1{
+		float:right;
+		padding:20px;
+	}
+	#theLocal2{
+		float:right;
+		padding:20px;
+	}
 	.mytextinput{
 		margin: 0;
 		padding: 5px 15px;
