@@ -1,1 +1,6 @@
 TOPIC06 - DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc. 
+
+studied about the DOM.
+is is very interesting to think about the DOM as a tree.
+we can add, modify,delete and find nodes in that tree.
+when we add a node we need to know where to add.

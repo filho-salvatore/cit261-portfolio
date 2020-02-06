@@ -1,1 +1,7 @@
 TOPIC07 - Manipulating CSS Class Properties Using JavaScript. 
+
+read the chaper 07 from the book.
+it teaches how to perform dynamic styling.
+i have never loked Css before, it is an oportunity to learn it.
+
+Each CSSStyleRule object is assigned a sequential index. As I explained in Chapter 2, the order that rules are included can affect how conflicts are resolved. The index is also important because you’ll need this to remove a rule.

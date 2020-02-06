@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title> Salvatore - Topic02</title>
+    <meta name="description" content="Salvatore Giannotta Filho - Topic 02 - Javascript Objects">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="topic02_style.css">
+    <script src="objects_complete.js"></script>
+  </head>
+  <body>
+<!--SESSION Object -->
+	<div id="sessionObject">
+   <h2>CREATE OBJECT SESSION</h2>
+   <p> To create an object with some properties just add the property names and values in the boxes bellow.
+   <p> After adding the values click the create object button to see your new object
+		      <p>
+              <label for="sessionkey">Key</label>
+		      <input type="text" class="mytextinput" name="key" id= "sessionkey" size="21" maxlength="120">
+              <label for="sessionvalue">Value</label>
+              <input type="text" class="mytextinput" name="value" id= "sessionvalue" size="21" maxlength="120">
+              <p>
+              <label for="sessionkey2">Key</label>
+		      <input type="text" class="mytextinput" name="key" id= "sessionkey2" size="21" maxlength="120">
+              <label for="sessionvalue2">Value</label>
+              <input type="text" class="mytextinput" name="value" id= "sessionvalue2" size="21" maxlength="120">
+             
+              <p>
+              <input id="create" type="button" class="mybutton" value="Create" onclick="createObject();" />
+              <input id="clear" type="button" class="mybutton" value="Clear" onclick="clearObject();" />  
+
+		<div id="showObject"> </div>
+        <p> This object is istored in the Session Storage
+        <p> With the next button you can restore it.
+        <p> select a key name, click <get> and check if the correct value is returned.
+      <p> Get Value
+      <p>
+               <label for="sessionkeyget">Key</label>
+		         <input type="text" class="mytextinput" name="key" id= "sessionkeyget" size="21" maxlength="120">
+               
+               <input id="Get2" type="button" class="mybutton" value="Get" onclick="sessionGetValue();" />
+               <p><label for="sessionkeyvalue">Value</label>
+               <input type="text" class="mytextinput" name="value" id= "sessionkeyvalue" size="21" maxlength="120" disabled>
+             
+              
+		
+	<div class="myclear"></div>
+	</div>
+    <div id="sessionConsole">
+    <hr>
+    <p> I have made several operations with objects:
+    <ul>
+    <li> Created Objects using several different approches </li>
+    <li> Worked with object properties </li>
+    <li> Created methods using different approaches </li>
+    <li> Tested inheritance </li>
+
+    </ul>
+    <p> To check all operation performed just click the button bellow </p>
+    <input id="Get2" type="button" class="mybutton" value="Show Console" onclick="showConsole();" />
+    <input id="Get2" type="button" class="mybutton" value="Clear Console" onclick="clearConsole();" />
+    <div id="consoleResult"></div>
+    </div>
+    <footer>
+        <p>@ 2020 - Salvatore Giannotta Filho - Location: São Paulo - <a href="http://www.byui.edu/online">BYU-I Online Learning</a></p>
+    </footer>
+  </body>
+</html>

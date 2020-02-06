@@ -3,18 +3,28 @@
 <html>
 <head>
 <meta charset="UTF-8" /> 
+<link rel="stylesheet" href="./sample.css" title="Shared" />
+<link rel="alternate stylesheet" href="./red.css" title="red"/>
+<link rel="alternate stylesheet" href="./green.css" title="green"/>
+<link rel="alternate stylesheet" href="./blue.css" title="blue"/>
 </head>
 <body>
-<a href="helpConsole.html" target="_blank">Help To open the Web Console:</a>
 
+<button onclick="toggleCSS()">Toggle</button> 
+<br>
+<br> This four buttons does not work in chrome because it lacks supporting alternate style sheets
+<br> try it on Firefox
+<br>
+<button onclick="disableAll()">Black</button>
+<button onclick="applyCSS('red')" style="color: red">Red</button>
+<button onclick="applyCSS('green')" style="color: green">Green</button>
+<button onclick="applyCSS('blue')" style="color: blue">Blue</button>
 
 <p>
-<h2>Javascript Code For the Manipulating CSS Class Properties Using JavaScript Lesson</h2>
+<h2>Javascript Code For the Manipulating the complete Style sheet Using JavaScript Lesson</h2>
+</p>
+<p><strong>Hello</strong> World!</p>
 
-<script type="text/javascript">
-   //Print to screen
-   document.write("Hello World!<br>"); // newline with <br>
-</script>
 <!-- prefer to load the .js file, instead addind the code embeded here, 
 to allow debugging inside the VSCode. 
 Otherwise it is not possible to debug -->
