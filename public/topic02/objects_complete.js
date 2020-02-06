@@ -636,6 +636,7 @@ function createObject(){
 }
 
 function clearObject(){
+    let mydiv = document.getElementById('showObject');
     sessionStorageClear()
     mydiv.innerHTML = "";
 }
