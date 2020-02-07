@@ -42,12 +42,12 @@ function onGetAPIName(){
     getAPIName((error,theAPIName)=>{
 
     if(theAPIName){
-        console.log("The API NAME is: " + theAPIName);
-        document.write("The API NAME is: " + theAPIName);
+        
+        alert("The API NAME is: " + theAPIName);
     }
     if(error){
-        document.write("The Error is: "+ error);
-        console.log("The Error is: "+ error);
+       
+       alert("The Error is: "+ error);
     }
 
     });
