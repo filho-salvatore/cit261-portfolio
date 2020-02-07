@@ -3,26 +3,57 @@
 <html>
 <head>
 <meta charset="UTF-8" /> 
+<meta name="description" content="Salvatore Giannotta Filho - Topic 04 - AJAX">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="topic04_style.css">
+    <script src="request.js"></script>
+    <script src="twitter.js"></script>
+    <script src="objects_complete.js"></script>
 </head>
 <body>
-<a href="helpConsole.html" target="_blank">Help To open the Web Console:</a>
-
 
 <p>
 <h2>Javascript Code For the Using XMLHTTPRequest to Consume a JSON Web Service Lesson</h2>
 
+<p> The server in Heroku has a route: <b>/api/name</b>.
+<p> if we use the method GET in that route it returns the API /api/name.
+<p> The next button test this functionality.
 <script type="text/javascript">
+   
    //Print to screen
    document.write("Click to get the API NAME <br>"); // newline with <br>
    
 </script>
    <p></p>
+
    <form>
-   <input id="getAPIName" type="button" value="clickme" onclick="onGetAPIName();" />
+   <input id="getAPIName" class="mybutton" type="button" value="clickme" onclick="onGetAPIName();" />
    </form>
+
+
+   <p>
+   <hr>
+<h2>USE 3rd Part REST API to get JSON data</h1>
+
+<h2>USE Twitter API to serach Twittes</h2>
+<p> The serch button uses the twitter API to search recent twitted topics.
+<p> add a topic in the text box and click <search>
+<p> You will get the latests twitters on this topic.
+<!-- HTML for SEARCH BAR -->
+	<div id="searchHeader">
+		
+		<input type="text" class="mytextinput" name="q" id= "queryText" size="21" maxlength="120">
+      <input id="getAPIName" type="button" class="mybutton" value="search" onclick="getTwitterData();" />
+                
+		
+	<div class="myclear"></div>
+	</div>
+    <div id="response">
+    </div>
 <!-- prefer to load the .js file, instead addind the code embeded here, 
 to allow debugging inside the VSCode. 
 Otherwise it is not possible to debug -->
-<script src="request.js"></script>
+
 </body>
 </html>
