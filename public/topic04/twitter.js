@@ -5,7 +5,7 @@
 
 
 function callTwitterAPI(theCallback) {
-    resultPlace.innerHTML = "";
+  
     var qValue = document.getElementById('queryText').value;
     var params = "querytext="+qValue;
     let url = 'https://cit261-portfolio.herokuapp.com/twitter';
