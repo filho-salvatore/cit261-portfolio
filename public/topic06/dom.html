@@ -4,26 +4,68 @@
 <head>
 <meta charset="UTF-8" /> 
 <link href="./mystyle.css" type="text/css" rel="stylesheet" /> 
+
+
 </head>
 <body>
-<a href="helpConsole.html" target="_blank">Help To open the Web Console:</a>
-
-
+<hr>
 <p>
-<h2>Javascript Code For the DOM Manipulation Listing the DOM. Lesson</h2>
+<h2>DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc.</h2>
+<div id="myDIV" class="header">
+  <h2 style="margin:5px">Add Emails to list</h2>
+  <p> Click [x] to remove </p>
+  <input class="mytextinput" type="text" id="myCCEmail" placeholder="CC:">
+  <input class="mybutton" id="addCC" type="button" class="mybutton" value="Add CC" onclick="newCCEmail()" />
+  <input class="mytextinput" type="text" id="myCCOEmail" placeholder="CCO:">
+  <input class="mybutton" id="addCCO" type="button" class="mybutton" value="Add CCO" onclick="newCCOEmail()" />
+  
+</div>
+<div id="myCCDIV" class="header">
+    <p> CC:
+    <ul id="myCC">
+       <li>lydia.scott@hotmail.com</li>
+    </ul>
+</div>
+<p>
+<div id="myCCODIV" class="header">
+    <p> CCO:
+    <ul id="myCCO">
+    <li>gia72728@byui.edu</li>
+   
+    
+    </ul>
+</div>
+<divid="myEmailDIV" class="header">
+    <p> E-mail Body
+         <br>
+         <textarea rows = "5" cols = "60" name = "description">
+            Enter details here...
+         </textarea><br>
+         <input type = "submit" value = "Send" onclick="sendEmail();"/>
+</div>
 
+<hr>
+<ht>
+<h2>Javascript Code For DOM Manipulation 
+<h2>Listing the DOM</h2>
 
+<p> the next buttons allows you to list the entire DOM Tree for this page.
+<br> Do not forget to scroll down the page to see the results.
+<br>
 <input id="showDOM" type="button" class="mybutton" value="show DOM TREE"  />
+<input id="clear" type="button" class="mybutton" value="Clear"  onclick="clearResults();"/>
 <p><label for="startPointInTree">TAG NAME of the Starting Point (HTML, BODY, etc) </label>
  <input type="text" class="mytextinput" name="startPoint" id= "startPointInTree" size="21" maxlength="120">
  <input id="show_DOM_TREE_Element" type="button" class="mybutton" value="Show"  />
                
                
-
+<hr>
 <div id="result"></div>
+<hr>
 <!-- prefer to load the .js file, instead addind the code embeded here, 
 to allow debugging inside the VSCode. 
 Otherwise it is not possible to debug -->
 <script src="dom.js"></script>
+<script src="dom-manipulation.js"></script>
 </body>
 </html>

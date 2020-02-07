@@ -73,3 +73,9 @@ function showDOMTree(node) {
 
 
 
+/**
+ * clear the results division
+ */
+function clearResults(){
+    document.getElementById("result").innerHTML = "";
+}

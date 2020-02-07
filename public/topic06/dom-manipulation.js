@@ -114,3 +114,11 @@ function newCCOEmail() {
 
   }
 }
+
+/**
+ * pretend to send the e-mail
+ */
+function sendEmail(){
+  alert("email sent!");
+}
+
