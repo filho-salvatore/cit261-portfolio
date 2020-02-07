@@ -60,7 +60,7 @@ disableAll();
 
 
 var element = document.createElement('style'),sheet;
-
+//element.title="mySheet"
 // Append style element to head
 document.head.appendChild(element);
 
@@ -89,7 +89,15 @@ let styles2 = "p {border: 1px solid black;}";
 // Add the first CSS rule to the stylesheet
 
 
-function toggleRule() {    
+function toggleRule() {  
+    var sets = document.styleSheets 
+    var sheet; 
+    for (var prop in sets) {
+        if (sets.hasOwnProperty(prop)) {
+            sheet = sets[prop];
+           
+        }
+    }
     if (newRuleIndex == -1) {        
         newRuleIndex = sheet.insertRule(styles2, 0);    
     }else {        
