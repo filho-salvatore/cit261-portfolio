@@ -39,13 +39,14 @@ function callTwitterAPI(theCallback) {
 
 function getTwitterData(){ 
      callTwitterAPI((error,theTwitterData)=>{
-
+        resultPlace.innerHTML = "";
     if(theTwitterData){
         let theData = JSON.parse(theTwitterData);
         let theDataParsed = JSON.parse(theData);  //for some reason I have to parse the data twice to get the object
         let twits = theDataParsed.statuses;
         console.log("number of twits: " + twits.length);
         var resultPlace = document.getElementById('response');
+        
         let htmlTable = '<table border="1">';
        
         htmlTable += '<thead><tr><th>ID</th><th>Text</th></tr>  </thead>';
