@@ -3,71 +3,131 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<link href="./mystyle.css" type="text/css" rel="stylesheet" /> 
+<link href="./topic05_style.css" type="text/css" rel="stylesheet" /> 
 </head>
 <body >
 
-<a href="helpConsole.html" target="_blank">Help To open the Web Console:</a>
-
-
 <p>
-<h2>Javascript Code For Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects</h2>
+
+<h2>Javascript Code For Local Storage API, Storing and Retrieving  Data, Arrays,  and Objects</h2>
+
 
    <!--LOCAL STORAGE -->
+   <hr>
 	<div id="localStorage">
-   <h2>USE LOCAL STORAGE</h2>
-		         <label for="localkey">Key</label>
-		         <input type="text" class="mytextinput" name="key" id= "localkey" size="21" maxlength="120">
+        <h2>USE LOCAL STORAGE TO STORE STRINGS</h2>
+		       <label for="localkey">Key</label>
+		       <input type="text" class="mytextinput" name="key" id= "localkey" size="21" maxlength="120">
                <label for="localvalue">Value</label>
                <input type="text" class="mytextinput" name="value" id= "localvalue" size="21" maxlength="120">
-               <p><input id="Save" type="button" class="mybutton" value="Save" onclick="localStorePair();" />
-               <input id="clear" type="button" class="mybutton" value="Clear" onclick="localStorageClear();" />  
+               <input id="Save" type="button" class="mybutton" value="Save" onclick="localStorePair();" />
+               
 
 		
-      <p> Get Value
+        <p> Get Value
      
      
-		        <input type="text" class="mytextinput" name="key" id= "localkeyget" size="21" maxlength="120">
+		      <input type="text" class="mytextinput" name="key" id= "localkeyget" size="21" maxlength="120">
               <input id="Get" type="button" class="mybutton" value="Get" onclick="localGetValue();" />
 
-              <p><label for="localkeyvalue">Value</label>
+              <label for="localkeyvalue">Value</label>
               <input type="text" class="mytextinput" name="value" id= "localkeyvalue" size="21" maxlength="120" disabled>
              
+     
+        <h2>USE LOCAL STORAGE TO STORE ARRAYS</h2>
+		      <label for="localkey">Select Array</label>
+		      <select class="mytextinput" name="key" id= "localkeyArray" size="3" maxlength="3">
+                    <option selected value="arr1">Array 1</option>
+                    <option value="arr2">Array 2</option>
+                    <option value="arr3">Array 3</option>
+                </select> 
+               <input id="Save" type="button" class="mybutton" value="Save Array" onclick="localStoreArray();" />
               
-		
-	<div class="myclear"></div>
-	</div>
-    <div id="mylocalStorage">
-    </div>
 
+		
+        <p> Get Array
+     
+            <p><label for="localkeyget">Select Array</label>
+		    <select class="mytextinput" name="key" id= "localkeyArrayget" size="3" maxlength="3">
+                <option selected value="arr1">Array 1</option>
+                <option value="arr2">Array 2</option>
+                <option value="arr3">Array 3</option>
+            </select> 
+              <input id="Get" type="button" class="mybutton" value="Get" onclick="localGetArray();" />
+
+              <label for="textValue">Value</label>
+              <input type="text" class="mytextinput" name="value" id= "textValue" size="21" maxlength="120" disabled>
+
+              
+       
+        
+	</div>
+     <hr>
+    <p><label for="clear">Clear Local Storage</label>		
+        <input id="clear" type="button" class="mybutton" value="Clear" onclick="localStorageClear();" />  
+	    <div class="myclear"></div>
+    <div id="mylocalStorage"> </div>         
+		
+	
+<hr>
 <!--SESSION STORAGE -->
 	<div id="sessionStorage">
-   <h2>USE SESSION STORAGE</h2>
-		        <label for="sessionkey">Key</label>
-		        <input type="text" class="mytextinput" name="key" id= "sessionkey" size="21" maxlength="120">
-               <label for="sessionvalue">Value</label>
+        <h2>USE SESSION STORAGE TO STORE STRINGS</h2>
+		      <label for="sessionkey">Key</label>
+		      <input type="text" class="mytextinput" name="key" id= "sessionkey" size="21" maxlength="120">
+              <label for="sessionvalue">Value</label>
               <input type="text" class="mytextinput" name="value" id= "sessionvalue" size="21" maxlength="120">
-             
-              <p>
               <input id="Save2" type="button" class="mybutton" value="Save" onclick="sessionStorePair();" />
-              <input id="clear2" type="button" class="mybutton" value="Clear" onclick="sessionStorageClear();" />  
+             
 
 		
-      <p> Get Value
-      <p>
+        <p> Get Value
+     
                <label for="sessionkeyget">Key</label>
-		         <input type="text" class="mytextinput" name="key" id= "sessionkeyget" size="21" maxlength="120">
+		       <input type="text" class="mytextinput" name="key" id= "sessionkeyget" size="21" maxlength="120">
                
                <input id="Get2" type="button" class="mybutton" value="Get" onclick="sessionGetValue();" />
-               <p><label for="sessionkeyvalue">Value</label>
+               <label for="sessionkeyvalue">Value</label>
                <input type="text" class="mytextinput" name="value" id= "sessionkeyvalue" size="21" maxlength="120" disabled>
+             
+ 
+	
+        <h2>USE SESSION STORAGE TO STORE OBJECTS</h2>
+		        <label for="sessionkey">Select Object</label>
+		       
+                <select class="mytextinput" name="key" id= "sessionkeyObject" size="3" maxlength="3">
+                    <option selected value="obj1">Object 1</option>
+                    <option value="obj2">Object 2</option>
+                    <option value="obj3">Object 3</option>
+                </select> 
+              
+             
+              <input id="SaveObject" type="button" class="mybutton" value="Save Object" onclick="sessionStoreObject();" />
+              
+
+		
+        <p> Get Object
+        <p>
+               <label for="sessionkeyget">Select Object</label>
+		        <select class="mytextinput" name="key" id= "sessionkeygetObject" size="3" maxlength="3">
+                    <option selected value="obj1">Object 1</option>
+                    <option value="obj2">Object 2</option>
+                    <option value="obj3">Object 3</option>
+                </select> 
+               
+               <input id="Get2" type="button" class="mybutton" value="Get" onclick="sessionGetObject();" />
+               <label for="sessionkeyvalue">Value</label>
+               <input type="text" class="mytextinput" name="value" id= "sessionkeyvalueObj" size="21" maxlength="120" disabled>
              
               
 		
-	<div class="myclear"></div>
 	</div>
-    <div id="mysessionStorage">
-    </div>
+    <hr>
+                <label for="clear2">Clear Session Storage</label>
+                 <input id="clear2" type="button" class="mybutton" value="Clear" onclick="sessionStorageClear();" />  
+	    <div class="myclear"></div>
+    <div id="mysessionStorage"></div>
+
 
 <!-- prefer to load the .js file, instead addind the code embeded here, 
 to allow debugging inside the VSCode. 

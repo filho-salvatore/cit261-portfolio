@@ -48,7 +48,10 @@ function localStorePair(){
 
     }
 }
-
+/**
+ * Get Value from Storage
+ * @param {*} key 
+ */
 function localGetValueFromStorage(key){
 // Retrieve
 let value = '';
@@ -86,6 +89,21 @@ function localGetValue(){
         alert("localStorage not enabled in this browser");
     }
     
+}
+
+/**
+ * Get Array from the localStorage
+ */
+function localGetArray(){
+  if (isStorageEnabled()) {
+      let key = document.getElementById('localkeyArrayget').value;
+
+      let value = localGetValueFromStorage(key);
+      document.getElementById('textValue').value = value;
+  }else{
+      alert("localStorage not enabled in this browser");
+  }
+  
 }
 /**
  * Update the <div> 'localStorage' with the data in the local Storage
@@ -157,6 +175,8 @@ return value;
 
 }
 
+
+
 /**
  * Clear Local Storage
  */
@@ -183,6 +203,22 @@ function sessionGetValue(){
     }
     
 }
+
+/**
+ * Get Value from the sessionStorage
+ */
+function sessionGetObject(){
+  if (isStorageEnabled()) {
+      let key = document.getElementById('sessionkeygetObject').value;
+
+      let value = sessionGetValueFromStorage(key);
+      document.getElementById('sessionkeyvalueObj').value = value;
+  }else{
+      alert("sessionStorage not enabled in this browser");
+  }
+  
+}
+
 /**
  * Update the <div> 'sessionStorage' with the data in the session Storage
  */
@@ -247,7 +283,7 @@ let obj1 = {
  function sessionStoreObject(){
     if (isStorageEnabled()) {
         let value
-        let key = document.getElementById('sessionkey').value;
+        let key = document.getElementById('sessionkeyObject').value;
         switch(key) {
             case 'obj1':
                 value = JSON.stringify(obj1);
@@ -273,7 +309,7 @@ let obj1 = {
  function localStoreArray(){
     if (isStorageEnabled()) {
         let value
-        let key = document.getElementById('localkey').value;
+        let key = document.getElementById('localkeyArray').value;
         switch(key) {
             case 'arr1':
                 value = JSON.stringify(myArray1);

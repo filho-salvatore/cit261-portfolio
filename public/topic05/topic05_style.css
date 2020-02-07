@@ -1,5 +1,10 @@
-
-	
+	#localStorage{
+		background-color:#c3dfef;
+	}
+		
+	#sessionStorage{
+		background-color:#769920;
+	}
 	.mytextinput{
 		margin: 0;
 		padding: 5px 15px;
