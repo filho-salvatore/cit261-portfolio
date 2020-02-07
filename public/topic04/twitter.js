@@ -5,6 +5,7 @@
 
 
 function callTwitterAPI(theCallback) {
+    resultPlace.innerHTML = "";
     var qValue = document.getElementById('queryText').value;
     var params = "querytext="+qValue;
     let url = 'https://cit261-portfolio.herokuapp.com/twitter';
@@ -39,7 +40,7 @@ function callTwitterAPI(theCallback) {
 
 function getTwitterData(){ 
      callTwitterAPI((error,theTwitterData)=>{
-        resultPlace.innerHTML = "";
+        
     if(theTwitterData){
         let theData = JSON.parse(theTwitterData);
         let theDataParsed = JSON.parse(theData);  //for some reason I have to parse the data twice to get the object
