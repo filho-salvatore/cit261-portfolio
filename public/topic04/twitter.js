@@ -47,7 +47,7 @@ function getTwitterData(){
         let twits = theDataParsed.statuses;
         console.log("number of twits: " + twits.length);
         var resultPlace = document.getElementById('response');
-        
+        resultPlace.innerHTML = "";
         let htmlTable = '<table border="1">';
        
         htmlTable += '<thead><tr><th>ID</th><th>Text</th></tr>  </thead>';
