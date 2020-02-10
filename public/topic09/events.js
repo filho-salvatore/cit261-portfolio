@@ -2,7 +2,9 @@
  * On Touch event for mobiles
  */
 window.addEventListener('load', function(){
-            var box1 = document.getElementById('box1')
+            let box1 = document.getElementById('box1');
+            boxCoord = box1.getBoundingClientRect();
+
             box1.addEventListener('touchmove', function(e) { // When the user moves their finger, the function will begin.
                 
                 e.preventDefault(); // Stop any annoying scrolling.
@@ -22,7 +24,7 @@ window.addEventListener('load', function(){
                     
                     blue.style.top = posY+'px';
                     blue.style.left = posX+'px';
-                    
+                    if(blue.style.top < boxCoord.top)
                     document.body.appendChild(blue); 
                     
                 }
@@ -34,7 +36,7 @@ window.addEventListener('load', function(){
                     
                     purple.style.top = posY+'px';
                     purple.style.left = posX+'px';
-                    
+                    if(purple.style.top < boxCoord.top)
                     document.body.appendChild(purple);
                 
                 }
@@ -46,7 +48,7 @@ window.addEventListener('load', function(){
                     
                     red.style.top = posY+'px';
                     red.style.left = posX+'px';
-                    
+                    if(red.style.top < boxCoord.top)
                     document.body.appendChild(red);
                 
                 }
