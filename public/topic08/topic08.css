@@ -1,8 +1,8 @@
-.zoomPic {
+.heartPic {
     margin: 30px;
     width: 300px;
     height: 180px;
-    background-color: blue;
+    background-color: white;
     background-image: url(zoomImage.png);
     background-repeat:no-repeat;
     background-position:50% 50%;
@@ -14,7 +14,7 @@
     -o-transition: all 2.5s ease-in-out;
     transition: all 2.5s ease-in-out;
   }
-  .zoomPic.zoom {
+  .heartPic.zoom {
     background-size: 1200px 720px !important; 
   }
 
