@@ -1,12 +1,13 @@
 .heartPic {
-    margin: 30px;
-    width: 300px;
-    height: 180px;
+    
+    background-position:50% 50%;
     background-color: white;
+    background-size: 400px 300px;
     background-image: url(zoomImage.png);
     background-repeat:no-repeat;
-    background-position:50% 50%;
-    background-size: 300px 180px;
+    margin: 30px;
+    width: 400px;
+    height: 200px;
     
     -webkit-transition: all 2.5s ease-in-out;
     -moz-transition: all 2.5s ease-in-out;
@@ -15,7 +16,7 @@
     transition: all 2.5s ease-in-out;
   }
   .heartPic.zoom {
-    background-size: 1200px 720px !important; 
+    background-size: 1200px 720px; 
   }
 
   /**
@@ -45,7 +46,7 @@
     -moz-animation-delay:1s;
     -ms-animation-delay:1s;
     -o-animation-delay:1s;
-    animation-dely:1s;
+    animation-delay:1s;
   }
 
 
