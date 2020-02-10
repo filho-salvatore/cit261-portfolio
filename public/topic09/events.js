@@ -19,7 +19,7 @@ window.addEventListener('load', function(){
                     
                     var blue = document.createElement('div');
                     blue.setAttribute('class', 'blue');
-                    blue.className   = 'added';
+                    
                     blue.style.top = posY+'px';
                     blue.style.left = posX+'px';
                     
@@ -57,7 +57,11 @@ window.addEventListener('load', function(){
 
 function clear(){
 
-    var box1 = document.getElementById('box1')
+    let blueElements=document.getElementsByClassName('blue');
+    blueElements.forEach(function (item, index) {
+        document.body.removeChild(item);
+      });
+    
 }
 
 
