@@ -41,18 +41,65 @@ body {
     border-radius: 200px;
 }
 
+canvas {
+  border: 1px solid black;
+  width: 300px;
+  height: 200px;
+}
+
+.square {
+  width : 50px;
+  height : 50px;
+  background : #064;
+  position :relative;
+}
+
+
+
+.active {
+  
+   -webkit-animation: 1600ms move infinite alternate ease-in-out;
+    -moz-animation: 1600ms move infinite alternate ease-in-out;
+    -ms-animation: 1600ms move infinite alternate ease-in-out;
+    -o-animation: 1600ms move infinite alternate ease-in-out;
+    animation: 1600ms move infinite alternate ease-in-out;
+    animation : 1s 2 move  infinite alternate ease-in-out;
+}
+
+@keyframes move {
+  0%{
+    left : 0;
+  }
+  100%{
+    left : 90vw;
+  }
+}
+
 </style>
 <p>
 <h2>Standard JavaScript Events Including those for Mobile Devices </h2>
 <div id='box1' style="background:  yellow">
-<hr>
-<br>If you open this page on a mobile, just touch the screen inside this yellow area, and drag, to see:
-<br>(1) One finger touch: a blue circle following your finger.
-<br>(2) two finger touch: a purple circle will follow your first finger.
-<br>(3) three finger touch: a red circle will follow your first finger
+      <hr>
+      <br>If you open this page on a mobile, just touch the screen inside this yellow area, and drag, to see:
+      <br>(1) One finger touch: a blue circle following your finger.
+      <br>(2) two finger touch: a purple circle will follow your first finger.
+      <br>(3) three finger touch: a red circle will follow your first finger
 
-<hr>
+      <hr>
  </div >
+
+ <h1>Drawing with mouse events</h1>
+<canvas id="myPics" width="560" height="360"></canvas>
+<hr>
+
+<input class="mybutton" id="startAnimation" type="button" class="mybutton" value="Start Animation" />
+<input class="mybutton" id="cancelAnimation" type="button" class="mybutton" value="Cancel Animation" />
+<br/>
+<div id='count'> Animation Iterations:</div>
+<div id="square" class="square active">
+  
+</div>
+<hr>
   <script src="script.js"></script> 
 <!-- prefer to load the .js file, instead addind the code embeded here, 
 to allow debugging inside the VSCode. 
