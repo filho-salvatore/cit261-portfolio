@@ -1,2 +1,37 @@
  
 TOPIC08 - Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript.
+
+understanf keyframes Animations
+
+the @keyframes rule specifies the animation code.
+The animation is created by gradually changing from one set of CSS styles to another.
+one drawback of anymations is the browser support.
+there are several different anymations and transform keywords, like -webkit-transform, -moz-transform, -ms-transform,-o-transform
+
+-webkit-animation: 1600ms pulsingHeart infinite alternate ease-in-out;
+    -moz-animation: 1600ms pulsingHeart infinite alternate ease-in-out;
+    -ms-animation: 1600ms pulsingHeart infinite alternate ease-in-out;
+    -o-animation: 1600ms pulsingHeart infinite alternate ease-in-out;
+    animation: 1600ms pulsingHeart infinite alternate ease-in-out;
+
+    https://www.w3.org/wiki/CSS3_2D_Transforms
+
+CSS transforms are currently supported with prefixes by these browsers:
+
+Chrome 10+
+
+Firefox 3.6+
+
+Internet Explorer 9+
+
+Opera 11+
+
+Safari 5+
+
+When declaring transforms always write the prefixed declarations first and the non-prefixed standard declaration at the end:
+
+-webkit-transform: <transform functions>;
+-moz-transform: <transform functions>;
+-ms-transform: <transform functions>;
+-o-transform: <transform functions>;
+transform: <transform functions>;

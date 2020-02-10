@@ -3,18 +3,49 @@
 <html>
 <head>
 <meta charset="UTF-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./topic08.css" title="Topic08" />
 </head>
 <body>
-<a href="helpConsole.html" target="_blank">Help To open the Web Console:</a>
+
 
 
 <p>
 <h2>Javascript Code For Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript</h2>
 
-<script type="text/javascript">
-   //Print to screen
-   document.write("Hello World!<br>"); // newline with <br>
+
+
+<h3>Triggers a transition</h3>
+<br> Use the buttons to add or remove zoom
+
+<div class="zoomPic" id = 'zoomPic'></div>
+<button class='zoom' id= 'zoom'>Zoom</button>
+<button class='pause' id= 'pause'>Pause</button>
+<button class='zoomout' id = 'zoomout' >Zoom Out</button>
+
+<h3>Heart Animated With Javascript</h3>
+
+<br>Hover the Mouse over the Heart to see the effect</br>
+<br> Click the buttons to stop or start the animation
+
+<button id="startbtn">Start</button>
+<button id="stopbtn">Stop</button>
+
+<div class='heart animated bigHeart' id='heart'></div> 
+
+
+<script>
+stopbtn.addEventListener("click", function(){
+	heart.style.animation = "infinite";
+	heart.style.webkitAnimation = "infinite";
+});
+startbtn.addEventListener("click", function(){
+	heart.style.animation = "";
+	heart.style.webkitAnimation = "";
+});
 </script>
+
+
 <!-- prefer to load the .js file, instead addind the code embeded here, 
 to allow debugging inside the VSCode. 
 Otherwise it is not possible to debug -->
