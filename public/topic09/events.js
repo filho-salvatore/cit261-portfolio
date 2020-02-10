@@ -1,11 +1,11 @@
 /**
  * On Touch event for mobiles
  */
-
-addEventListener('touchmove', function(e) { // When the user moves their finger, the function will begin.
+var box1 = document.getElementById('box1')
+box1.addEventListener('touchmove', function(e) { // When the user moves their finger, the function will begin.
      
     e.preventDefault(); // Stop any annoying scrolling.
- 
+    
     var touch = e.touches[0]; // Fires every time the user moves.
          
     var posY = touch.pageY - 25; // Get the Y position (-25 to center)
