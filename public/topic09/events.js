@@ -14,6 +14,9 @@ window.addEventListener('load', function(){
                 var posY = touch.pageY - 25; // Get the Y position (-25 to center)
                 var posX = touch.pageX - 25; // Get the X position (-25 to center)
                 
+                if(posY >= boxCoord.top)  posY = boxCoord.top;
+                if(posY <= boxCoord.bottom)  posY = boxCoord.bottom;
+
                 if(e.touches.length == 1) { // If one finger is touching
                 
                     // Creates div at current position of finger 
@@ -24,7 +27,7 @@ window.addEventListener('load', function(){
                     
                     blue.style.top = posY+'px';
                     blue.style.left = posX+'px';
-                    if(blue.style.top < boxCoord.top)
+                    if(blue.style.top < box1)
                     document.body.appendChild(blue); 
                     
                 }
@@ -36,7 +39,7 @@ window.addEventListener('load', function(){
                     
                     purple.style.top = posY+'px';
                     purple.style.left = posX+'px';
-                    if(purple.style.top < boxCoord.top)
+                    
                     document.body.appendChild(purple);
                 
                 }
@@ -48,7 +51,7 @@ window.addEventListener('load', function(){
                     
                     red.style.top = posY+'px';
                     red.style.left = posX+'px';
-                    if(red.style.top < boxCoord.top)
+                    
                     document.body.appendChild(red);
                 
                 }
