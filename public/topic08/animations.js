@@ -33,8 +33,8 @@ document.getElementById('pause').onclick = function() {
  * Event Handler to stop the heart animation
  */
 stopbtn.addEventListener("click", function(){
-	heart.style.animation = "infinite";
-	heart.style.webkitAnimation = "infinite";
+	heart.style.animation = "test";
+	heart.style.webkitAnimation = "test";
 });
 
 /**
