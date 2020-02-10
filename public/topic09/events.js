@@ -15,7 +15,9 @@ window.addEventListener('load', function(){
                 var posX = touch.pageX - 25; // Get the X position (-25 to center)
                 
                 if(posY <= boxCoord.top)  posY = boxCoord.top ;
-                if(posY >= boxCoord.bottom)  posY = boxCoord.bottom - 50;
+                //if(posY >= boxCoord.bottom)  posY = boxCoord.bottom - 50;
+
+                
 
                 if(e.touches.length == 1) { // If one finger is touching
                 
