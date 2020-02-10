@@ -19,11 +19,11 @@ window.addEventListener('load', function(){
                     
                     var blue = document.createElement('div');
                     blue.setAttribute('class', 'blue');
-                    
+                    blue.className   = 'added';
                     blue.style.top = posY+'px';
                     blue.style.left = posX+'px';
                     
-                    box1.appendChild(blue); 
+                    document.body.appendChild(blue); 
                     
                 }
                 
@@ -35,7 +35,7 @@ window.addEventListener('load', function(){
                     purple.style.top = posY+'px';
                     purple.style.left = posX+'px';
                     
-                    box1.appendChild(purple);
+                    document.body.appendChild(purple);
                 
                 }
                 
@@ -47,7 +47,7 @@ window.addEventListener('load', function(){
                     red.style.top = posY+'px';
                     red.style.left = posX+'px';
                     
-                    box1.appendChild(red);
+                    document.body.appendChild(red);
                 
                 }
                 
