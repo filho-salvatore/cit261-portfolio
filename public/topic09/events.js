@@ -18,7 +18,7 @@ addEventListener('touchmove', function(e) { // When the user moves their finger,
          
         var blue = document.createElement('div');
         blue.setAttribute('class', 'blue');
-         
+        blue.setAttribute('class', 'added'); 
         blue.style.top = posY+'px';
         blue.style.left = posX+'px';
          
@@ -30,7 +30,7 @@ addEventListener('touchmove', function(e) { // When the user moves their finger,
      
         var purple = document.createElement('div');
         purple.setAttribute('class', 'purple');
-         
+        purple.setAttribute('class', 'added'); 
         purple.style.top = posY+'px';
         purple.style.left = posX+'px';
          
@@ -42,7 +42,7 @@ addEventListener('touchmove', function(e) { // When the user moves their finger,
      
         var red = document.createElement('div');
         red.setAttribute('class', 'red');
-         
+        red.setAttribute('class', 'added');
         red.style.top = posY+'px';
         red.style.left = posX+'px';
          
@@ -52,7 +52,7 @@ addEventListener('touchmove', function(e) { // When the user moves their finger,
      
 }, false);
 
-/*
+
 function clear(){
 
    let addedElements = document.getElementsByClassName('added');
@@ -63,5 +63,5 @@ function clear(){
     }
 
 }
-*/
+
 
