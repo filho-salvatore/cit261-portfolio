@@ -37,13 +37,48 @@ body {
     background: red;
     border-radius: 200px;
 }
+#parent {
+  background: #99C0C3;
+  width: 160px;
+  height: 120px;
+  position: relative;
+}
+
+#child {
+  background: #FFDE99;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+textarea {
+  height: 140px;
+  width: 300px;
+  display: block;
+}
 </style>
 <p>
 <h2>Standard JavaScript Events Including those for Mobile Devices </h2>
 
 <hr>
-If you open this page on a mobile, just touch the screen and drag to see a blue circle following your finger.
+If you open this page on a mobile, just touch the screen and drag to see:
+(1) One finger touch: a blue circle following your finger.
+(2) two finger touch: a purple circle will follow your first finger.
+(3) three finger touch: a red circle will follow your first finger
 <hr>
+ <input id="Save" type="button" class="mybutton" value="Clear" onclick="clear();" />
+
+
+<div id="parent">parent
+    <div id="child">child</div>
+  </div>
+  <textarea id="text"></textarea>
+  <input onclick="clearText()" value="Clear" type="button">
+
+  <script src="script.js"></script> 
 <!-- prefer to load the .js file, instead addind the code embeded here, 
 to allow debugging inside the VSCode. 
 Otherwise it is not possible to debug -->

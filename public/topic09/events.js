@@ -18,7 +18,7 @@ addEventListener('touchmove', function(e) { // When the user moves their finger,
          
         var blue = document.createElement('div');
         blue.setAttribute('class', 'blue');
-         
+        blue.setAttribute('class' ,'added');
         blue.style.top = posY+'px';
         blue.style.left = posX+'px';
          
@@ -30,7 +30,8 @@ addEventListener('touchmove', function(e) { // When the user moves their finger,
      
         var purple = document.createElement('div');
         purple.setAttribute('class', 'purple');
-         
+        purple.setAttribute('class' ,'added');
+
         purple.style.top = posY+'px';
         purple.style.left = posX+'px';
          
@@ -42,7 +43,8 @@ addEventListener('touchmove', function(e) { // When the user moves their finger,
      
         var red = document.createElement('div');
         red.setAttribute('class', 'red');
-         
+        red.setAttribute('class' ,'added');
+
         red.style.top = posY+'px';
         red.style.left = posX+'px';
          
@@ -51,3 +53,73 @@ addEventListener('touchmove', function(e) { // When the user moves their finger,
     }
      
 }, false);
+
+$('div').on('mousedown mouseup', function mouseState(e) {
+    if (e.type == "mousedown") {
+        //code triggers on hold
+        console.log("hold");
+    }
+});
+
+
+
+function clear(){
+
+   let addedElements = document.getElementsByClassName('added');
+   for (var i = 0; i < addedElements.length; i++) {
+    
+    addedElements[i].parentNode.removeChild(addedElements[i]);
+    //Do something
+    }
+
+}
+
+
+let parent = document.getElementById('parent');
+parent.onmouseover = parent.onmouseout = parent.onmousemove = handler;
+
+function handler(event) {
+  let type = event.type;
+  while (type < 11) type += ' ';
+
+  log(type + " target=" + event.target.id)
+  return false;
+}
+
+
+function clearText() {
+  text.value = "";
+  lastMessage = "";
+}
+
+let lastMessageTime = 0;
+let lastMessage = "";
+let repeatCounter = 1;
+
+function log(message) {
+  if (lastMessageTime == 0) lastMessageTime = new Date();
+
+  let time = new Date();
+
+  if (time - lastMessageTime > 500) {
+    message = '------------------------------\n' + message;
+  }
+
+  if (message === lastMessage) {
+    repeatCounter++;
+    if (repeatCounter == 2) {
+      text.value = text.value.trim() + ' x 2\n';
+    } else {
+      text.value = text.value.slice(0, text.value.lastIndexOf('x') + 1) + repeatCounter + "\n";
+    }
+
+  } else {
+    repeatCounter = 1;
+    text.value += message + "\n";
+  }
+
+  text.scrollTop = text.scrollHeight;
+
+  lastMessageTime = time;
+  lastMessage = message;
+}
