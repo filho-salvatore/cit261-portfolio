@@ -52,7 +52,7 @@ addEventListener('touchmove', function(e) { // When the user moves their finger,
      
 }, false);
 
-
+/*
 function clear(){
 
    let addedElements = document.getElementsByClassName('added');
@@ -63,5 +63,5 @@ function clear(){
     }
 
 }
-
+*/
 
