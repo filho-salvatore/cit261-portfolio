@@ -3,18 +3,61 @@
 <html>
 <head>
 <meta charset="UTF-8" /> 
+<meta  name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" >
+<link rel="stylesheet" href="./topic11.css" title="Topic11" />
 </head>
-<body>
-<a href="helpConsole.html" target="_blank">Help To open the Web Console:</a>
-
+<body >
 
 <p>
 <h2>Javascript Code For Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries (Thought Library)</h2>
 
-<script type="text/javascript">
-   //Print to screen
-   document.write("Hello World!<br>"); // newline with <br>
-</script>
+<h2 id="css3-transition-properties">CSS3 Transition Properties</h2>
+				<p>The following table provides a brief overview of all the transition properties:</p>
+				<div class="shadow">
+					<table class="data no-wrap">
+						<thead>
+							<tr>
+								<th style="width: 205px;">Property</th>
+								<th>Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><code>transition</code></td>
+								<td>A shorthand property for setting all the four individual transition properties in a single declaration.</td>
+							</tr>
+							<tr>
+								<td><code>transition-delay</code></td>
+								<td>Specifies when the transition will start.</td>
+							</tr>
+							<tr>
+								<td><code>transition-duration</code></td>
+								<td>Specifies the number of seconds or milliseconds a transition animation should take to complete.</td>
+							</tr>
+							<tr>
+								<td><code>transition-property</code></td>
+								<td>Specifies the names of the CSS properties to which a transition effect should be applied.</td>
+							</tr>
+							
+							<tr>
+								<td><code>transition-timing-function</code></td>
+								<td>Specifies how the intermediate values of the CSS properties being affected by a transition will be calculated.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+<hr>
+<h2>Demonstration</h2>
+<br> The next box is an automatic transiction effect
+<div class="parent">
+  <div class="box"></div>
+</div>
+<br> Hover the next box to see the effect
+<div class="boxhover"></div>
+<br> Click the button to see the next transiction
+<input class="mybutton" id="seeVideo" type="button" class="mybutton" value="Fade Out" onclick='fadeout();'/>
+<div id='clickedbox' class="controledbox"></div>
+
 <!-- prefer to load the .js file, instead addind the code embeded here, 
 to allow debugging inside the VSCode. 
 Otherwise it is not possible to debug -->
