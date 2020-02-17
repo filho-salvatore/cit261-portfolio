@@ -1,1 +1,6 @@
 TOPIC09 -   Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events.
+
+studied javascript events.
+there is huge list of events in javascript: https://developer.mozilla.org/en-US/docs/Web/Events
+
+one need to understand the ppurpose of each event i order to use them correctly.

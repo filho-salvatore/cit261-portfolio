@@ -3,18 +3,32 @@
 <html>
 <head>
 <meta charset="UTF-8" /> 
+<meta  name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" >
+<link rel="stylesheet" href="./topic10.css" title="Topic09" />
 </head>
 <body>
-<a href="helpConsole.html" target="_blank">Help To open the Web Console:</a>
 
-
-<p>
 <h2>Javascript Code For the  HTML5 Tags - Video, Audio, and Canvas Lesson</h2>
 
-<script type="text/javascript">
-   //Print to screen
-   document.write("Hello World!<br>"); // newline with <br>
-</script>
+<h1>Drawing the canvas with the mouse</h1>
+<canvas id="myPics" ></canvas>
+<hr>
+<h1> Dance Monkey in Portuguese (Love this song...)</h1>
+ <p>
+ 
+
+<div class="parent">  
+   <div class="left">
+  
+      <video id"DanceMonkey" width="320" height="240" controls>
+      <source src="./DANCE_MONKEY_portuguese.webm" type='video/webm;codecs="vp8, vorbis"'>
+  
+      </video>
+      <br>
+      <input class="mybutton" id="seeVideo" type="button" class="mybutton" value="Watch Coreography" onclick='seeVideo();'/>
+   </div>
+   <div id='videoTag' ></div>
+</div>  
 <!-- prefer to load the .js file, instead addind the code embeded here, 
 to allow debugging inside the VSCode. 
 Otherwise it is not possible to debug -->

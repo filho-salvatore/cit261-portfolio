@@ -1,0 +1,13 @@
+canvas {
+     border: 1px solid black;
+     width: 300px;
+     height: 200px;
+   }
+.parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.left {
+  margin-top: 30px;
+}
