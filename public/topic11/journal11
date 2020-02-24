@@ -1,1 +1,16 @@
 TOPIC 11 - Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries (Thought Library). 
+
+
+Transitions are very powefull effect. We need to understand the properties of a transition, which are five, and how to use them. It is very important to understand the duration os a transition.
+I spent some time to understand how to control transitions through javascript code. That gives to the proggrammer a powerfull tool to make better pages.
+CSS Transitions allows property changes in CSS values to occur smoothly over a specified duration.
+Transitions - steps:
+(1) define wha tproperties you want to apply a transition effect to (collor, padding, etc)
+(2) define the trnasition duration
+(3) define the timing-function that will control the transition animation specified 
+3.1 - Ease:
+3.2 - Linear
+3.3 - Ease-in
+3.4 - East out
+3.5 - Ease-in-out
+(4) Define the delay

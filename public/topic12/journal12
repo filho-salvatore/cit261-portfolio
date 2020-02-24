@@ -1,1 +1,31 @@
 TOPIC 12 -  Designing, Defining, and Triggering CSS3 Transforms without Custom Libraries (Thought Library). 
+
+important to understand the difference between transformation and animation:
+CSS transforms allow you to move, rotate, scale, and skew elements.
+CSS transforms allows elements styled with CSS to be transformed in two-dimensional or three-dimensional space.
+
+Designing
+There are 2D transforms and 3D transforms
+2D transforms
+ methods: 
+ translate: moves an elements
+ rotate:   rotates an element clockwise or counter-clockwise according to a given degree.
+ scaleX,scaleY,scale: increases or decreases the size of an element
+ skewX,skewY,skew: skews an element the given angles
+ matrix: combines all the 2D transform methods into one:
+ matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())
+
+3D transforms
+take 3 arguments (x,y,z)
+rotate only the angles
+methods: 
+translate3d, scale3d,
+    rotateX()
+    rotateY()
+    rotateZ()
+
+Properties:
+transform, transform-origin, transform-style,perspective, perspective-origin, backface-visibility
+Defining:
+
+Triggering

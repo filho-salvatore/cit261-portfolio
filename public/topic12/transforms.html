@@ -3,18 +3,55 @@
 <html>
 <head>
 <meta charset="UTF-8" /> 
+<meta  name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" >
+<link rel="stylesheet" href="./topic12.css" title="Topic11" />
 </head>
 <body>
-<a href="helpConsole.html" target="_blank">Help To open the Web Console:</a>
 
 
 <p>
 <h2>Javascript Code For Designing, Defining, and Triggering CSS3 Transforms without Custom Libraries (Thought Library).</h2>
 
-<script type="text/javascript">
-   //Print to screen
-   document.write("Hello World!<br>"); // newline with <br>
-</script>
+<hr>
+<p> 2D Domain </p>
+<br> In the 2D domain wi will play with this thransorm. Please hove the mouse over the picture to see...
+
+
+<h1>CSS3 2D Transform examples (on <kbd>:hover</kbd>)</h1>
+<div class="wrap"><div class="one"><kbd>translateX(20px)</kbd></div></div>
+<div class="wrap"><div class="two"><kbd>translateY(-20px)</kbd></div></div>
+<div class="wrap"><div class="three"><kbd>translate(-20px, 20px)</kbd></div></div>
+<div class="wrap"><div class="four"><kbd>scaleX(-1)</kbd></div></div>
+<div class="wrap"><div class="five"><kbd>scaleY(1.2)</kbd></div></div>
+<div class="wrap"><div class="six"><kbd>scale(1.2, 0.5)</kbd></div></div>
+<div class="wrap"><div class="seven"><kbd>rotate(720deg)</kbd></div></div>
+<div class="wrap"><div class="eight"><kbd>skewX(20deg)</kbd></div></div>
+<div class="wrap"><div class="nine"><kbd>skewY(-20deg)</kbd></div></div>
+<div class="wrap"><div class="ten"><kbd>skew(-20deg, 20deg)</kbd></div></div>
+<div class="wrap"><div class="eleven"><kbd>matrix(1.2,0,0.5,1.2,50,0)</kbd></div></div>
+
+<hr>
+<p> 3D Domain </p>
+<br> In the 3D domain we will play with the perspective of a picture
+<div id="perspective-container">
+	<code>#container</code>
+	<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/male-model-large.jpg" alt="" id="model1">
+	<div id="slidercontainer">
+		<label for="slider">perspective: 100</label>
+		<input type="range" name="perspective-slider" min="100" max="2000" value="1200" id="perspective-slider">
+		<label for="perspective-slider">2000</label>
+	</div>
+  <div id="codesample">
+    <pre><code>div#container {
+	<strong>perspective: <span id="perspective-amount">1200</span>px; </strong>
+}
+img {
+	transform: rotateY(45deg);
+}</code></pre>
+  </div>
+</div>
+
+
 <!-- prefer to load the .js file, instead addind the code embeded here, 
 to allow debugging inside the VSCode. 
 Otherwise it is not possible to debug -->
