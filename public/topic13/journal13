@@ -1,2 +1,24 @@
  
 TOPIC 13 - Designing, Defining, and Triggering CSS3 Animations without Custom Libraries (Thought Library).
+
+Designing
+To design animations the proggrammer must understand the properties:
+
+    @keyframes
+    animation-name
+    animation-duration
+    animation-delay
+    animation-iteration-count
+    animation-direction
+    animation-timing-function
+    animation-fill-mode
+    animation
+
+
+Defining
+
+The key part is to define the keyframes
+Keyframes hold what styles the element will have at certain times.
+
+Triggering
+Need to bind the animation to the element
