@@ -1,315 +1,354 @@
-body{
-     background: #1e1e1e;
-}
 
-.socket{
-     width: 200px;
-     height: 200px;
+.animation_box{
+     background:black;
+     width: 300px;
+     height: 300px;
      position: absolute;
      left: 50%;
      margin-left: -100px;
      top: 50%;
      margin-top: -100px;
+     
 }
 
-.hex-brick{
-  background: #ABF8FF;
+/**
+this is a rectangle 30x20. with transforms we make it a  hexagon
+*/
+.animation_element{
+  background:yellow;
   width: 30px;
-  height: 17px;
+  height: 20px;
   position: absolute;
   top: 5px;
-animation-name: fade;
+animation-name: hexagon_animation;
      animation-duration: 2s;
      animation-iteration-count: infinite;
-     -webkit-animation-name: fade;
+     -webkit-animation-name: hexagon_animation;
      -webkit-animation-duration: 2s;
      -webkit-animation-iteration-count: infinite;
 }
 
-.h2{
+/**
+this transform a box into a hezagon by rotating the rectangle two times  with 60 degres each
+*/
+.hexagon_layer2{
      transform: rotate(60deg);
      -webkit-transform: rotate(60deg);
 }
 
-.h3{
+.hexagon_layer3{
      transform: rotate(-60deg);
      -webkit-transform: rotate(-60deg);
 }
 
-.gel{
-     height: 30px;
-     width: 30px;	
-     transition: all .3s;
-     -webkit-transition: all .3s;
+/**
+heigh positive moved the hexadon down
+width positive moves the hexagom right
+*/
+.element_transition{
      position: absolute;
+     width: 10px;	
+     height: 10px;
+     -webkit-transition: all .5s;
+     transition: all .5s;
+     
 top: 50%;
 left: 50%;
 }
 
-.center-gel{
+/**
+The central hexagon
+*/
+.center-hexagon{
      margin-left: -15px;
      margin-top: -15px;
      
-     animation-name: pulse;
+     animation-name: layer_animation;
      animation-duration: 2s;
      animation-iteration-count: infinite;
-     -webkit-animation-name: pulse;
+     -webkit-animation-name: layer_animation;
      -webkit-animation-duration: 2s;
      -webkit-animation-iteration-count: infinite;
 }
 
-.c1{
+/**
+the position of each element
+I positioned the elements changing the margin 
+lef - gives the horizontal position, and top gives the vertical position relatives to the animation box.
+margin-left = -150 is the left border of the animation_box
+margin-left = 0 is the center of the animation box is 0
+margin-left = + 150 is the right border of the animation_box
+margin-top = -150 is the top border of the animation_box
+margin-top = 150 is the botton border of the animation_box
+*/
+.position1{
      margin-left: -47px;
      margin-top: -15px;
 }
 
-.c2{
+.position2{
      margin-left: -31px;
      margin-top: -43px;
 }
 
-.c3{
+.position3{
      margin-left: 1px;
      margin-top: -43px;
 }
 
-.c4{
+.position4{
      margin-left: 17px;
      margin-top: -15px;
 }
-.c5{
+.position5{
      margin-left: -31px;
      margin-top: 13px;
 }
 
-.c6{
+.position6{
      margin-left: 1px;
      margin-top: 13px;
 }
 
-.c7{
+.position7{
      margin-left: -63px;
      margin-top: -43px;
 }
 
-.c8{
+.position8{
      margin-left: 33px;
      margin-top: -43px;
 }
 
-.c9{
+.position9{
      margin-left: -15px;
      margin-top: 41px;
 }
 
-.c10{
+.position10{
      margin-left: -63px;
      margin-top: 13px;
 }
 
-.c11{
+.position11{
      margin-left: 33px;
      margin-top: 13px;
 }
 
-.c12{
+.position12{
      margin-left: -15px;
      margin-top: -71px;
 }
 
-.c13{
+.position13{
      margin-left: -47px;
      margin-top: -71px;
 }
 
-.c14{
+.position14{
      margin-left: 17px;
      margin-top: -71px;
 }
 
-.c15{
+.position15{
      margin-left: -47px;
      margin-top: 41px;
 }
 
-.c16{
+.position16{
      margin-left: 17px;
      margin-top: 41px;
 }
 
-.c17{
+.position17{
      margin-left: -79px;
      margin-top: -15px;
 }
 
-.c18{
+.position18{
      margin-left: 49px;
      margin-top: -15px;
 }
 
-.c19{
+.position19{
      margin-left: -63px;
      margin-top: -99px;
 }
 
-.c20{
+.position20{
      margin-left: 33px;
      margin-top: -99px;
 }
 
-.c21{
+.position21{
      margin-left: 1px;
      margin-top: -99px;
 }
 
-.c22{
+.position22{
      margin-left: -31px;
      margin-top: -99px;
 }
 
-.c23{
+.position23{
      margin-left: -63px;
      margin-top: 69px;
 }
 
-.c24{
+.position24{
      margin-left: 33px;
      margin-top: 69px;
 }
 
-.c25{
+.position25{
      margin-left: 1px;
      margin-top: 69px;
 }
 
-.c26{
+.position26{
      margin-left: -31px;
      margin-top: 69px;
 }
 
-.c27{
+.position27{
      margin-left: -79px;
      margin-top: -15px;
 }
 
-.c28{
+.position28{
      margin-left: -95px;
      margin-top: -43px;
 }
 
-.c29{
+.position29{
      margin-left: -95px;
      margin-top: 13px;
 }
 
-.c30{
+.position30{
      margin-left: 49px;
      margin-top: 41px;
 }
 
-.c31{
+.position31{
      margin-left: -79px;
      margin-top: -71px;
 }
 
-.c32{
+.position32{
      margin-left: -111px;
      margin-top: -15px;
 }
 
-.c33{
+.position33{
      margin-left: 65px;
      margin-top: -43px;
 }
 
-.c34{
+.position34{
      margin-left: 65px;
      margin-top: 13px;
 }
 
-.c35{
+.position35{
      margin-left: -79px;
      margin-top: 41px;
 }
 
-.c36{
+.position36{
      margin-left: 49px;
      margin-top: -71px;
 }
 
-.c37{
+.position37{
      margin-left: 81px;
      margin-top: -15px;
 }
-
-.r1{
-     animation-name: pulse;
-     animation-duration: 2s;
+/*
+* the first row with 6 hexagon_animations
+*/
+.layer1{
+     animation-name: layer_animation;
+     animation-duration: 1s;
      animation-iteration-count: infinite;
      animation-delay: .2s;
-     -webkit-animation-name: pulse;
+     -webkit-animation-name: layer_animation;
      -webkit-animation-duration: 2s;
      -webkit-animation-iteration-count: infinite;
      -webkit-animation-delay: .2s;
 }
 
-.r2{
-     animation-name: pulse;
+/**
+the central row, with 12 hexagon_animations
+*/
+.layer2{
+     animation-name: layer_animation;
      animation-duration: 2s;
      animation-iteration-count: infinite;
      animation-delay: .4s;
-     -webkit-animation-name: pulse;
+     -webkit-animation-name: layer_animation;
      -webkit-animation-duration: 2s;
      -webkit-animation-iteration-count: infinite;
      -webkit-animation-delay: .4s;
 }
 
-.r3{
-     animation-name: pulse;
-     animation-duration: 2s;
+/*
+the most outside row, with 18 hexagon_animations
+*/
+.layer3{
+     animation-name: layer_animation;
+     animation-duration: 4s;
      animation-iteration-count: infinite;
      animation-delay: .6s;
-     -webkit-animation-name: pulse;
-     -webkit-animation-duration: 2s;
-     -webkit-animation-iteration-count: infinite;
-     -webkit-animation-delay: .6s;
-}
-
-.r1 > .hex-brick{
-     animation-name: fade;
-     animation-duration: 2s;
-     animation-iteration-count: infinite;
-     animation-delay: .2s;
-     -webkit-animation-name: fade;
-     -webkit-animation-duration: 2s;
-     -webkit-animation-iteration-count: infinite;
-     -webkit-animation-delay: .2s;
-}
-
-.r2 > .hex-brick{
-     animation-name: fade;
-     animation-duration: 2s;
-     animation-iteration-count: infinite;
-     animation-delay: .4s;
-     -webkit-animation-name: fade;
-     -webkit-animation-duration: 2s;
-     -webkit-animation-iteration-count: infinite;
-     -webkit-animation-delay: .4s;
-}
-
-.r3 > .hex-brick{
-     animation-name: fade;
-     animation-duration: 2s;
-     animation-iteration-count: infinite;
-     animation-delay: .6s;
-     -webkit-animation-name: fade;
+     -webkit-animation-name: layer_animation;
      -webkit-animation-duration: 2s;
      -webkit-animation-iteration-count: infinite;
      -webkit-animation-delay: .6s;
 }
 
 
-@keyframes pulse{
+/**
+different durations for each layer. pretty effect.
+*/
+
+.layer1 > .animation_element{
+     animation-name: hexagon_animation;
+     animation-duration: 2s;
+     animation-iteration-count: infinite;
+     animation-delay: .2s;
+     -webkit-animation-name: hexagon_animation;
+     -webkit-animation-duration: 2s;
+     -webkit-animation-iteration-count: infinite;
+     -webkit-animation-delay: .2s;
+}
+
+.layer2 > .animation_element{
+     animation-name: hexagon_animation;
+     animation-duration: 3s;
+     animation-iteration-count: infinite;
+     animation-delay: .4s;
+     -webkit-animation-name: hexagon_animation;
+     -webkit-animation-duration: 2s;
+     -webkit-animation-iteration-count: infinite;
+     -webkit-animation-delay: .4s;
+}
+
+.layer3 > .animation_element{
+     animation-name: hexagon_animation;
+     animation-duration: 4s;
+     animation-iteration-count: infinite;
+     animation-delay: .6s;
+     -webkit-animation-name: hexagon_animation;
+     -webkit-animation-duration: 2s;
+     -webkit-animation-iteration-count: infinite;
+     -webkit-animation-delay: .6s;
+}
+
+/**
+This animation makes the element fade
+*/
+
+@keyframes layer_animation{
      0%{
           -webkit-transform: scale(1);
           transform: scale(1);
@@ -326,21 +365,25 @@ left: 50%;
      }
 }
 
-@keyframes fade{
+/**
+This animation makes the element to move
+*/
+@keyframes hexagon_animation{
      0%{
-          background: #ABF8FF;
+          background: yellow;
      }
      
      50%{
-          background: #90BBBF;
+          background: black;
      }
      
      100%{
-          background: #ABF8FF;
+          background:white;
      }
 }
 
-@-webkit-keyframes pulse{
+
+@-webkit-keyframes layer_animation{
      0%{
           -webkit-transform: scale(1);
           transform: scale(1);
@@ -357,16 +400,16 @@ left: 50%;
      }
 }
 
-@-webkit-keyframes fade{
+@-webkit-keyframes hexagon_animation{
      0%{
-          background: #ABF8FF;
+          background: yellow;
      }
      
      50%{
-          background: #389CA6;
+          background: black;
      }
      
      100%{
-          background: #ABF8FF;
+          background:white;
      }
 }
