@@ -4,3 +4,16 @@ studied about the DOM.
 is is very interesting to think about the DOM as a tree.
 we can add, modify,delete and find nodes in that tree.
 when we add a node we need to know where to add.
+
+05/03
+
+I was studyng the DOM. 
+I needed to add some attributes to the Elements.
+In fact I wanted to add some method to some DOM element.
+In other words I wnate dto extend the dom.
+I have found this excelent tutorial explaining how doe it works.
+It is how JQuery and other librries works.
+http://perfectionkills.com/whats-wrong-with-extending-the-dom/
+and then: https://www.freecodecamp.org/news/how-to-write-a-jquery-like-library-in-71-lines-of-code-learn-about-the-dom-e9fb99dbc8d2/
+
+I have built my Own DOM extension to work like jQuery, where I can use the $() to select objectos of te DOM and use my onw methods on them. Nice!!!

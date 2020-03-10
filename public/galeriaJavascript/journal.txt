@@ -1,0 +1,19 @@
+09/03
+
+I had to deal with several problems to create thisgalery.
+(1) to find out how to pass the "this" pointer of the class inside to the event handler. This is because event handlers receive the context of the target instead of the context of the class.
+I have found that we can use the bind function and bind the context of the class in to the event handler.
+(2) I am using my personal lib (salvaLib) in order to work with dom. I have to understand the difference of attributes to property in the dom element in order to fix salvalib and return the correct values to the galery.
+attributes are the values we append to the HTML TAG.
+(3)
+I have to understand how select attributes and properties work in order to get the select Value and change the selected item.
+
+In order to get the elect value I vahe to inpect the options property and find the index of the selectedIndex options[selectedIndex].value;
+and ordinary elements I only have to get the property value.
+(4) I had to learn how to work with CSS variables.
+We can change the value of a css variable in the javascript. 
+this allow us to make CSS more flexibe. in the case of this galery, I can change the size of the image window on the fly.
+all that I have to do is tho change the value of width and height  css variables I have created, and all css that uses this variable will change accordingly.
+(5) I had to learn how css flex works in order to position th elements correctly in the screen.
+
+
