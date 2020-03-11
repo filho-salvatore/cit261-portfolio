@@ -36,7 +36,7 @@ var yyyy = today.getFullYear();
 today = mm + '/' + dd + '/' + yyyy;
 
 
-
+let globalExercises = [];
 
 class DataControl {
 
@@ -854,7 +854,16 @@ constructor()	{
 	})
 	.then((blob)=> {
 		this.exercises = blob.data;
-		// console.log(blob);
+		this.exercises.forEach( (item) => {
+			//(pName, pDescription,pReps=10,pSets=3)
+			let myExercise = new Exercise(item.name,item.description);
+			DataControl.addExerciseID(myExercise.ID);
+			myExercise.store();
+			globalExercises.push(myExercise);
+
+		});
+		DataControl.store();
+		 console.log(blob);
 	});
  }
 }
@@ -862,3 +871,25 @@ constructor()	{
 let myExercises = new Exercises();
 
 let teste;
+
+function supportsImports() {
+	return 'import' in document.createElement('link');
+   }
+ /*
+   if (supportsImports()) {
+	// Good to go!
+   } else {
+	// Use other libraries/require systems to load files.
+   }
+ 
+let importSupported = supportsImports();
+
+
+var link = document.querySelector('link[rel="import"]');
+var content = link.import;
+
+// Grab DOM from warning.html's document.
+var el = content.querySelector('.warning');
+
+document.body.appendChild(el.cloneNode(true));
+*/

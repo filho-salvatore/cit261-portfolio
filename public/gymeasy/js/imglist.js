@@ -8,7 +8,8 @@ const arrowLeft = carouselContainer.querySelector('.arrow-left');
 const arrowRight = carouselContainer.querySelector('.arrow-right');
 */
 
-class Carrousell {
+
+export class Carrousell {
 
 
 constructor (
@@ -248,34 +249,11 @@ addimagesToSelect() {
 }
 
 
-myCar = new Carrousell(
-    500,
-    300
-);
-//alt="" current-image-list
-let imageList = [
-    "./photo_1.png",
-    "./photo_2.png",
-    "./photo_3.png",
-    "./photo_4.png",
-    "./photo_5.png",
-    "./photo_6.png",
-    "./photo_7.png",
-    "./photo_8.png",
-    "./photo_9.png",
-    "./photo_10.png",
-    "./photo_11.png",
-    "./photo_12.png",
-    "./photo_13.png"
-]
 
-
-myCar.addElements(imageList);
 
 window.addEventListener('resize', function(e) {
     myCar.styleList();
 });
-
 
 
 
