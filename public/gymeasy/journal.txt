@@ -16,4 +16,7 @@ this allow us to make CSS more flexibe. in the case of this galery, I can change
 all that I have to do is tho change the value of width and height  css variables I have created, and all css that uses this variable will change accordingly.
 (5) I had to learn how css flex works in order to position th elements correctly in the screen.
 
+(6) A big problem I have is to lod the modules script. whenever i tried to create a module the browser complained about the CORS.
+ I tried several alternatives without sucess. The last one is to use requireJS to load my libraries as modules dependeencies. otherwise mi code would be very bad because I would have to duplicate everything in each page I needed it.
+
 

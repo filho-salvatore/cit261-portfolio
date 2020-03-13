@@ -635,12 +635,41 @@ salQuery.prototype = {
 
 };
 
-$ = function(selector) {
- var el = new salQuery(selector);
- el.init();
- return el;
-};
+// Expose salvaQuery to the global object
+window.salvaQuery = window.$ = function (selector) {
+    var el = new salQuery(selector);
+    el.init();
+    return el;
+  };
 
 
+define(function () {
+ 
+
+  function modelBase(selector) {
+    var el = new salQuery(selector);
+    el.init();
+    return el;
+  }
+
+  modelBase.prototype = {
+      $: function () {
+          return this;
+      }
+  };
+
+  return modelBase;
+});
+
+
+  (function(window){
+
+    window.salvaQuery = window.$ = function (selector) {
+      var el = new salQuery(selector);
+      el.init();
+      return el;
+    }; 
+
+  })(window); // Send the window variable withing our function
 //let myBack = $('.carousel-container').cssGetProp('color');
 //console.log(myBack);

@@ -2626,11 +2626,6 @@ code.output {
     display: block
 }
 
-.imageWrapper img {
-    width: 100%;
-    position: absolute;
-    opacity: 0
-}
 
 .imageWrapper img.b-loaded {
     opacity: 1;

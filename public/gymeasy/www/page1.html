@@ -1,3 +1,16 @@
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <title>Page 1</title>
+        <script data-main="js/page1" src="js/lib/require.js"></script>
+    </head>
+    <body>
+        <a href="page2.html">Go to Page 2</a>
+    </body>
+</html>  -->
+<!-- https://www.tutorialspoint.com/requirejs/requirejs_configuration.htm
+https://requirejs.org/docs/download.html#requirejs
+-->
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
@@ -112,6 +125,7 @@
 <ul class="showcase" id="showcase">
   
     <li>
+    <div class="imageWrapper">
     <select id="sel_images"></select>
 	<section id='carousel-container' class="carousel-container" style="color:blue;font-size:46px;">
 		
@@ -139,15 +153,15 @@
 			
 		</div>
 	</section>
-
-      <a href="./exercises/index.html" target="_blank">
+    </div>
+      <!--<a href="./exercises/index.html" target="_blank">
         <figure>
           <div class="imageWrapper">
             <img id= "" class="b-lazy" src="img/spacer.gif" alt="Spotify for Developers">
           </div>
           <figcaption>Available Exercises</figcaption>
         </figure>
-      </a>
+      </a>-->
     </li>
   
     <li>
@@ -229,13 +243,13 @@
 
 <!-- END  FOOTER    -->
   
-
-
+<script data-main="js/page1" src="js/lib/require.js"></script>
+<!--
 
 <script src="./js/salvaQuery.js"></script>
-<script src= "./js/imglist.js"></script>
-<script type="module" src="./js/index1.js"></script>
-<!--<script src="./js/classes.js"></script>
+<script type="module"  src= "./js/imglist.js"></script>
+<script src="./js/index1.js"></script>
+<script src="./js/classes.js"></script>
 -->
 </body>
 </html>

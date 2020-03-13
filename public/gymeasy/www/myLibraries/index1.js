@@ -1,4 +1,4 @@
-import { Carrousell } from './imglist.js';
+var Carrousell = require('./imglist.js');
 
 let myCar = new Carrousell(
      200,

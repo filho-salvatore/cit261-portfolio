@@ -9,7 +9,8 @@ const arrowRight = carouselContainer.querySelector('.arrow-right');
 */
 
 
-export class Carrousell {
+
+class Carrousell {
 
 
 constructor (
@@ -257,3 +258,10 @@ window.addEventListener('resize', function(e) {
 
 
 
+
+ define(function () {
+    //var $ = require('./js/salvaQuery.js');
+    return {
+        list: new Carrousell(200,100)
+    };
+});
