@@ -45,7 +45,7 @@ constructor (
     this.mycurrentImageStyleClass = 'current-image-list'; //is the current image of the list. parent is next-list
     this.mySlideStyleClassRight = 'slideInFromRight'; //is the animation right
     this.mySlideStyleClassLeft = 'slideInFromLeft'; //is the animation left
-    this.mySelect = $('#sel_images');
+    
     //events 
     $(pArrowLeft).evlOn('click',this.goToLeft.bind(this));
     $(pArrowRight).evlOn('click', this.goToRight.bind(this));
@@ -258,21 +258,25 @@ addimagesToSelect() {
 
 
 
+
 window.addEventListener('resize', function(e) {
-    myCar.styleList();
+  //  myCar.styleList();
 });
 
 
 
 
- define(['./salvaQuery'], function ($) {
+ define(['salvaQuery'], function () {
     //var $ = require('./js/salvaQuery.js');
     let Images = [
-        './img/photo_1.png',
-        './img/photo_2.png',
-        './img/photo_3.png'
+        './img/squat-200.png',
+        './img/lunge-200.png',
+        './img/seated-toe-raise-200.png'
 
     ];
+
+    
+    
     return {
         list: new Carrousell(230,150,50).addElements(Images)
     };

@@ -126,7 +126,7 @@ https://requirejs.org/docs/download.html#requirejs
   
     <li>
     <div class="imageWrapper">
-    <select id="sel_images"></select>
+    <select id="sel_images" ></select>
 	<section id='carousel-container' class="carousel-container" style="color:blue;font-size:46px;">
 		
 	</section>
@@ -165,27 +165,35 @@ https://requirejs.org/docs/download.html#requirejs
     </li>
   
     <li>
-      <a href="./routines/index.html" target="_blank">
+     <div class="imageWrapper">
+        <select id="sel_routines" class='select-css'></select>
+        <div class='btn-wrapper'>
+              <a href="/resources/">Add</a>
+              <a href="/resources/">Edit</a>
+              <a href="/resources/">Delete</a>
+        </div>
+        <p id='routine_description' > Routine Description </p>
+     </div>
+     <figcaption>Available Routines</figcaption>
+      <!-- <a href="./routines/index.html" target="_blank">
         <figure>
           <div class="imageWrapper">
             <img class="b-lazy" src="img/spacer.gif" alt="Twitch Developer Documentation">
           </div>
           <figcaption>Available Routines</figcaption>
         </figure>
-      </a>
+      </a>-->
     </li>
   
     
   
     <li>
-      <a href="./personal/index.html" target="_blank">
-        <figure>
-          <div class="imageWrapper">
-            <img class="b-lazy" src="img/spacer.gif" alt="AdHawk">
-          </div>
-          <figcaption>Personal Routines</figcaption>
-        </figure>
-      </a>
+       <div class="imageWrapper">
+        <select id="sel_routine_exercises" class='select-css'></select>
+        <p id='routexer_description' > </p>
+       </div>
+       <figcaption>Routine EXercises</figcaption>
+      
     </li>
   
     <li>
@@ -194,7 +202,7 @@ https://requirejs.org/docs/download.html#requirejs
           <div class="imageWrapper">
             <img class="b-lazy" src="/img/spacer.gif" alt="how to">
           </div>
-          <figcaption>How this page was done</figcaption>
+          <figcaption>Routine EXercises</figcaption>
         </figure>
       </a>
     </li>

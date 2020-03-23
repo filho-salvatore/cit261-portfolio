@@ -1,4 +1,4 @@
-define(['jquery'], function ($) {
+define(['salvaQuery'], function ($) {
     return {
         getBody: function () {
             return $('body');

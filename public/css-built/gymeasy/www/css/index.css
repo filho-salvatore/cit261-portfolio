@@ -113,6 +113,15 @@ body {
     right: 10px
 }
 
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+
 @keyframes fadeIn {
     0% {
         opacity: 0
@@ -122,10 +131,32 @@ body {
     }
 }
 
+@-webkit-keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%)
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px)
+    }
+}
+
 @keyframes slideInFromLeft {
     0% {
         opacity: 0;
         transform: translateX(-100%)
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px)
+    }
+}
+
+@-webkit-keyframes slideInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%)
     }
     100% {
         opacity: 1;
@@ -145,15 +176,18 @@ body {
 }
 
 .slideInFromLeft {
-    animation: slideInFromLeft .5s ease-in-out
+    -webkit-animation: slideInFromLeft .5s ease-in-out;
+            animation: slideInFromLeft .5s ease-in-out
 }
 
 .slideInFromRight {
-    animation: slideInFromRight .5s ease-in-out
+    -webkit-animation: slideInFromRight .5s ease-in-out;
+            animation: slideInFromRight .5s ease-in-out
 }
 
 .fadeIn {
-    animation: fadeIn .5s ease-in-out
+    -webkit-animation: fadeIn .5s ease-in-out;
+            animation: fadeIn .5s ease-in-out
 }
 
 

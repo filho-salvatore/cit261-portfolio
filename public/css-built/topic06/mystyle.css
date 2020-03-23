@@ -1,0 +1,60 @@
+
+	#localStorage{
+		background-color:#c3dfef;
+	}
+	#sessionStorage{
+		background-color:#f3ffef;
+	}
+	#theSession1{
+		float:right;
+		padding:20px;
+	}
+	#theSession2{
+		float:right;
+		padding:20px;
+	}
+	#theLocal1{
+		float:right;
+		padding:20px;
+	}
+	#theLocal2{
+		float:right;
+		padding:20px;
+	}
+	.mytextinput{
+		margin: 0;
+		padding: 5px 15px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size:14px;
+		border:1px solid #0076a3; border-right:0px;
+		border-top-left-radius: 5px 5px;
+		border-bottom-left-radius: 5px 5px;
+	}
+	.mybutton {
+		margin: 0;
+		padding: 5px 15px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size:14px;
+		outline: none;
+		cursor: pointer;
+		text-align: center;
+		text-decoration: none;
+		color: #ffffff;
+		border: solid 1px #0076a3; border-right:0px;
+		background: #0095cd;
+		background: -moz-linear-gradient(top,  #00adee,  #0078a5);
+		border-top-right-radius: 5px 5px;
+		border-bottom-right-radius: 5px 5px;
+	}
+	.mybutton:hover {
+		text-decoration: none;
+		background: #007ead;
+		background: -moz-linear-gradient(top,  #0095cc,  #00678e);
+	}
+	/* Fixes submit button height problem in Firefox */
+	.mybutton::-moz-focus-inner {
+	  border: 0;
+	}
+	.myclear{
+		clear:both;
+	}

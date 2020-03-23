@@ -53,7 +53,8 @@ a {
 abbr[title] {
     border-bottom: none;
     text-decoration: underline;
-    text-decoration: underline dotted
+    -webkit-text-decoration: underline dotted;
+            text-decoration: underline dotted
 }
 
 b,
@@ -234,8 +235,6 @@ template {
 
 .grid,
 .unit {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box
 }
 
@@ -697,7 +696,10 @@ template {
 }
 
 .highlight .bash .nv {
-    user-select: none
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none
 }
 
 @font-face {
@@ -790,6 +792,18 @@ template {
 }
 
 
+@-webkit-keyframes sbx-reset-in {
+    0% {
+        transform: translate3d(-20%, 0, 0);
+        opacity: 0
+    }
+    100% {
+        transform: none;
+        opacity: 1
+    }
+}
+
+
 @keyframes sbx-reset-in {
     0% {
         transform: translate3d(-20%, 0, 0);
@@ -816,15 +830,12 @@ body {
     font: 300 21px Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #ddd;
     background-color: #333;
-    -webkit-box-shadow: inset 0 3px 30px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: inset 0 3px 30px rgba(0, 0, 0, 0.3);
     box-shadow: inset 0 3px 30px rgba(0, 0, 0, 0.3);
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-    -webkit-font-feature-settings: "kern" 1;
-    -moz-font-feature-settings: "kern" 1;
     -o-font-feature-settings: "kern" 1;
     font-feature-settings: "kern" 1;
-    font-kerning: normal;
+    -webkit-font-kerning: normal;
+            font-kerning: normal;
     margin: 0
 }
 
@@ -902,25 +913,18 @@ nav li,
 
 .main-nav li a,
 .meta li a {
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
     border-radius: 5px;
     font-weight: 900;
     font-size: 0.75em;
     padding: 0.5em 1em;
     text-shadow: none;
     text-transform: uppercase;
-    -webkit-transition: all 0.25s;
-    -moz-transition: all 0.25s;
-    -o-transition: all 0.25s;
     transition: all 0.25s
 }
 
 .main-nav li a:hover,
 .meta li a:hover {
     background-color: #252525;
-    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 255, 255, 0.1);
-    -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 255, 255, 0.1);
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 255, 255, 0.1);
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5)
 }
@@ -929,8 +933,6 @@ nav li,
 .meta li.current a {
     background-color: #fc0;
     color: #222;
-    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 1px 5px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 1px 5px rgba(0, 0, 0, 0.5);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 1px 5px rgba(0, 0, 0, 0.5);
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3)
 }
@@ -955,8 +957,6 @@ nav li,
     font-size: 0.625em;
     font-weight: 900;
     padding: 10px 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
     border-radius: 5px
 }
 
@@ -969,8 +969,6 @@ nav li,
 .mobile-nav .current a {
     background-color: #fc0;
     color: #222;
-    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 1px 5px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 1px 5px rgba(0, 0, 0, 0.5);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 1px 5px rgba(0, 0, 0, 0.5);
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3)
 }
@@ -980,9 +978,6 @@ nav li,
     left: 0.5em;
     opacity: 0;
     font-size: 0.8em;
-    -webkit-transition: opacity 0.2s ease-in-out 0.1s;
-    -moz-transition: opacity 0.2s ease-in-out 0.1s;
-    -o-transition: opacity 0.2s ease-in-out 0.1s;
     transition: opacity 0.2s ease-in-out 0.1s
 }
 
@@ -1056,9 +1051,6 @@ footer img {
     margin-left: 5px;
     opacity: .8;
     padding: 1px;
-    -webkit-transition: opacity 0.2s;
-    -moz-transition: opacity 0.2s;
-    -o-transition: opacity 0.2s;
     transition: opacity 0.2s
 }
 
@@ -1091,8 +1083,6 @@ footer img {
     background-color: #3F1F1F;
     color: #fff;
     margin: 60px 0;
-    -webkit-box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.4);
     box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.4)
 }
 
@@ -1137,21 +1127,13 @@ footer img {
     text-align: center;
     margin: 0 20px;
     padding: 5px 0;
-    -webkit-border-radius: 5px 5px 0 0;
-    -moz-border-radius: 5px 5px 0 0;
     border-radius: 5px 5px 0 0;
-    -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
     font: 400 16px/24px 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #444;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
     background-color: #f7f7f7;
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjclIiBzdG9wLWNvbG9yPSIjY2ZjZmNmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2FhYWFhYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), color-stop(7%, #cfcfcf), to(#aaa));
-    background-image: -webkit-linear-gradient(top, #f7f7f7 0%, #cfcfcf 7%, #aaa 100%);
-    background-image: -moz-linear-gradient(top, #f7f7f7 0%, #cfcfcf 7%, #aaa 100%);
-    background-image: -o-linear-gradient(top, #f7f7f7 0%, #cfcfcf 7%, #aaa 100%);
     background-image: linear-gradient(top, #f7f7f7 0%, #cfcfcf 7%, #aaa 100%);
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#aaaaaa', GradientType=0);
     border-bottom: 1px solid #111
@@ -1162,11 +1144,7 @@ footer img {
     text-shadow: none;
     margin: 0 20px;
     background-color: #171717;
-    -webkit-border-radius: 0 0 5px 5px;
-    -moz-border-radius: 0 0 5px 5px;
     border-radius: 0 0 5px 5px;
-    -webkit-box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3)
 }
 
@@ -1208,8 +1186,6 @@ footer img {
 
 .free-hosting .pane {
     background-color: #3e3e3e;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
     border-radius: 10px;
     text-shadow: none;
     position: relative;
@@ -1264,13 +1240,9 @@ footer img {
 
 article {
     background-color: #444;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
     border-radius: 10px;
     padding: 20px;
     margin: 0 10px;
-    -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     font-size: 16px
 }
@@ -1368,11 +1340,7 @@ aside li.current a {
     text-transform: uppercase;
     font-weight: 700;
     padding: 8px 12px 10px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
     border-radius: 5px;
-    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.5);
-    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.5);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.5);
     background-color: #767676
 }
@@ -1438,8 +1406,6 @@ aside li.current a {
     color: #000;
     background: #ddd;
     border-color: transparent;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
     border-radius: 5px
 }
 
@@ -1468,19 +1434,11 @@ article h2:first-child {
     margin-left: -30px;
     padding: 6px 10px 8px;
     padding-left: 50px;
-    -webkit-border-radius: 0 5px 5px 0;
-    -moz-border-radius: 0 5px 5px 0;
     border-radius: 0 5px 5px 0;
     position: relative;
-    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.3);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.3);
     background-color: #9e2812;
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzllMjgxMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM2ZjBkMGQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#9e2812), to(#6f0d0d));
-    background-image: -webkit-linear-gradient(top, #9e2812 0%, #6f0d0d 100%);
-    background-image: -moz-linear-gradient(top, #9e2812 0%, #6f0d0d 100%);
-    background-image: -o-linear-gradient(top, #9e2812 0%, #6f0d0d 100%);
     background-image: linear-gradient(to bottom, #9e2812 0%, #6f0d0d 100%);
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#9e2812', endColorstr='#6f0d0d', GradientType=0)
 }
@@ -1521,8 +1479,6 @@ article h2:first-child {
 }
 
 .avatar {
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
     border-radius: 3px;
     display: inline-block;
     vertical-align: middle
@@ -1542,12 +1498,8 @@ article h2:first-child {
 
 .news article+article {
     margin-top: -10px;
-    -webkit-border-radius: 0 0 10px 10px;
-    -moz-border-radius: 0 0 10px 10px;
     border-radius: 0 0 10px 10px;
     border-top: 1px solid #555;
-    -webkit-box-shadow: 0 -1px 0 #2f2f2f;
-    -moz-box-shadow: 0 -1px 0 #2f2f2f;
     box-shadow: 0 -1px 0 #2f2f2f
 }
 
@@ -1581,11 +1533,7 @@ h5>code,
     max-width: 100%;
     overflow-x: auto;
     vertical-align: middle;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
     border-radius: 5px;
-    -webkit-box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.1), 0 -1px 0 rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.1), 0 -1px 0 rgba(0, 0, 0, 0.5);
     box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.1), 0 -1px 0 rgba(0, 0, 0, 0.5)
 }
 
@@ -1643,9 +1591,6 @@ h6 {
 a {
     color: #fc0;
     text-decoration: none;
-    -webkit-transition: all 0.25s;
-    -moz-transition: all 0.25s;
-    -o-transition: all 0.25s;
     transition: all 0.25s
 }
 
@@ -1725,48 +1670,30 @@ table {
     width: 100%;
     background-color: #555;
     margin: .5em 0;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
     border-radius: 5px;
-    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3)
 }
 
 thead {
-    -webkit-border-top-left-radius: 5px;
-    -moz-border-radius-topleft: 5px;
     border-top-left-radius: 5px;
-    -webkit-border-top-right-radius: 5px;
-    -moz-border-radius-topright: 5px;
     border-top-right-radius: 5px;
     color: #fff;
     background-color: #3a3a3a;
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzNhM2EzYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxZTFlMWUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#3a3a3a), to(#1e1e1e));
-    background-image: -webkit-linear-gradient(top, #3a3a3a 0%, #1e1e1e 100%);
-    background-image: -moz-linear-gradient(top, #3a3a3a 0%, #1e1e1e 100%);
-    background-image: -o-linear-gradient(top, #3a3a3a 0%, #1e1e1e 100%);
     background-image: linear-gradient(to bottom, #3a3a3a 0%, #1e1e1e 100%);
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#3a3a3a', endColorstr='#1e1e1e', GradientType=0)
 }
 
 thead th {
     position: relative;
-    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1)
 }
 
 thead th:first-child {
-    -webkit-border-top-left-radius: 5px;
-    -moz-border-radius-topleft: 5px;
     border-top-left-radius: 5px
 }
 
 thead th:last-child {
-    -webkit-border-top-right-radius: 5px;
-    -moz-border-radius-topright: 5px;
     border-top-right-radius: 5px
 }
 
@@ -1789,14 +1716,8 @@ th {
 tbody td {
     border-top: 1px solid #747474;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.1)), to(rgba(255, 255, 255, 0)));
-    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
-    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
-    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#1affffff', endColorstr='#00ffffff', GradientType=0)
 }
@@ -1841,19 +1762,11 @@ code.output {
     margin-left: -30px;
     padding: 20px 20px 24px;
     padding-left: 50px;
-    -webkit-border-radius: 0 5px 5px 0;
-    -moz-border-radius: 0 5px 5px 0;
     border-radius: 0 5px 5px 0;
     position: relative;
-    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.3);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.3);
     background-color: #7e6d42;
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzdlNmQ0MiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1YzRlMzUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#7e6d42), to(#5c4e35));
-    background-image: -webkit-linear-gradient(top, #7e6d42 0%, #5c4e35 100%);
-    background-image: -moz-linear-gradient(top, #7e6d42 0%, #5c4e35 100%);
-    background-image: -o-linear-gradient(top, #7e6d42 0%, #5c4e35 100%);
     background-image: linear-gradient(to bottom, #7e6d42 0%, #5c4e35 100%);
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#7e6d42', endColorstr='#5c4e35', GradientType=0)
 }
@@ -1913,10 +1826,6 @@ code.output {
 .info {
     background-color: #0389aa;
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAzODlhYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDYxN2YiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#0389aa), to(#00617f));
-    background-image: -webkit-linear-gradient(top, #0389aa 0%, #00617f 100%);
-    background-image: -moz-linear-gradient(top, #0389aa 0%, #00617f 100%);
-    background-image: -o-linear-gradient(top, #0389aa 0%, #00617f 100%);
     background-image: linear-gradient(to bottom, #0389aa 0%, #00617f 100%);
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#0389aa', endColorstr='#00617f', GradientType=0)
 }
@@ -1924,10 +1833,6 @@ code.output {
 .warning {
     background-color: #9e2812;
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzllMjgxMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM2ZjBkMGQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#9e2812), to(#6f0d0d));
-    background-image: -webkit-linear-gradient(top, #9e2812 0%, #6f0d0d 100%);
-    background-image: -moz-linear-gradient(top, #9e2812 0%, #6f0d0d 100%);
-    background-image: -o-linear-gradient(top, #9e2812 0%, #6f0d0d 100%);
     background-image: linear-gradient(to bottom, #9e2812 0%, #6f0d0d 100%);
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#9e2812', endColorstr='#6f0d0d', GradientType=0)
 }
@@ -1935,10 +1840,6 @@ code.output {
 .unreleased {
     background-color: #cd9239;
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2NkOTIzOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhMjc1MjgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#cd9239), to(#a27528));
-    background-image: -webkit-linear-gradient(top, #cd9239 0%, #a27528 100%);
-    background-image: -moz-linear-gradient(top, #cd9239 0%, #a27528 100%);
-    background-image: -o-linear-gradient(top, #cd9239 0%, #a27528 100%);
     background-image: linear-gradient(to bottom, #cd9239 0%, #a27528 100%);
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#cd9239', endColorstr='#a27528', GradientType=0)
 }
@@ -2102,26 +2003,16 @@ code.output {
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
     background-color: #f7f7f7;
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjclIiBzdG9wLWNvbG9yPSIjY2ZjZmNmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2FhYWFhYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), color-stop(7%, #cfcfcf), to(#aaa));
-    background-image: -webkit-linear-gradient(top, #f7f7f7 0%, #cfcfcf 7%, #aaa 100%);
-    background-image: -moz-linear-gradient(top, #f7f7f7 0%, #cfcfcf 7%, #aaa 100%);
-    background-image: -o-linear-gradient(top, #f7f7f7 0%, #cfcfcf 7%, #aaa 100%);
     background-image: linear-gradient(top, #f7f7f7 0%, #cfcfcf 7%, #aaa 100%);
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#aaaaaa', GradientType=0);
     border-bottom: 1px solid #111;
     text-align: center;
     content: "terminal";
-    -webkit-border-radius: 5px 5px 0 0;
-    -moz-border-radius: 5px 5px 0 0;
     border-radius: 5px 5px 0 0;
-    -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5)
 }
 
 .language-sh .highlight {
-    -webkit-border-radius: 0 0 5px 5px;
-    -moz-border-radius: 0 0 5px 5px;
     border-radius: 0 0 5px 5px
 }
 
@@ -2225,24 +2116,17 @@ ol div.highlighter-rouge {
 /*   ------  custom button -------- */
 
 a {
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
     border-radius: 5px;
     font-weight: 900;
     font-size: 0.75em;
     padding: 0.5em 1em;
     text-shadow: none;
     text-transform: uppercase;
-    -webkit-transition: all 0.25s;
-    -moz-transition: all 0.25s;
-    -o-transition: all 0.25s;
     transition: all 0.25s
 }
 
 a:hover {
     background-color: #252525;
-    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 255, 255, 0.1);
-    -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 255, 255, 0.1);
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 255, 255, 0.1);
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5)
 }

@@ -1,0 +1,101 @@
+#perspective-container{
+     perspective: 1200px;
+     -webkit-transform-style: preserve-3d;
+     padding: 2em;
+     background: #ccc;
+     max-width: 700px;
+     margin: 0 auto;
+     font-family: Avenir, Helvetica, sans-serif;
+   }
+   #model1 {
+     webkit-transform: rotateY(45deg);
+     transform: rotateY(45deg);
+     width: 50%;
+   }
+   #perspective-container, #model1 {
+     margin-bottom: 4rem;
+     margin: 0 auto;
+     display: block;
+   }
+   #codesample{
+     width: 80%;
+     margin: 0 auto;
+   }
+   #container img{ 
+     margin-bottom: 2em;
+   }
+   #slidercontainer {
+     margin-left: 30%
+   }
+   #perspective-slider { 
+     margin: 5%;
+     margin-top: 2rem;
+   }
+   #codesample{
+     background: #fff;
+     font-size: 1.5rem;
+     padding: 1rem;
+     margin-top: 1rem;
+   }
+
+   
+/*  2D transforms */
+* {box-sizing: border-box;}
+body {font-family: 'Playfair Display', serif; margin: 0;text-align: center}
+h1 {font-weight: normal;color: #6A5953}
+kbd {font-size: 0.9em;display:inline-block;line-height:1.1;}
+.wrap {
+  display: inline-block;
+  margin: 0 40px 2em 0;
+  background: rgba(228, 225, 228, .5);
+}
+div {
+  width: 170px;
+  height: 100px;
+  line-height: 100px;
+  margin: 0 auto;
+  transition: all 0.5s ease-in-out;
+}
+.one, .four, .seven, .ten {
+  background: rgba(135, 86, 120, .4);
+}
+.one:hover {
+  transform: translateX(20px);
+}
+.two, .five, .eight, .eleven {
+  background: rgba(0, 228, 246, .4);
+}
+.two:hover {  
+  transform: translateY(-20px);
+}
+.three, .six, .nine {
+  background: rgba(255, 153, 0, .4);
+}
+.three:hover {
+  transform: translate(-20px, 20px);
+}
+.four:hover {
+  transform: scaleX(-1);
+}
+.five:hover {
+  transform: scaleY(1.2);
+}
+.six:hover {
+  transform: scale(1.2, 0.5);
+}
+.seven:hover {
+  transform: rotate(720deg);
+}
+.eight:hover {
+  transform: skewX(20deg);
+}
+.nine:hover {
+  transform: skewY(-20deg);
+}
+.ten:hover {
+  transform: skew(-20deg, 20deg);
+}
+.eleven:hover {
+  transform: matrix(1.2,0,0.5,1.2,50,0);
+}
+

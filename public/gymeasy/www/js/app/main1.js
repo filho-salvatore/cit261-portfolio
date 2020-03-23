@@ -1,20 +1,23 @@
 define(function (require) {
     
-    var $ = require('jquery'),
+    var /*$ = require('./model/salvaQuery'),*/
         lib = require('./lib'),
         controller = require('./controller/c1'),
         model = require('./model/m1'),
         salva = require('./model/s1'),
-        carrousel = require('./model/imglist');
+        Classes = require('./model/classes');
+        displayRoutines = require('./model/displayRoutines');
+        displayRoutExer = require('./model/displayRoutexer');
+        imageList = require('./model/imglist');
+        //DataControl = require('./model/classes');
+        //exercises = require('./model/classes');
         //carrousel.addElements(Images);
-/*
- salvalib = require('./model/salvaQuery');
-        */
+        //routines = require('./model/classes');
 
     //A fabricated API to show interaction of
     //common and specific pieces.
     controller.setModel(model);
-    $(function () {
-        controller.render(lib.getBody());
-    });
+    //$(function () {
+    //    controller.render(lib.getBody());
+    //});
 });

@@ -1,5 +1,5 @@
 define(function (require) {
-    var $ = require('jquery'),
+    var $ = require('./model/salvaQuery'),
         lib = require('./lib'),
         controller = require('./controller/c2'),
         model = require('./model/m2');
