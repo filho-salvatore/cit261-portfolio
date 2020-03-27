@@ -56,7 +56,7 @@
          setSingleProp(element, property, value);
    
        } else {
-         throw new Error('Invalid arguments prop name or value')
+         throw new Error('Invalid arguments prop name or value');
        }
      }
    
@@ -230,7 +230,11 @@ const dom = {
        
        function thisChange  (target) {
             if (target.tagName === 'SELECT') {
+              if(target.options && target.options.length > 0) {
               return target.options[target.selectedIndex].value;
+              } else {
+                return null;
+              }
             } else if (target.tagName === undefined) {
               return new Error ('No such element found');
             } else {

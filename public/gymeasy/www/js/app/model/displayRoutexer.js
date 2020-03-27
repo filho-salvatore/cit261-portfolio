@@ -1,39 +1,4 @@
-class DisplayRoutExer {
 
-     constructor() {
-          return this;
-     }
- 
- 
-     fillRoutines()   {
-         let mySelectRoutines = $('#sel_routine_exercises');
-         //get routines from datastore
-         //dataControl.retrieve();
-        
-         let listOfRoutExers = Array.from(Classes.dataControl.myRoutines);
-         let listofRoutObjects =[]
-         listOfRoutExers.forEach((item) => {
-             let myPersonal = Classes.routine();
-             //load object from Storage local
-             myPersonal.retrieve(item);
-             listofRoutObjects.push(myPersonal);
-         });
-         
-         for (let i = 0; i< listOfRoutExers.length; i++){
-             var opt = document.createElement('option');
-             opt.value = i;
-             //let mySrc = listOfRoutExers[i].src;
-             //let splitted = mySrc.split('/');
-             let fileName = listofRoutObjects[i].name; /*splitted[splitted.length-1];*/
-             opt.innerHTML =fileName;
-     
-             mySelectRoutines.domAppend(opt);
-         }
- 
-     }
- 
- }
- 
 
 define(['./classes'],function (Classes) {
      
@@ -43,6 +8,7 @@ define(['./classes'],function (Classes) {
           constructor() {
                
                $('#sel_routine_exercises').evlOn('click',this.onSelectChange.bind(this));
+               
                this.listofRoutObjects =[];
                this.myExercisesArray= [];
                return this;
@@ -51,16 +17,22 @@ define(['./classes'],function (Classes) {
           getRoutinesArray() {
             return Array.from(Classes.dataControl.myRoutineExercises);
           }
-      
+
+          //Add the exercises of the routine to the Select
           fillRoutines()   {
+            
               let mySelectRoutines = $('#sel_routine_exercises');
+              mySelectRoutines.element[0].options.length = 0;
               //get routines from datastore
               //dataControl.retrieve();
               this.myExercisesArray= [];
               let listOfRoutExers = this.getRoutinesArray();
              //get selected routine
+             let myRoutine = $('#sel_routines');
+             if(myRoutine.element) {
              let mySelectRoutine = $('#sel_routines').domVal();
              
+              //find the routine exercises where the routine id == mySelectRoutine
               listOfRoutExers.forEach((item) => {
                   
                   let myPersonal = Classes.routineExercise();
@@ -76,6 +48,7 @@ define(['./classes'],function (Classes) {
                   this.listofRoutObjects.push(myPersonal);
               });
               
+            
 
               for (let i = 0; i< this.myExercisesArray.length; i++){
                   var opt = document.createElement('option');
@@ -86,7 +59,8 @@ define(['./classes'],function (Classes) {
           
                   mySelectRoutines.domAppend(opt);
               }
-      
+            }
+              return this;
           }
 
           onSelectChange() {
@@ -105,6 +79,28 @@ define(['./classes'],function (Classes) {
           }
       
       }
-     return  new DisplayRoutExer().fillRoutines();
+      const SelecRoutExer = new DisplayRoutExer();//.fillRoutines();
+      const fillRoutines =  SelecRoutExer;
+      /**
+         * add the selected exercise to the selected workout
+         */
+        function addExercisesToWorkout() {
+            //get the selected exercise
+            let myExercise = $('#sel_images').domVal();
+            //get the selected workout
+            let myRoutine =  $('#sel_routines').domVal();
+            //create a workexer
+            let myRoutExer = Classes.routineExercise(Number(myRoutine),Number(myExercise), true).store();
+            //add to select
+            DataControl.store();
+            SelecRoutExer.fillRoutines();
+         }
+
+     return  {
+         disPlay: SelecRoutExer,
+         addExercisesToWorkout,
+         fillRoutines
+
+     };
      
  });

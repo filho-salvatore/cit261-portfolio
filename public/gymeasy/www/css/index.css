@@ -93,16 +93,18 @@ body {
 .arrow {
     display: flex;
     position: absolute;
-    height: var(--nav-height);
     bottom: 10px;
     flex: 1;
     text-align: center;
-    line-height: 50px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 2
+    z-index: 2;
+    color: black;
+    font-weight: 900;
+    
+
 }
 
 .arrow-left {
@@ -173,8 +175,8 @@ body {
   
   .nav-item{
     width: 20px;
-    height: var(--nav-height);
-    margin: 10px 1px 1px 2px;
+   
+    padding: 10px 1px 1px 2px;
     text-align: center;
   }
 

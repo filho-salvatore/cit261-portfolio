@@ -32,9 +32,7 @@ class DataControl {
 	static addRoutineID(pID){
 		this.myRoutines.add(pID);
 	}
-	static addExerciseID(pID){
-		this.myExercises.add(pID);
-	}
+	
 	static addPersonalRoutineID(pID){
 		this.myPersonalRoutines.add(pID);
 	}
@@ -43,6 +41,9 @@ class DataControl {
 	}
 	static addPersonalRoutineExerciseID(pID) {
 		this.myPersonalRoutineExercises.add(pID);
+	}
+	static addExerciseID (pID){
+		DataControl.myExercises.add(pID);
 	}
 
 	/**
@@ -87,7 +88,24 @@ class DataControl {
 	 */
 	static retrieveThis() {
 		let localObj =  myStorage.localGetObj('dataControl');
+		
+		this.myRoutines = new Set(localObj.routines);
+		this.myRoutineExercises =  new Set(localObj.routineExercises);
+		this.myExercises =  new Set(localObj.exercises);
+		this.myPersonalRoutines =  new Set(localObj.personalRoutines);
+		this.myPersonalRoutineExercises =  new Set(localObj.personalRoutineExercises);
 		return localObj;
+	}
+
+	static getExercises() {
+		const theExercises = [];
+		if (this.myExercises && this.myExercises.size > 0)
+		this.myExercises.forEach((exer) => {
+			const exercise = new Exercise();
+			exercise.retrieve(exer);
+			theExercises.push(exercise);
+		});
+		return theExercises;
 	}
 
 }
@@ -244,17 +262,23 @@ class Routine  {
 }
 
 class Exercise {
-	constructor(pName, pDescription,pGenID=false, pReps=10,pSets=3) {
+	constructor(pName, pDescription,pID,pGenID=false, pReps=10,pSets=3) {
+		if(pID) {
+			this.myID = pID;
+		}
 		if (pGenID)  { 
 			this.myID= generateId(); 
 			DataControl.addExerciseID(this.ID);
 		}
 
-		else this.myID = 0;
+		if(!this.myID)  {
+			this.myID = 0;
+		}
 		this.myExerciseName = pName;
 		this.myDescription = pDescription;
 		this.myDefaultReps = pReps;
 		this.myDefaultSets = pSets;
+		this.myImage = '';
 		return this;
 	}
 	get ID(){
@@ -273,6 +297,10 @@ class Exercise {
 		return this.myDefaultSets;
 	}
 
+	get image () {
+		return this.myImage;
+	}
+
 	set ID(id) {
 		this.ID = id;
 		DataControl.addExerciseID(this.ID);
@@ -288,6 +316,10 @@ class Exercise {
 	}
 	set sets(val) {
 		this.myDefaultSets = val;
+	}
+
+	set image(val) {
+		this.myImage = val;
 	}
 
 	/**
@@ -320,6 +352,31 @@ class Exercise {
 		let localObj =  myStorage.localGetObj(this.ID);
 		return localObj;
 	}
+
+	getImage() {
+		const endpoint = `http://gymeasy.herokuapp.com/medias?filter[id_exercise]=${this.ID}&filter[type]=record_image`               ;
+	const myToken = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJsZXZlbCI6ImV4cGVydCIsInVzZXJuYW1lIjoiYWRtaW4iLCJpZCI6IjUzYjBlYzY0LTUwNGItMTFlYS1iOWM5LTIyMDAwYWVmNGUwYiIsImlhdCI6MTU4MjMwMDg5MCwiZXhwIjoxNTgyMzA0NDkwfQ.HQGPNm_YSqpVUmJTrs2gulD2e5PYZSuye4-4qMh0Fk8';
+
+	const myHeaders = new Headers({
+		'Authorization': myToken,
+		'Content-Type': 'application/x-www-form-urlencoded'
+	});
+
+	fetch(endpoint, {
+		headers: myHeaders,
+		method: 'GET'
+	}).then(response => {
+		return response.json();
+	})
+	.then((blob)=> {
+		 //console.log(blob);
+		 if(blob.data && Array.isArray(blob.data) && blob.data.length > 0) {
+		  this.myImage = blob.data[0].link;
+		  this.store();
+		 }
+	});
+	}
+
 }
 
 
@@ -672,7 +729,8 @@ class myStorage {
 	}
 
 	static localGetObj(pKey) {
-		return this.localGetArray(pKey);
+		let myObj =  this.localGetArray(pKey);
+		return myObj;
 	}
 
 	/**
@@ -818,7 +876,12 @@ class myStorage {
 	    }
 	}
 	
-
+	static setFlagElementsSreated() {
+		localStorage.setItem('DatabaseCreated', 'true');
+	}
+	static getFlagElementsSreated() {
+		return localStorage.getItem('DatabaseCreated');
+	}
 	 
 }
 
@@ -833,94 +896,48 @@ myFunction1 = function test1(){
  myStorage.localStoreArray('arr1', myArray1);
  let theArray = myStorage.localGetArray('arr1');
  
- /**
-  * Test Objects to use in the advanced page
-  */
- 
- let obj1 = {
-	objName: "This is the Object number 1",
-	function1: "I have One function called myFunction1",
-	array1: myArray1
-  };
- 
-  let obj2 = {
-	objName: "This is the Object number 2",
-	array1: myArray2
-  };
- 
-  const myArray3 = ['Array of objects',obj1,obj2];
- 
-  let obj3 = {
-	objName: "This is the Object number 3",
-	array1: myArray3
-  };
- 
-myStorage.sessionStoreObject('obj', obj3);
-let theObje = myStorage.sessionGetObject('obj');
- 
-
-let myuser = new User('teste','123456','Nome','Sobrenome');
-
-let Nome = myuser.firstName;
-let ID = myuser.ID;
-
+ /*
 let myRout = new PersonalRoutine(139,1,true);
 
 myRout.store();
 let myID = myRout.ID;
 
+
 let myStoredRout = new PersonalRoutine();
 myStoredRout.retrieve(myID);
+*/
+// after tested, remove this line.
+//only clear storage if the elements are not there;
+let myDatabaseCreated = myStorage.getFlagElementsSreated();
+if(myDatabaseCreated != 'true') {
+myStorage.localStorageClear();
 
 //generate some routines and save the to data store
-let a =  new Routine('Shoulder Workout', 'workout to strengthen the sholder muscles', true);
-a.store();
+let a =  new Routine('Shoulder Workout', 'workout to strengthen the sholder muscles', true).store();
 let b = new Routine('Leg Workout', 'workout to strengthen the Leg muscles', true).store();
 let c = new Routine('Triceps Workout', 'workout to strengthen the Triceps muscles', true).store();
 let d = new Routine('Back Workot', 'workout to strengthen the back muscles', true).store();
 
-//generate some exercises and save the to the database
-let ex1 = new Exercise('Exercise 1','Test Exercise 1',true, 15,3).store();
-let ex2 = new Exercise('Exercise 2','Test Exercise 2',true, 15,3).store();
-let ex3 = new Exercise('Exercise 3','Test Exercise 3',true, 15,3).store();
-let ex4 = new Exercise('Exercise 4','Test Exercise 4',true, 15,3).store();
-let ex5 = new Exercise('Exercise 5','Test Exercise 5',true, 15,3).store();
-let ex6 = new Exercise('Exercise 6','Test Exercise 6',true, 15,3).store();
-
-let ex7 = new Exercise('Exercise 7','Test Exercise 7',true, 15,3).store();
-let ex8 = new Exercise('Exercise 8','Test Exercise 8',true, 15,3).store();
-let ex9 = new Exercise('Exercise 9','Test Exercise 9',true, 15,3).store();
-
-
-let Rex1a = new RoutineExercise(a.ID,ex1.ID,true,10,3).store();
-let Rex1b = new RoutineExercise(a.ID,ex2.ID,true,12,3).store();
-let Rex1c = new RoutineExercise(a.ID,ex3.ID,true,14,3).store();
-
-let Rex2a = new RoutineExercise(b.ID,ex4.ID,true,8,3).store();
-let Rex2b = new RoutineExercise(b.ID,ex5.ID,true,10,3).store();
-let Rex2c = new RoutineExercise(b.ID,ex6.ID,true,12,3).store();
-
-let Rex3a = new RoutineExercise(c.ID,ex7.ID,true,8,3).store();
-let Rex3b = new RoutineExercise(c.ID,ex8.ID,true,6,3).store();
-let Rex4a = new RoutineExercise(d.ID,ex9.ID,true,10,3).store();
-let Rex4b = new RoutineExercise(d.ID,ex2.ID,true,10,3).store();
-
-
 DataControl.store();
-
+myStorage.setFlagElementsSreated();
+}
 class Exercises {
 
 constructor(pDataControl)	{
 	this.exercises =[];
 	this.theDataControl = pDataControl;
 
-	const endpoint = 'http://gymeasy.herokuapp.com/exercises';
+	const endpoint = new URL('http://gymeasy.herokuapp.com/exercises');
 	const myToken = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJsZXZlbCI6ImV4cGVydCIsInVzZXJuYW1lIjoiYWRtaW4iLCJpZCI6IjUzYjBlYzY0LTUwNGItMTFlYS1iOWM5LTIyMDAwYWVmNGUwYiIsImlhdCI6MTU4MjMwMDg5MCwiZXhwIjoxNTgyMzA0NDkwfQ.HQGPNm_YSqpVUmJTrs2gulD2e5PYZSuye4-4qMh0Fk8';
 
 	const myHeaders = new Headers({
 		'Authorization': myToken,
 		'Content-Type': 'application/x-www-form-urlencoded'
 	});
+
+	let params = {'filter[is_part]':false};
+	Object.keys(params).forEach(key => endpoint.searchParams.append(key, params[key]));
+
 	fetch(endpoint, {
 		headers: myHeaders,
 		method: 'GET'
@@ -928,22 +945,23 @@ constructor(pDataControl)	{
 		return response.json();
 	})
 	.then((blob)=> {
-		this.exercises = blob.data;
-		this.exercises.forEach( (item) => {
+		this.exerc = blob.data;
+		this.exerc.forEach( (item) => {
 			//(pName, pDescription,pReps=10,pSets=3)
-			let myExercise = new Exercise(item.name,item.description);
-			pDataControl.addExerciseID(myExercise.ID);
+			let myExercise = new Exercise(item.name,item.description,Number(item.id));
+			myExercise.getImage();
+			DataControl.addExerciseID(myExercise.ID);
 			myExercise.store();
 
 		});
 		pDataControl.store();
-		 console.log(blob);
+		//console.log(blob);
 	});
  }
 }
 
 
-let teste;
+
 
 function supportsImports() {
 	return 'import' in document.createElement('link');
@@ -969,6 +987,7 @@ document.body.appendChild(el.cloneNode(true));
 
 define(['salvaQuery'], function ($) {
 	//var $ = require('./js/salvaQuery.js');
+	
 	function personalRoutineFactory() {
 		return new PersonalRoutine();
 	   }
@@ -983,12 +1002,15 @@ define(['salvaQuery'], function ($) {
 	function userFactory() {
 		return new User();
 	}
-	function routineExerciseFactory() {
-		return new RoutineExercise();
+	function routineExerciseFactory(x=null,y=null,z=null) {
+		return new RoutineExercise(x,y,z);
 	}
 	function personalRoutineExerciseFactory() {
 		return new PersonalRoutineExercise();
 	}
+
+	 
+
 
 	return {
 	    	dataControl: DataControl,
@@ -999,6 +1021,7 @@ define(['salvaQuery'], function ($) {
 		user: userFactory,
 		routineExercise: routineExerciseFactory,
 		personalRoutineExercise: personalRoutineExerciseFactory
+		
 
 	};
  });

@@ -8,7 +8,9 @@ define(function (require) {
         Classes = require('./model/classes');
         displayRoutines = require('./model/displayRoutines');
         displayRoutExer = require('./model/displayRoutexer');
+        
         imageList = require('./model/imglist');
+       
         //DataControl = require('./model/classes');
         //exercises = require('./model/classes');
         //carrousel.addElements(Images);

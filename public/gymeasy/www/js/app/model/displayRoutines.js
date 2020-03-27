@@ -1,13 +1,15 @@
  
 
-define(['./classes'],function (Classes) {
+define(['./classes','./displayRoutexer'],function (Classes, routexer) {
      
-     
+        const myRout = routexer;
+     //const DisplayRoutExerSelect =  disp.fillRoutines;
      class DisplayRoutines {
 
           constructor() {
                
-               $('#sel_routines').evlOn('click',this.onSelectChange.bind(this));
+               $('#sel_routines').evlOn('change',this.changeRoutExer.bind(this));
+               //$('#sel_routines').evlOn('onselect',this.onSelectChange.bind(this));
                this.listofRoutObjects =[];
                return this;
           }
@@ -17,7 +19,7 @@ define(['./classes'],function (Classes) {
               let mySelectRoutines = $('#sel_routines');
               //get routines from datastore
               //dataControl.retrieve();
-             
+              Classes.dataControl.retrieveThis();
               let listOfRoutines = Array.from(Classes.dataControl.myRoutines);
              
               listOfRoutines.forEach((item) => {
@@ -36,11 +38,11 @@ define(['./classes'],function (Classes) {
           
                   mySelectRoutines.domAppend(opt);
               }
-      
+              this.changeRoutExer();
           }
 
           onSelectChange() {
-              
+           // DisplayRoutExerSelect.fillRoutines();
                let mySelectVal = $('#sel_routines').domVal();
                let myRoutine = this.listofRoutObjects.find((item) => {
                     if(item.ID == mySelectVal) return true;
@@ -50,8 +52,18 @@ define(['./classes'],function (Classes) {
                    descObj.element[0].innerHTML = myRoutine.description;
                }
           }
+          /**
+           * Fill the routExer select with the exercises from the selected routine;
+           */
+          changeRoutExer() {
+            myRout.fillRoutines.fillRoutines();
+
+          }
+
       
       }
+
+      
      return  new DisplayRoutines().fillRoutines();
      
  });
