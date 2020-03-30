@@ -40,12 +40,19 @@ body {
     width: auto;
     height: 100%
 }
+/*  INNER SCROLLER ============*/
 
-.next-list {
+.outer-scroller{
+    width: var(--box-widht);
+    height: var(--nav-height);
+    margin: 3px 3px 3px 3px;
+  }
+
+.inner-scroller {
     list-style-type: none;
-    margin: 0;
+    margin: 0; 
     padding: 0;
-    width: 100%;
+    width: 800px;
     height: 80%;
     bottom: 10px;
     left: 0;
@@ -55,7 +62,7 @@ body {
     transition: all .5s
 }
 
-.next-list li {
+.inner-scroller li {
     padding: 0;
     margin: 0;
     width: var(--img-list-width);
@@ -68,11 +75,11 @@ body {
     transition: all .5s
 }
 
-.next-list li:first-of-type {
+.inner-scroller li:first-of-type {
     padding-left: 50px
 }
 
-.next-list li:last-of-type {
+.inner-scroller li:last-of-type {
     padding-right: 50px
 }
 
@@ -180,8 +187,4 @@ body {
     text-align: center;
   }
 
-  .nav-content{
-    width: 420px;
-    height: var(--nav-height);
-    margin: 3px 3px 3px 3px;
-  }
+  

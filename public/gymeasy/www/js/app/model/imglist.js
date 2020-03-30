@@ -1,6 +1,6 @@
 /*
 const carouselContainer = document.querySelector('.carousel-container');
-const listImageArea = carouselContainer.querySelector('.next-list');
+const listImageArea = carouselContainer.querySelector('.inner-scroller');
 const listOfImages = listImageArea.querySelectorAll('img');
 const currentImage = carouselContainer.querySelector('.current-image');
 
@@ -37,7 +37,7 @@ window.addEventListener('resize', function(e) {
             pHeight = 400,
             pNavHeight = 80,
             pCarouselContainer = '.carousel-container',
-            pListImageArea = '.next-list',
+            pListImageArea = '.inner-scroller',
             //pListOfImages = 'img',
             pCurrentImage = '.current-image',
             pArrowLeft = '.arrow-left',
@@ -50,7 +50,7 @@ window.addEventListener('resize', function(e) {
             this.CurrentImageClass = '.current-image';
             this.carouselContainer =$(pCarouselContainer).element;
             this.listImageArea = $(pListImageArea).element;
-            this.myListImageArea = $(pListImageArea);
+            this.myListImageArea = $(pListImageArea); //the ul container for the image list
             this.listOfImages = null;
             this.imagesFromREST = null;
             this.currentImage = $(pCurrentImage).element;
@@ -62,7 +62,7 @@ window.addEventListener('resize', function(e) {
         
             //tags
             this.myCurrentImageListTAG = '.current-image-list';
-            this.mycurrentImageStyleClass = 'current-image-list'; //is the current image of the list. parent is next-list
+            this.mycurrentImageStyleClass = 'current-image-list'; //is the current image of the list. parent is inner-scroller
             this.mySlideStyleClassRight = 'slideInFromRight'; //is the animation right
             this.mySlideStyleClassLeft = 'slideInFromLeft'; //is the animation left
             
@@ -181,7 +181,7 @@ window.addEventListener('resize', function(e) {
         }
             styleList() {
                 
-                const mylistImageArea = $('.next-list');
+                const mylistImageArea = $('.inner-scroller');
                 if (mylistImageArea.element.scrollWidth == mylistImageArea.domGetProp('offsetWidth')) {
                     mylistImageArea.cssSetProp('justifyContent','center');
                 } else {
@@ -219,8 +219,17 @@ window.addEventListener('resize', function(e) {
                 }
             }
         
+            scrollDiv(dir, px) {
+                var scroller = document.getElementById('outer-scroller');
+                if (dir == 'l') {
+                    scroller.scrollLeft -= px;
+                }
+                else if (dir == 'r') {
+                    scroller.scrollLeft += px;
+                }
+            }
             applyAnimation(current){
-                const mylistImageArea = this.myListImageArea; // <ul>
+                const mylistImageArea = this.myListImageArea; // <ul> '.inner-scroller'
                 const myCurrentImage = $(this.CurrentImageClass);
                 
                 if(current.element) {
@@ -352,6 +361,7 @@ window.addEventListener('resize', function(e) {
                             
                         }
                         if(!found) {
+                            //update the current image (the selected one)
                             if(index == 0) {
                                 let curImg = document.getElementById('carousel-container');  
                                 var curImage = document.createElement('img');
@@ -359,6 +369,7 @@ window.addEventListener('resize', function(e) {
                                 curImage.src = './img/'+item.link;
                                 curImage.classList.add('current-image');
                             }
+
                             var entry = document.createElement('li');
                             var image = document.createElement('img');
                             image.src = './img/'+item.link;
@@ -366,6 +377,7 @@ window.addEventListener('resize', function(e) {
                             image.addEventListener('click', this.changeCurrentImage.bind(this));
                             myImages.push(image);
                             entry.appendChild(image);
+                            //apend the new image to the inner scroller
                             let list = document.getElementById('imageList');
                             list.appendChild(entry);
                         }
