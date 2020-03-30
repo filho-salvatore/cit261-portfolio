@@ -144,7 +144,35 @@ class DataControl {
 		return  myStorage.getFlagElementsSreated();
 	}
 
+	/**
+	 * Get the selected routine from database
+	 * @Return the selected routine, if found or null otherwise
+	 */
+	static getSelectedRoutine(){
+		let theRoutine= myStorage.localGetObj('selectedWorkout');
+		let myPersonal = null;
+		if(theRoutine ) {
+			myPersonal = new Routine().retrieve(theRoutine.myID);
+		}
+		//load object from Storage local
+		return myPersonal;
+	
+	}
 
+	/**
+	 * Save the selected routine to database
+	 * @param {*} pRoutine  the routine to save as selected
+	 */
+	static saveSelectedRoutine(pRoutine){
+		return myStorage.localStoreObj('selectedWorkout',pRoutine);
+	}
+
+	/**
+	 * clear the selected routine in the database
+	 */
+	static clearSelectedRoutine() {
+		myStorage.localRemoveItem('selectedWorkout');
+	}
 }
 
 DataControl.myUsers = new Set();
@@ -759,7 +787,19 @@ class myStorage {
 	    }
 	 }
 
-	
+	/**
+	 * remove a item (key,value pair) from the local Storage
+	 * @param {*} pItem the key of the item to remove
+	 */ 
+	static localRemoveItem(pItem) {
+		
+		if (this.isStorageEnabled()) {
+			localStorage.removeItem(pItem);
+			
+		 }else{
+			throw new Error('localStorage not enabled in this browser');
+		 }
+	}
 
 	/**
 	 * Get Array from the localStorage

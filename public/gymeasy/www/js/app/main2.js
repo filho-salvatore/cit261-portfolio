@@ -1,13 +1,34 @@
 define(function (require) {
-    var $ = require('./model/salvaQuery'),
-        lib = require('./lib'),
-        controller = require('./controller/c2'),
-        model = require('./model/m2');
+    let lib = require('./lib');
+        //controller = require('./controller/c2'),
+    let classes = require('./model/classes');
+       
+    function loadRoutine() {
+        let theRoutine = classes.dataControl.getSelectedRoutine();
+        if(theRoutine) {
+            $('#workout_id').domSetProp('value',theRoutine.myID);
+            $('#workout_name').domSetProp('value',theRoutine.name);        
+            $('#workout_description').domSetProp('value',theRoutine.description);
+        } else {
+            $('#workout_id').domSetProp('value','');
+            $('#workout_name').domSetProp('value','');        
+            $('#workout_description').domSetProp('value','');
+        }
+        
+    }
 
-    //A fabricated API to show interaction of
-    //common and specific pieces.
-    controller.setModel(model);
-    $(function () {
-        controller.render(lib.getBody());
-    });
+    if(window.attachEvent) {
+        window.attachEvent('onload', loadRoutine);
+    } else {
+        if(window.onload) {
+            var curronload = window.onload;
+            var newonload = function(evt) {
+                curronload(evt);
+                loadRoutine(evt);
+            };
+            window.onload = newonload;
+        } else {
+            window.onload = loadRoutine();
+        }
+    }
 });

@@ -31,7 +31,7 @@ window.addEventListener('resize', function(e) {
     });
 
     $('#addWorkoutButton').evlOn('click', function( ){
-        disp.saveSelectedRoutine(disp.disPlay);
+        disp.clearSelectedRoutine(disp.disPlay);
         window.open('page2.html', '_blank'); 
     });
     $('#editWorkoutButton').evlOn('click', function( ){

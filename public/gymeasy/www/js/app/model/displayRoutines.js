@@ -66,7 +66,17 @@ define(['./classes','./displayRoutexer'],function (Classes, routexer) {
             }else {
                   self = this;
             }
+            //get the selected routine
+            let mySelectRoutine = $('#sel_routines').domVal();
+            let myPersonal = Classes.routine();
+            //load object from Storage local
+            myPersonal.retrieve(mySelectRoutine);
+            //save it
+            Classes.dataControl.saveSelectedRoutine(myPersonal);
+          }
 
+          clearSelectedRoutine(){
+            Classes.dataControl.clearSelectedRoutine();
           }
 
           onSelectChange() {
@@ -97,7 +107,8 @@ define(['./classes','./displayRoutexer'],function (Classes, routexer) {
      return { 
         disPlay: SelecRoutine,
         fillRoutines: fill.fillRoutines,
-        saveSelectedRoutine: fill.saveSelectedRoutine
+        saveSelectedRoutine: fill.saveSelectedRoutine,
+        clearSelectedRoutine: fill.clearSelectedRoutine
     };
      
  });

@@ -1,4 +1,5 @@
-define(['./Base'], function (Base) {
-    var m2 = new Base('This is the data for Page 2');
-    return m2;
+define(['./classes'], function (Base) {
+    
+    let myRoutine = Base.dataControl.getSelectedRoutine(null);
+    return myRoutine;
 });
