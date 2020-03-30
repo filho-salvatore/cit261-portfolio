@@ -15,7 +15,11 @@ define(['./classes'],function (Classes) {
           }
       
           getRoutinesArray() {
-            return Array.from(Classes.dataControl.myRoutineExercises);
+            let myInitiledDatabase = Classes.dataControl.getFlagElementsSreated();
+            if (myInitiledDatabase && myInitiledDatabase === 'true') {
+                return Array.from(Classes.dataControl.myRoutineExercises);
+            }
+            return null;
           }
 
           //Add the exercises of the routine to the Select
@@ -31,7 +35,7 @@ define(['./classes'],function (Classes) {
              let myRoutine = $('#sel_routines');
              if(myRoutine.element) {
              let mySelectRoutine = $('#sel_routines').domVal();
-             
+              if(listOfRoutExers) {
               //find the routine exercises where the routine id == mySelectRoutine
               listOfRoutExers.forEach((item) => {
                   
@@ -60,6 +64,7 @@ define(['./classes'],function (Classes) {
                   mySelectRoutines.domAppend(opt);
               }
             }
+            }
               return this;
           }
 
@@ -85,6 +90,7 @@ define(['./classes'],function (Classes) {
          * add the selected exercise to the selected workout
          */
         function addExercisesToWorkout() {
+            //DataControl.retrieveThis(); /* get the actual stae of Datacontrol before changing it */
             //get the selected exercise
             let myExercise = $('#sel_images').domVal();
             //get the selected workout
@@ -92,7 +98,7 @@ define(['./classes'],function (Classes) {
             //create a workexer
             let myRoutExer = Classes.routineExercise(Number(myRoutine),Number(myExercise), true).store();
             //add to select
-            DataControl.store();
+            //DataControl.store();
             SelecRoutExer.fillRoutines();
          }
 

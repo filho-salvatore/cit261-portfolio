@@ -23,11 +23,32 @@ window.addEventListener('resize', function(e) {
 
 
 
- define(['salvaQuery','./classes','./displayRoutexer'], function ($,datacontrol,disp) {
+ define(['salvaQuery','./classes','./displayRoutines','./displayRoutexer'], function ($,datacontrol,disp,routExer) {
     //var $ = require('./js/salvaQuery.js');
+    $('#initButton').evlOn('click', function( ){
+		datacontrol.dataControl.init();
+		disp.fillRoutines(disp.disPlay);
+    });
+
+    $('#addWorkoutButton').evlOn('click', function( ){
+        disp.saveSelectedRoutine(disp.disPlay);
+        window.open('page2.html', '_blank'); 
+    });
+    $('#editWorkoutButton').evlOn('click', function( ){
+        disp.saveSelectedRoutine(disp.disPlay);
+        window.open('page2.html', '_blank'); 
+    });
+    $('#deleteWorkoutButton').evlOn('click', function( ){
+        disp.saveSelectedRoutine(disp.disPlay);
+        window.open('page2.html', '_blank'); 
+    });
     
+    /*
+    addWorkoutButton
+    */
+
     const DataControl = datacontrol.dataControl;
-    const addExercise = disp.addExercisesToWorkout;
+    const addExercise = routExer.addExercisesToWorkout;
     // ========= START CARROUSELL =========
     class Carrousell {
 

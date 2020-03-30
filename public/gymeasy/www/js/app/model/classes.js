@@ -46,10 +46,31 @@ class DataControl {
 		DataControl.myExercises.add(pID);
 	}
 
+
+	static init () {
+		let myDatabaseCreated = myStorage.getFlagElementsSreated();
+		if(myDatabaseCreated != 'true') {
+		//myStorage.localStorageClear();
+		
+		//generate some routines and save the to data store
+		let a =  new Routine('Shoulder Workout', 'workout to strengthen the sholder muscles', true).store();
+		let b = new Routine('Leg Workout', 'workout to strengthen the Leg muscles', true).store();
+		let c = new Routine('Triceps Workout', 'workout to strengthen the Triceps muscles', true).store();
+		let d = new Routine('Back Workout', 'workout to strengthen the back muscles', true).store();
+
+		DataControl.store();
+		myStorage.setFlagElementsSreated();
+		}else {
+			
+			DataControl.retrieveThis();
+		}
+
+	}	
 	/**
 	 * Store this object in the Local Database
 	 */
 	static store(){
+		if(this.myRoutines.size >0) {
 		//todo: create an object before store it
 		let localUsers = (DataControl.myUsers ? Array.from(DataControl.myUsers) : null);
 		let localExercises = (DataControl.myExercises ? Array.from(DataControl.myExercises) : null);
@@ -67,34 +88,42 @@ class DataControl {
 			personalRoutineExercises: localPersonalRoutineExercises
 		};
 		myStorage.localStoreObj('dataControl',myLocalObj);
+	}
 		return this;
 	}
 
-	/**
-	 * Retrieve this object from the Local Storage
-	 * @param {*} pID the id of the Object in the Storage 
-	 */
-	static retrieve(pID) {
-		let localObj =  myStorage.localGetObj(pID);
-		/*
-		get values from localObj
-		*/
-		
-	}
 
 	/**
 	 * Retrieve this object from the local Storage and return it
 	 * Does not change this object
+	 * @pPreserve true to preserve the actualData ansd only add new data
 	 */
 	static retrieveThis() {
 		let localObj =  myStorage.localGetObj('dataControl');
+		if(localObj) {
+			
+		localObj.routines.forEach((routine)=> {
+			this.myRoutines.add(routine);
+		});
+		localObj.routineExercises.forEach((routine)=> {
+			this.myRoutineExercises.add(routine);
+		});
 		
-		this.myRoutines = new Set(localObj.routines);
-		this.myRoutineExercises =  new Set(localObj.routineExercises);
-		this.myExercises =  new Set(localObj.exercises);
-		this.myPersonalRoutines =  new Set(localObj.personalRoutines);
-		this.myPersonalRoutineExercises =  new Set(localObj.personalRoutineExercises);
-		return localObj;
+		//this.myRoutineExercises =  new Set(localObj.routineExercises);
+		localObj.exercises.forEach((routine)=> {
+			this.myExercises.add(routine);
+		});
+		//this.myExercises =  new Set(localObj.exercises);
+		localObj.personalRoutines.forEach((routine)=> {
+			this.myPersonalRoutines.add(routine);
+		});
+		//this.myPersonalRoutines =  new Set(localObj.personalRoutines);
+		localObj.personalRoutineExercises.forEach((routine)=> {
+			this.myPersonalRoutineExercises.add(routine);
+		});
+		//this.myPersonalRoutineExercises =  new Set(localObj.personalRoutineExercises);
+		}
+		return localObj | null;
 	}
 
 	static getExercises() {
@@ -108,6 +137,14 @@ class DataControl {
 		return theExercises;
 	}
 
+	static setFlagElementsSreated() {
+		return myStorage.setFlagElementsSreated();
+	}
+	static getFlagElementsSreated() {
+		return  myStorage.getFlagElementsSreated();
+	}
+
+
 }
 
 DataControl.myUsers = new Set();
@@ -116,6 +153,7 @@ DataControl.myExercises =new Set();
 DataControl.myPersonalRoutines =new Set();
 DataControl.myRoutineExercises = new Set();
 DataControl.myPersonalRoutineExercises = new Set();
+
 
 
 class User{
@@ -181,11 +219,13 @@ class User{
 	 */
 	retrieve(pID) {
 		let localObj =  myStorage.localGetObj(pID);
-		this.myID = localObj.myID;
-		this.myUsername = localObj.myUsername;
-		this.myPassword = localObj.myPassword;
-		this.myFirstName = localObj.myFirstName;
-		this.myLastName = localObj.myLastName;
+		if (localObj) {
+			this.myID = localObj.myID;
+			this.myUsername = localObj.myUsername;
+			this.myPassword = localObj.myPassword;
+			this.myFirstName = localObj.myFirstName;
+			this.myLastName = localObj.myLastName;
+		}
 		return this;
 	}
 
@@ -244,9 +284,11 @@ class Routine  {
 	 */
 	retrieve(pID) {
 		let localObj =  myStorage.localGetObj(pID);
+		if (localObj) {
 		this.myID = localObj.myID;
 		this.myRoutineName= localObj.myRoutineName;
 		this.myDescription = localObj.myDescription;
+		}
 		return this;
 	}
 
@@ -336,11 +378,13 @@ class Exercise {
 	 */
 	retrieve(pID) {
 		let localObj =  myStorage.localGetObj(pID);
-		this.myID = localObj.myID;
-		this.myExerciseName = localObj.myExerciseName;
-		this.myDescription = localObj.myDescription;
-		this.myDefaultReps = localObj.myDefaultReps;
-		this.myDefaultSets = localObj.myDefaultSets;
+		if (localObj) {
+			this.myID = localObj.myID;
+			this.myExerciseName = localObj.myExerciseName;
+			this.myDescription = localObj.myDescription;
+			this.myDefaultReps = localObj.myDefaultReps;
+			this.myDefaultSets = localObj.myDefaultSets;
+		}
 		return this;
 	}
 
@@ -457,12 +501,14 @@ class PersonalRoutine {
 	 */
 	retrieve(pID) {
 		let localObj =  myStorage.localGetObj(pID);
-		this.myID = localObj.myID;
-		this.myPersonID = localObj.myPersonID;
-		this.myRoutineID = localObj.myRoutineID;
-		this.myRoutineDate = localObj.myRoutineDate;
-		this.myTimetaken  = localObj.myTimetaken;
-		this.myCompleted = localObj.myCompleted;
+		if (localObj) {
+			this.myID = localObj.myID;
+			this.myPersonID = localObj.myPersonID;
+			this.myRoutineID = localObj.myRoutineID;
+			this.myRoutineDate = localObj.myRoutineDate;
+			this.myTimetaken  = localObj.myTimetaken;
+			this.myCompleted = localObj.myCompleted;
+		}
 		return this;
 
 	}
@@ -537,11 +583,13 @@ class RoutineExercise {
 	 */
 	retrieve(pID) {
 		let localObj =  myStorage.localGetObj(pID);
-		this.myID = localObj.myID;
-		this.myRoutineID = localObj.myRoutineID;
-		this.myExerciseID = localObj.myExerciseID;
-		this.myDefaultReps = localObj.myDefaultReps;
-		this.myDefaultSets = localObj.myDefaultSets;
+		if (localObj) {
+			this.myID = localObj.myID;
+			this.myRoutineID = localObj.myRoutineID;
+			this.myExerciseID = localObj.myExerciseID;
+			this.myDefaultReps = localObj.myDefaultReps;
+			this.myDefaultSets = localObj.myDefaultSets;
+		}
 		return this;
 	}
 
@@ -616,11 +664,13 @@ class PersonalRoutineExercise {
 	 */
 	retrieve(pID) {
 		let localObj =  myStorage.localGetObj(pID);
-		this.myID = localObj.myID;
-		this.myRoutineID = localObj.myRoutineID;
-		this.myExerciseID = localObj.myExerciseID;
-		this.myNumberOfReps = localObj.myNumberOfReps;
-		this.myNumberOfSets = localObj.myNumberOfSets;
+		if (localObj) {
+			this.myID = localObj.myID;
+			this.myRoutineID = localObj.myRoutineID;
+			this.myExerciseID = localObj.myExerciseID;
+			this.myNumberOfReps = localObj.myNumberOfReps;
+			this.myNumberOfSets = localObj.myNumberOfSets;
+		}
 		return this;
 	}
 
@@ -886,16 +936,7 @@ class myStorage {
 }
 
 
-myFunction1 = function test1(){
-	throw new Error("Function Test1");
- };
- 
- const myArray1 = ['Array of numbers',1,2,3,4,5,6,7,8];
- const myArray2 = ['Array of strings','string 1','string 2', 'string 3'];
- 
- myStorage.localStoreArray('arr1', myArray1);
- let theArray = myStorage.localGetArray('arr1');
- 
+
  /*
 let myRout = new PersonalRoutine(139,1,true);
 
@@ -908,25 +949,15 @@ myStoredRout.retrieve(myID);
 */
 // after tested, remove this line.
 //only clear storage if the elements are not there;
-let myDatabaseCreated = myStorage.getFlagElementsSreated();
-if(myDatabaseCreated != 'true') {
-myStorage.localStorageClear();
 
-//generate some routines and save the to data store
-let a =  new Routine('Shoulder Workout', 'workout to strengthen the sholder muscles', true).store();
-let b = new Routine('Leg Workout', 'workout to strengthen the Leg muscles', true).store();
-let c = new Routine('Triceps Workout', 'workout to strengthen the Triceps muscles', true).store();
-let d = new Routine('Back Workot', 'workout to strengthen the back muscles', true).store();
 
-DataControl.store();
-myStorage.setFlagElementsSreated();
-}
 class Exercises {
 
 constructor(pDataControl)	{
 	this.exercises =[];
 	this.theDataControl = pDataControl;
-
+	/* get the actual state of the DataControl, before changing it */
+	//pDataControl.retrieveThis();
 	const endpoint = new URL('http://gymeasy.herokuapp.com/exercises');
 	const myToken = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJsZXZlbCI6ImV4cGVydCIsInVzZXJuYW1lIjoiYWRtaW4iLCJpZCI6IjUzYjBlYzY0LTUwNGItMTFlYS1iOWM5LTIyMDAwYWVmNGUwYiIsImlhdCI6MTU4MjMwMDg5MCwiZXhwIjoxNTgyMzA0NDkwfQ.HQGPNm_YSqpVUmJTrs2gulD2e5PYZSuye4-4qMh0Fk8';
 
@@ -954,40 +985,23 @@ constructor(pDataControl)	{
 			myExercise.store();
 
 		});
-		pDataControl.store();
+		//pDataControl.store();
 		//console.log(blob);
 	});
  }
 }
 
+window.addEventListener('beforeunload', function( ){
+	//save the database
+	DataControl.store();
+});
 
 
 
-function supportsImports() {
-	return 'import' in document.createElement('link');
-   }
- /*
-   if (supportsImports()) {
-	// Good to go!
-   } else {
-	// Use other libraries/require systems to load files.
-   }
- 
-let importSupported = supportsImports();
-
-
-var link = document.querySelector('link[rel="import"]');
-var content = link.import;
-
-// Grab DOM from warning.html's document.
-var el = content.querySelector('.warning');
-
-document.body.appendChild(el.cloneNode(true));
-*/
 
 define(['salvaQuery'], function ($) {
-	//var $ = require('./js/salvaQuery.js');
-	
+		
+
 	function personalRoutineFactory() {
 		return new PersonalRoutine();
 	   }

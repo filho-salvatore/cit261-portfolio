@@ -1,5 +1,8 @@
 define(function (require) {
     
+    /**
+     * This code execute after the initialization when the requirejs load the modules
+     */
     var /*$ = require('./model/salvaQuery'),*/
         lib = require('./lib'),
         controller = require('./controller/c1'),

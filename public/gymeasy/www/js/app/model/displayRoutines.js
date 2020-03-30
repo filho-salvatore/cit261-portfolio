@@ -15,30 +15,58 @@ define(['./classes','./displayRoutexer'],function (Classes, routexer) {
           }
       
       
-          fillRoutines()   {
+          /**
+           * Fill the select with the routines from the database
+           * @param {*} pThis if this is called from the event correct the this pointer
+           */
+          fillRoutines(pThis)   {
+                let self =null;  
+                if(pThis !=undefined) {
+                  self = pThis;
+                }else {
+                  self = this;
+                }
               let mySelectRoutines = $('#sel_routines');
               //get routines from datastore
               //dataControl.retrieve();
-              Classes.dataControl.retrieveThis();
-              let listOfRoutines = Array.from(Classes.dataControl.myRoutines);
-             
-              listOfRoutines.forEach((item) => {
-                  let myPersonal = Classes.routine();
-                  //load object from Storage local
-                  myPersonal.retrieve(item);
-                  this.listofRoutObjects.push(myPersonal);
-              });
-              
-              for (let i = 0; i< listOfRoutines.length; i++){
-                  var opt = document.createElement('option');
-                  opt.value =this.listofRoutObjects[i].ID;  // the value of the select
-                  
-                  let fileName = this.listofRoutObjects[i].name; 
-                  opt.innerHTML =fileName; // the text of the select
-          
-                  mySelectRoutines.domAppend(opt);
-              }
-              this.changeRoutExer();
+              //verify if the databse is initialized
+              let myInitiledDatabase = Classes.dataControl.getFlagElementsSreated();
+              if (myInitiledDatabase && myInitiledDatabase == 'true') {
+                    Classes.dataControl.retrieveThis();
+                    let listOfRoutines = Array.from(Classes.dataControl.myRoutines);
+                    
+                    listOfRoutines.forEach((item) => {
+                        let myPersonal = Classes.routine();
+                        //load object from Storage local
+                        myPersonal.retrieve(item);
+                        self.listofRoutObjects.push(myPersonal);
+                    });
+                    
+                    for (let i = 0; i< listOfRoutines.length; i++){
+                        var opt = document.createElement('option');
+                        opt.value =self.listofRoutObjects[i].ID;  // the value of the select
+                        
+                        let fileName = self.listofRoutObjects[i].name; 
+                        opt.innerHTML =fileName; // the text of the select
+                
+                        mySelectRoutines.domAppend(opt);
+                    }
+                    self.changeRoutExer();
+                }
+          }
+
+          /**
+           * Save the selected routine to database to be used somewhere else
+           * @param {*} pThis if this is called from the event correct the this pointer
+           */
+          saveSelectedRoutine(pThis) {
+            let self = null;  
+            if(pThis != undefined) {
+                  self = pThis;
+            }else {
+                  self = this;
+            }
+
           }
 
           onSelectChange() {
@@ -63,7 +91,13 @@ define(['./classes','./displayRoutexer'],function (Classes, routexer) {
       
       }
 
-      
-     return  new DisplayRoutines().fillRoutines();
+      const SelecRoutine = new DisplayRoutines();
+      const fill = SelecRoutine;
+
+     return { 
+        disPlay: SelecRoutine,
+        fillRoutines: fill.fillRoutines,
+        saveSelectedRoutine: fill.saveSelectedRoutine
+    };
      
  });
