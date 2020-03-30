@@ -398,7 +398,7 @@ class Exercise {
 	}
 
 	getImage() {
-		const endpoint = `http://gymeasy.herokuapp.com/medias?filter[id_exercise]=${this.ID}&filter[type]=record_image`               ;
+		const endpoint = `https://gymeasy.herokuapp.com/medias?filter[id_exercise]=${this.ID}&filter[type]=record_image`               ;
 	const myToken = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJsZXZlbCI6ImV4cGVydCIsInVzZXJuYW1lIjoiYWRtaW4iLCJpZCI6IjUzYjBlYzY0LTUwNGItMTFlYS1iOWM5LTIyMDAwYWVmNGUwYiIsImlhdCI6MTU4MjMwMDg5MCwiZXhwIjoxNTgyMzA0NDkwfQ.HQGPNm_YSqpVUmJTrs2gulD2e5PYZSuye4-4qMh0Fk8';
 
 	const myHeaders = new Headers({
@@ -958,7 +958,7 @@ constructor(pDataControl)	{
 	this.theDataControl = pDataControl;
 	/* get the actual state of the DataControl, before changing it */
 	//pDataControl.retrieveThis();
-	const endpoint = new URL('http://gymeasy.herokuapp.com/exercises');
+	const endpoint = new URL('https://gymeasy.herokuapp.com/exercises');
 	const myToken = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJsZXZlbCI6ImV4cGVydCIsInVzZXJuYW1lIjoiYWRtaW4iLCJpZCI6IjUzYjBlYzY0LTUwNGItMTFlYS1iOWM5LTIyMDAwYWVmNGUwYiIsImlhdCI6MTU4MjMwMDg5MCwiZXhwIjoxNTgyMzA0NDkwfQ.HQGPNm_YSqpVUmJTrs2gulD2e5PYZSuye4-4qMh0Fk8';
 
 	const myHeaders = new Headers({
