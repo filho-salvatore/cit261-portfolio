@@ -1,13 +1,14 @@
 
 
-define(['./classes','./scrollsal'],function (Classes, ScrollSal) {
+define(['./classes','./salvaScroll'],function (Classes, ScrollSal) {
      
      
      class DisplayRoutExer {
 
           constructor() {
                
-               $('#sel_routine_exercises').evlOn('click',this.onSelectChange.bind(this));
+               $('#sel_routine_exercises').evlOn('mousedown',this.onSelectChange.bind(this));
+               $('#sel_routine_exercises').evlOn('change',this.onSelectChange.bind(this));
                
                this.listofRoutObjects =[];
                this.myExercisesArray= [];
@@ -65,6 +66,7 @@ define(['./classes','./scrollsal'],function (Classes, ScrollSal) {
               }
             }
             }
+              this.onSelectChange();
               return this;
           }
 
@@ -106,6 +108,8 @@ define(['./classes','./scrollsal'],function (Classes, ScrollSal) {
             //add to select
             //DataControl.store();
             SelecRoutExer.fillRoutines();
+            //update description
+            SelecRoutExer.onSelectChange();
          }
 
      return  {

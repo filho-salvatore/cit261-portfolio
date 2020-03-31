@@ -13,7 +13,7 @@ define(function (require) {
         displayRoutExer = require('./model/displayRoutexer');
         
         imageList = require('./model/imglist');
-        ScrollSal = require('./model/scrollsal');
+        ScrollSal = require('./model/salvaScroll');
         new ScrollSal.scroll(".custom-scroll-1",10).setStyle({
 			"background":"#202020",
 			"z-index":"2"

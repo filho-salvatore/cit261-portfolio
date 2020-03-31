@@ -27,7 +27,8 @@ window.addEventListener('resize', function(e) {
     //var $ = require('./js/salvaQuery.js');
     $('#initButton').evlOn('click', function( ){
 		datacontrol.dataControl.init();
-		disp.fillRoutines(disp.disPlay);
+        disp.fillRoutines(disp.disPlay);
+       
     });
 
     $('#addWorkoutButton').evlOn('click', function( ){
