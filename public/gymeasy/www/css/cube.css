@@ -14,7 +14,7 @@ body {
   text-align: center;
   display: inline-block;
 }
-._3dbox {
+.cubeContainer {
   display: inline-block;
   transition: all 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   text-align: center;
@@ -24,7 +24,7 @@ body {
   transform-style: preserve-3d;
   transform: rotateX(-15deg) rotateY(15deg);
 }
-._3dface {
+.cubeFace {
   overflow: hidden;
   position: absolute;
   border: 1px solid #888;
@@ -33,76 +33,88 @@ body {
   line-height: 250px;
   opacity: 0.8;
 }
-._3dface--front {
+.cubeFace--front {
   width: 250px;
   height: 250px;
   transform: translate3d(0, 0, 125px);
 }
-._3dface--top {
+.cubeFace--top {
   width: 250px;
   height: 250px;
   transform: rotateX(90deg) translate3d(0, 0, 125px);
 }
-._3dface--bottom {
+.cubeFace--bottom {
   width: 250px;
   height: 250px;
   transform: rotateX(-90deg) translate3d(0, 0, 125px);
 }
-._3dface--left {
+.cubeFace--left {
   width: 250px;
   height: 250px;
   left: 50%;
   margin-left: -125px;
   transform: rotateY(-90deg) translate3d(0, 0, 125px);
 }
-._3dface--right {
+.cubeFace--right {
   width: 250px;
   height: 250px;
   left: 50%;
   margin-left: -125px;
   transform: rotateY(90deg) translate3d(0, 0, 125px);
 }
-._3dface--back {
+.cubeFace--back {
   width: 250px;
   height: 250px;
   transform: rotateY(180deg) translate3d(0, 0, 125px);
 }
-#radio-left:checked ~ .space3d ._3dbox {
+
+#radio-left:checked ~ .space3d .cubeContainer {
   transform: rotateY(90deg);
 }
-#radio-right:checked ~ .space3d ._3dbox {
+#radio-right:checked ~ .space3d .cubeContainer {
   transform: rotateY(-90deg);
 }
-#radio-bottom:checked ~ .space3d ._3dbox {
+#radio-bottom:checked ~ .space3d .cubeContainer {
   transform: rotateX(90deg);
 }
-#radio-top:checked ~ .space3d ._3dbox {
+#radio-top:checked ~ .space3d .cubeContainer {
   transform: rotateX(-90deg);
 }
-#radio-back:checked ~ .space3d ._3dbox {
+#radio-back:checked ~ .space3d .cubeContainer {
   transform: rotateY(180deg);
 }
-._3dface--front {
-  background: url('../img/back-extension.png');
+
+/*-----IMAGES--------------*/
+
+.cubeFace--front {
+  
   background-size: 100%;
+  background: url('../img/back-extension.png');
+
 }
-._3dface--left {
+.cubeFace--left {
+  background-size: auto 100%;
   background: url('../img/barbell-front-squat.png');
-  background-size: auto 100%;
+  
 }
-._3dface--right {
+.cubeFace--right {
+  
+  background-size: auto 100%;
   background: url('../img/bench-press.png');
-  background-size: auto 100%;
+
 }
-._3dface--top {
+.cubeFace--top {
+  background-size: auto 100%;
   background: url('../img/front-chin-up.png');
-  background-size: auto 100%;
+  
 }
-._3dface--bottom {
+.cubeFace--bottom {
+  background-size: auto 100%;
   background: url('../img/leg-curl.png');
-  background-size: auto 100%;
+  
 }
-._3dface--back {
-  background: url('../img/incline-dumbbell-press.png');
+.cubeFace--back {
   background-size: auto 100%;
+  background: url('../img/incline-dumbbell-press.png');
+  
 }
