@@ -13,16 +13,11 @@ define(function (require) {
         displayRoutExer = require('./model/displayRoutexer');
         
         imageList = require('./model/imglist');
-       
-        //DataControl = require('./model/classes');
-        //exercises = require('./model/classes');
-        //carrousel.addElements(Images);
-        //routines = require('./model/classes');
-
-    //A fabricated API to show interaction of
-    //common and specific pieces.
-    //controller.setModel(model);
-    //$(function () {
-    //    controller.render(lib.getBody());
-    //});
+        Scrollbot = require('./model/scrollbot');
+        custom2 = new Scrollbot.scroll(".custom-scroll-1",10).setStyle({
+			"background":"#202020",
+			"z-index":"2"
+		},{
+			"background":"rgba(0,0,0,0)"
+		});
 });

@@ -1,6 +1,6 @@
 
 
-define(['./classes'],function (Classes) {
+define(['./classes','./scrollbot'],function (Classes, Scrollbot) {
      
      
      class DisplayRoutExer {
@@ -81,6 +81,12 @@ define(['./classes'],function (Classes) {
                    let descObj = $('#routexer_description');
                    descObj.element[0].innerHTML = myExercise.description;
                }
+               new Scrollbot.scroll("#scrolable1").setStyle({
+                    "background":"#202020",
+                    "z-index":"2"
+                },{
+                    "background":"rgba(0,0,0,0)"
+                });
           }
       
       }

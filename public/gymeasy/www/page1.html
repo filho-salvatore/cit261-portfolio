@@ -32,6 +32,7 @@ https://requirejs.org/docs/download.html#requirejs
   <meta property="og:url" content="https://cit261-portfolio.herokuapp.com/gemeasy/" />
   <meta property="og:site_name" content="GymEasy - Make your fitness easy" />
   <meta property="og:image" content="./img/logo-black.png" />
+  
   <!-- END GymEasy-->
 </head>
 
@@ -186,20 +187,23 @@ https://requirejs.org/docs/download.html#requirejs
     </li>
   
     
+    
   
     <li>
-       <div class="imageWrapper">
-        <select id="sel_routine_exercises" class='select-css'></select>
-        <p id='routexer_description' > </p>
-       </div>
-       <figcaption>Routine EXercises</figcaption>
-      
+     <select  id="sel_routine_exercises" class='select-css ' multiple></select>
+      <div id="scrolable1">
+          <div class='imageWrapper' >
+            <p id='routexer_description' > </p>
+            
+          </div>
+         </div> 
     </li>
   
     <li>
-      <a href="./doc/index.html" target="_blank">
+      
         <figure>
-          <div class="imageWrapper">
+        <div class="custom-scroll-1">
+          <div class='imageWrapper' >
             <p>(1) To see the Workouts, Click Load Workouts 
             <hr>
             <p>(2) To add Exercises, Click Load Exercises
@@ -208,10 +212,12 @@ https://requirejs.org/docs/download.html#requirejs
             <hr>
             <p>(3) To Adminitrate Workouts(Add,Edit,delete)
             <p>(3.1) Click the respective button (add,Edit,Delete)
+            
           </div>
+         </div> 
           <figcaption>BASIC INSTRUCTIONS</figcaption>
         </figure>
-      </a>
+      
     </li>
   
     
@@ -257,7 +263,56 @@ https://requirejs.org/docs/download.html#requirejs
 </footer>
 
 <!-- END  FOOTER    -->
-  
+<script>
+
+
+		//var custom = new Scrollbot(".custom-scroll");
+/*
+		custom2 = new Scrollbot(".custom-scroll-1",10).setStyle({
+			"background":"#202020",
+			"z-index":"2"
+		},{
+			"background":"rgba(0,0,0,0)"
+		});
+		var psuedo = document.createElement("div");
+		psuedo.style.cssText = "height:100%;width:2px;left:4px;background:#808080;position:absolute;z-index:1";
+		custom2.scrollBarHolder.appendChild(psuedo);
+		
+
+		var custom3 = new Scrollbot(".custom-scroll-2");
+		custom3.setStyle({height:2});
+		var onscrollfollower = document.createElement("div");
+		onscrollfollower.style.width = "100%";
+		onscrollfollower.style.height = "100%";
+		onscrollfollower.style.backgroundColor = "#222222";
+		onscrollfollower.style.position = "absolute";
+		onscrollfollower.style.bottom = "100%";
+		onscrollfollower.style.right = 0;
+		custom3.scrollBarHolder.appendChild(onscrollfollower);
+		custom3.onScroll(function(){onscrollfollower.style.bottom = 100 - parseFloat(this.scrollBar.style.top) + "%";})
+
+		var custom4 = new Scrollbot(".custom-scroll-3",10).setStyle({
+			"background":"#202020",
+			"z-index":"2",
+			"border-radius":"50%",
+			"height":"10px"
+		},{
+			"background":"rgba(0,0,0,0)"
+		});
+		var psuedo = document.createElement("div");
+		psuedo.style.cssText = "height:100%;width:2px;left:4px;background:#808080;position:absolute;z-index:1";
+		custom4.scrollBarHolder.appendChild(psuedo);
+
+
+
+		var custom6 = new Scrollbot(".custom-scroll-4");
+
+		document.querySelector("#destroy").onclick = function(){
+			custom6.destroy();
+		}
+
+			*/
+	</script>
 <script data-main="js/page1" src="js/lib/require.js"></script>
 <!--
 
