@@ -40,10 +40,14 @@ window.addEventListener('resize', function(e) {
         window.open('page2.html', '_blank'); 
     });
     $('#deleteWorkoutButton').evlOn('click', function( ){
-        disp.saveSelectedRoutine(disp.disPlay);
-        window.open('page2.html', '_blank'); 
+        let deletion = confirm("Are you sure you want to delete?");
+        if (deletion ) disp.removeSelectedRoutine(disp.disPlay);
+        
     });
-    
+    $('#removeExerciseButton').evlOn('click',function() {
+        let deletion = confirm("Are you sure you want to delete?");
+        if (deletion ) routExer.removeSelected();
+    });
     /*
     addWorkoutButton
     */

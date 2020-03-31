@@ -46,6 +46,15 @@ class DataControl {
 		DataControl.myExercises.add(pID);
 	}
 
+	static removeRoutine(pID){
+		this.myRoutines.delete(pID);
+		myStorage.localRemoveItem(pID);
+	}
+
+	static removeRoutExer(pID){
+		this.myRoutineExercises.delete(pID);
+		myStorage.localRemoveItem(pID);
+	}
 
 	static init () {
 		let myDatabaseCreated = myStorage.getFlagElementsSreated();

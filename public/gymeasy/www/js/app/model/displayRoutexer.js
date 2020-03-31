@@ -90,6 +90,37 @@ define(['./classes','./salvaScroll'],function (Classes, ScrollSal) {
                     "background":"rgba(0,0,0,0)"
                 });
           }
+
+          /**
+           * remove the selected exercise from the Routine
+           */
+          removeSelected() {
+                //get the routine
+                let myroutine =  Number($('#sel_routines').domVal());
+                let myExercise = Number($('#sel_routine_exercises').domVal());
+                //find the routexer
+                if(myroutine && myExercise) {
+                    let myRoutExers = Array.from(Classes.dataControl.myRoutineExercises);
+                      if (myRoutExers) {
+                        let found = myRoutExers.find((item) => {
+                          let myRoutine = Classes.routineExercise().retrieve(item);
+                          return ((myRoutine.myRoutineID == myroutine) &&
+                                  (myRoutine.myExerciseID == myExercise));
+                         
+                            });
+                        if (found)    {
+                            Classes.dataControl.removeRoutExer(found);
+                        }
+                      }
+                      
+                //remove from select
+                $('#sel_routine_exercises').selectRemoveSelected();
+                
+                      
+                }
+
+          }
+
       
       }
       const SelecRoutExer = new DisplayRoutExer();//.fillRoutines();
@@ -112,10 +143,13 @@ define(['./classes','./salvaScroll'],function (Classes, ScrollSal) {
             SelecRoutExer.onSelectChange();
          }
 
+        
+
      return  {
          disPlay: SelecRoutExer,
          addExercisesToWorkout,
-         fillRoutines
+         fillRoutines,
+         removeSelected: fillRoutines.removeSelected
 
      };
      

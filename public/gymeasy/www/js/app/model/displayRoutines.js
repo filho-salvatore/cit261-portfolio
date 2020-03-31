@@ -75,6 +75,32 @@ define(['./classes','./displayRoutexer'],function (Classes, routexer) {
             Classes.dataControl.saveSelectedRoutine(myPersonal);
           }
 
+          removeSelectedRoutine(pThis) {
+            //get the selected routine
+            let mySelectRoutine = Number($('#sel_routines').domVal());
+            let myRoutExerToDelete = [];
+            //get all routexers
+            if(mySelectRoutine) {
+            let myRoutExers = Classes.dataControl.myRoutineExercises;
+              if (myRoutExers) {
+                myRoutExers.forEach((item) => {
+                  let myRoutine = Classes.routineExercise().retrieve(item);
+                  if(myRoutine.myRoutineID == mySelectRoutine) {
+                    myRoutExerToDelete.push(item);
+                  }
+                });
+              }
+              Classes.dataControl.removeRoutine(mySelectRoutine);
+              myRoutExerToDelete.forEach((item) => {
+                Classes.dataControl.removeRoutExer(item);
+              });
+              //remove from select
+              $('#sel_routines').selectRemoveSelected();
+              
+              
+            }
+          }
+
           clearSelectedRoutine(){
             Classes.dataControl.clearSelectedRoutine();
           }
@@ -108,7 +134,8 @@ define(['./classes','./displayRoutexer'],function (Classes, routexer) {
         disPlay: SelecRoutine,
         fillRoutines: fill.fillRoutines,
         saveSelectedRoutine: fill.saveSelectedRoutine,
-        clearSelectedRoutine: fill.clearSelectedRoutine
+        clearSelectedRoutine: fill.clearSelectedRoutine,
+        removeSelectedRoutine: fill.removeSelectedRoutine
     };
      
  });

@@ -103,8 +103,49 @@
     <div class="unit whole">
       <article>
         <h1>How to Use</h1>
-        <p>(1) - get Exercises</p>
+        <p>This application is completely done in pure Javascript. Known there as Vanilla Javascript.
+        Some things I had to build:</p>
+        <ul>
+        <li>
+         It started with a library of useful functions, similar to JQuery, 
+        <br>where you can use the $ (<element>) syntax to select DOM elements and apply functionality to them.
+        </li>
+        <li>
+        The Carroussel of images
+        </li>
+        <li>
+        The Scroll for divisions with Text
+        </li>
+        <li>
+        The Library to work with Local Storage as a Database
+        </li>
+        </ul>
+      <hr>
+       <h1>Project Requirements</h1>
 
+       <ul>
+        <li>
+        Designing, Defining, and Triggering CSS3 Transitions
+          To assemble the Exercise Carousel I used some Transitions. Especially when making the slide of the images
+        </li>
+        <li>
+        Designing, Defining, and Triggering CSS3 Transformations. the entire page uses transforms for upper case text. And the Cube in the workout page uses 3D transforms.
+        </li>
+        <li>
+        Designing, Defining, and Triggering CSS3 Animations. Especially when making the slide of the images
+        </li>
+        <li>
+        JavaScript, AJAX and LocalStorage.
+        <p> The Applicative receives the Exercises from the REST API. 'https://gymeasy.herokuapp.com/exercises'
+        It is an REST API I have created for my Senior Project. It has a database with several exercises with description and other information
+        <p> All information in this applicative is stored in the Local Storage. The Exercises, the Workouts (Routines) the association (routines vs Exercises).
+        <p> The information remains in storage. So the user will always be able to get the same information from their Workouts, even if they turn off their browser or mobile and load the page the other day.
+        </li>
+
+       </ul>
+
+      <hr>
+      <p>The only external package I use is RequireJS, because to work with ES6 and import modules from one page to another I had problems. Browsers do not allow this type of configuration because of security. In this case, to be able to share my modules between different pages I use RequireJs (https://requirejs.org/).</p>
 
 
 

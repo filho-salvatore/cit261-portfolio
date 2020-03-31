@@ -12,7 +12,7 @@ SalvaScroll = function(e, w) {
     /**
      * the original element (paragraph)
      */
-    this.origP = $(e).element;
+    this.origP = document.querySelector(e);
 
     // init function, if not ie 8 and below this will run
     this.init = function(){

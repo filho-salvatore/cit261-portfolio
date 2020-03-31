@@ -244,6 +244,70 @@ const dom = {
        }
        
      },
+     /**
+      * Get the selected text from a select
+      * @param {*} element the select element
+      */
+     getSelectedText: function(element) {
+      let target;
+        if (Array.isArray(element) && element[0] != null) { //
+          target = element[0];
+        }else {
+          target = element;
+        }
+        if (target.tagName === 'SELECT') {
+          return target.options[target.selectedIndex].text;
+        }
+     },
+     /**
+      * Add an option to a select element
+      * @param {*} element the target select element
+      * @param {*} text the content of the option (string)
+      * @param {*} value the value of the option (string)
+      * @param {*} defaultSelected (boolean) true if the option is the default selected
+      * @param {*} selected  (boolean) true if the option is selected
+      */
+     addOption: function(element, text, value, defaultSelected =false, selected=false) {
+        let target;
+        if (Array.isArray(element) && element[0] != null) { //
+          target = element[0];
+        }else {
+          target = element;
+        }
+        if (target.tagName === 'SELECT') {
+          target.options[target.options.length] = new Option(text, value, defaultSelected, selected);
+        }
+     },
+     /**
+      * Remove the selected option form a select element
+      * @param {*} element the target element
+      */
+     removeSelected: function(element) {
+        let target;
+        if (Array.isArray(element) && element[0] != null) { //
+          target = element[0];
+        }else {
+          target = element;
+        }
+        if (target.tagName === 'SELECT') {
+            target.options[target.options.selectedIndex] = null;
+        }
+     },
+     /**
+      * Remove all options from a select element
+      * @param {*} element the target element 
+      */
+     removeAllOptions: function(element) {
+      let target;
+      if (Array.isArray(element) && element[0] != null) { //
+        target = element[0];
+      }else {
+        target = element;
+      }
+      if (target.tagName === 'SELECT') {
+        target.options.length = 0;
+      }
+     },
      domProp: function (element, property, value) {
       'use strict';
       var args = Array.from(arguments);
@@ -518,7 +582,12 @@ let salInit = function() {
           else return elem;
      }
      else if (type === '#') {
-       this.element = [document.getElementById(query)];
+      let res = query.split(" ");
+       if(res.length > 1) {
+        this.element = document.querySelectorAll(query);
+       }else {
+        this.element = [document.getElementById(query)];
+       }
      }
      else if (!VALIDATOR.test(this.selectors)) {
        throw Error('Invalid Selector');
@@ -581,11 +650,23 @@ salQuery.prototype = {
                dom.prepend(this.element, element);
                return this;
      },
+     selectGetText: function() {
+      return dom.getSelectedText(this.element);
+     },
+     selectAddOption: function(text, value, defaultSelected= false, selected=false) {
+      return dom.addOption(this.element, text, value, defaultSelected, selected);
+     },
+     selectRemoveSelected: function() {
+      return dom.removeSelected(this.element);
+     },
+     selectRemoveAllOptions: function() {
+       return dom.removeAllOptions(this.element);
+     },
      domVal: function() {
        let value = dom.val(this.element);
        return value;
      },
-     domPropVal: function (element) {
+     domPropVal: function (prop) {
       return dom.domProp(this.element, prop);
      },
      domGetProp:function(prop){
@@ -599,7 +680,7 @@ salQuery.prototype = {
             dom.domProp(this.element, props);
             return this;
      },
-     domAttrVal: function () {
+     domAttrVal: function (attr) {
       return dom.domAtributes(this.element, attr);
      },
      domGetAttr:function(attr){
