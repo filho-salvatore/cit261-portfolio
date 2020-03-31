@@ -118,12 +118,21 @@ https://requirejs.org/docs/download.html#requirejs
       <article>
         <h1>Personal Fitness Planner</h1>
         <p>You can Plan The perfect Workout for you...</p>
+        <a href="#basic">Basic Instructions</a>
 
 <ul class="showcase" id="showcase">
   
     <li>
+    <figcaption>
+          <div  class='btn-wrapper'>
+              <a id='getExercises'>Get Exercises</a>
+          
+              <a id='addExercises'>Add To Workout</a>
+          </div>
+          </figcaption>
+    <select id="sel_images" class='select-css' ></select>
         <div class="imageWrapper">
-          <select id="sel_images" class='select-css' ></select>
+          
           <section id='carousel-container' class="carousel-container" style="color:blue;font-size:46px;">
             
           </section>
@@ -147,35 +156,37 @@ https://requirejs.org/docs/download.html#requirejs
                 </div>
             </div>
           </section>
-          <div id='getExercises' class='btn-wrapper'>
-              <a >Get Exercises</a>
-          </div>
-          <div id='addExercises' class='btn-wrapper'>
-              <a >Add To Workout</a>
-          </div>
+         
         </div>
+        <figcaption>Available Exercises</figcaption>
+         
           <!--<a href="./exercises/index.html" target="_blank">
             <figure>
               <div class="imageWrapper">
                 <img id= "" class="b-lazy" src="img/spacer.gif" alt="Spotify for Developers">
               </div>
-              <figcaption>Available Exercises</figcaption>
+              Available Exercises
             </figure>
           </a>-->
     </li>
   
     <li>
-     <div class="imageWrapper">
-        <select id="sel_routines" class='select-css'></select>
-        <div class='btn-wrapper'>
+     <figcaption>
+
+     <div class='btn-wrapper'>
               <a id='initButton'>Load Workouts</a>
               <a id='addWorkoutButton'>Add</a>
               <a id='editWorkoutButton'>Edit</a>
               <a id='deleteWorkoutButton'>Delete</a>
         </div>
-        <p id='routine_description' > Routine Description </p>
+     </figcaption>
+    <select id="sel_routines" class='select-css'></select>
+     <div class="imageWrapper">
+        
+        
+        <p id='routine_description' > Workout Description </p>
      </div>
-     <figcaption>Available Routines</figcaption>
+    <figcaption>Available Workouts</figcaption>
       <!-- <a href="./routines/index.html" target="_blank">
         <figure>
           <div class="imageWrapper">
@@ -197,21 +208,23 @@ https://requirejs.org/docs/download.html#requirejs
             
           </div>
          </div> 
+         <figcaption>Workout Exercises</figcaption>
     </li>
   
     <li>
-      
+        <figcaption id="basic">Basic Instructions</figcaption>
         <figure>
         <div class="custom-scroll-1">
           <div class='imageWrapper' >
-            <p>(1) To see the Workouts, Click Load Workouts 
+            <p>(1) To get the Workouts, Click Load Workouts 
             <hr>
-            <p>(2) To add Exercises, Click Load Exercises
-            <p>(2.1) Select the desired Exercise
-            <p>(2.2) Click Add to Workout
+            <p>(2) To add Exercises to a Workout
+            <p>  (2.1)Click Load Exercises
+            <p>  (2.2) Select the desired Exercise
+            <p>  (2.3) Click Add to Workout
             <hr>
-            <p>(3) To Adminitrate Workouts(Add,Edit,delete)
-            <p>(3.1) Click the respective button (add,Edit,Delete)
+            <p>(3) To Adminitrate Workouts (Add,Edit,delete)
+            <p>  (3.1) Click the respective button (add,Edit,Delete)
             
           </div>
          </div> 
