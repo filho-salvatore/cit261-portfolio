@@ -13,8 +13,8 @@ define(function (require) {
         displayRoutExer = require('./model/displayRoutexer');
         
         imageList = require('./model/imglist');
-        Scrollbot = require('./model/scrollbot');
-        custom2 = new Scrollbot.scroll(".custom-scroll-1",10).setStyle({
+        ScrollSal = require('./model/scrollsal');
+        new ScrollSal.scroll(".custom-scroll-1",10).setStyle({
 			"background":"#202020",
 			"z-index":"2"
 		},{

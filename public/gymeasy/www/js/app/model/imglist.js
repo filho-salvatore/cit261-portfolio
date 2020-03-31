@@ -211,13 +211,20 @@ window.addEventListener('resize', function(e) {
             }
         
             onSelectChange() {
-                let val = this.mySelect.domVal();
-                if (val) {
-                    //get the element
-                    let mynewImage = this.listOfImages[Number(val)];
+                //the val is the id of the exercise
+                let theSelect = $('#sel_images');
+                let SelImageName = theSelect.element[0].options[theSelect.element[0].selectedIndex].text;
+                
+                if (SelImageName) {
+                    //get the exercise
+                    let found = this.listOfImages.find((imag) => {
+                        let imagename =  imag.src.replace(/^.*[\\\/]/, '');
+                        return (imagename == SelImageName);
+                    });
+                    //let mynewImage = this.listOfImages[Number(val)];
                     //call change image
-                    if(mynewImage) {
-                    this.changeCurrentImage(mynewImage);
+                    if(found) {
+                    this.changeCurrentImage(found);
                     }
                     //console.log('select chaged');
                 }   
