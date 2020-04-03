@@ -26,12 +26,16 @@ window.addEventListener('resize', function(e) {
  define(['salvaQuery','./classes','./displayRoutines','./displayRoutexer'], function ($,datacontrol,disp,routExer) {
     //var $ = require('./js/salvaQuery.js');
     $('#initButton').evlOn('click', function( ){
-		datacontrol.dataControl.init();
+        datacontrol.dataControl.init();
+        $('#sel_routines').selectRemoveAllOptions();
         disp.fillRoutines(disp.disPlay);
        
     });
 
     $('#addWorkoutButton').evlOn('click', function( ){
+        datacontrol.dataControl.init();
+        disp.fillRoutines(disp.disPlay);
+        datacontrol.dataControl.store();
         disp.clearSelectedRoutine(disp.disPlay);
         window.open('page2.html', '_blank'); 
     });

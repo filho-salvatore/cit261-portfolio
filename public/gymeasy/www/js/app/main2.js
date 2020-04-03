@@ -2,8 +2,23 @@ define(function (require) {
     let lib = require('./lib');
         //controller = require('./controller/c2'),
     let classes = require('./model/classes');
-       
+    let formSubmit = function (e) {
+        
+        let id = $('#workout_id').domVal();
+        let name = $('#workout_name').domVal();
+        let description = $('#workout_description').domVal();
+        if (id!='') { //edit workout
+            classes.dataControl.updateRoutine(id,name,description);
+        } else { //add workout
+            
+            classes.dataControl.createRoutine(name,description);
+            classes.dataControl.store();
+        }
+
+    };
+    $('#workout_form').evlOn('submit',formSubmit);
     function loadRoutine() {
+        classes.dataControl.retrieveThis();
         let theRoutine = classes.dataControl.getSelectedRoutine();
         if(theRoutine) {
             $('#workout_id').domSetProp('value',theRoutine.myID);

@@ -104,9 +104,13 @@
     <div class="unit whole">
       <article>
         <h1>Workouts Administration</h1>
-        <p>Add, Edit, Remove Workouts</p>
+        <p>Add or Edit Workouts</p>
+        <hr>
+        <p> (1) To edit a wokout you must select it first in the home page </p>
+        <p> (2) To Add a workout, just fill the form and submit it </p>
+        <p> (3) After adding a workout you must load workouts in the home page to show them in the select</p>
 
-        <form action="/action_page.php">
+        <form id='workout_form' >
           <label for="workout_id">Workout ID:</label><br>
           <input type="text" id="workout_id" name="workout_id" value="" disabled><br>
           <label for="workout_name">Workout name:</label><br>

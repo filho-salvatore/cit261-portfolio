@@ -182,6 +182,21 @@ class DataControl {
 	static clearSelectedRoutine() {
 		myStorage.localRemoveItem('selectedWorkout');
 	}
+
+	static updateRoutine(pId,pName,pDescription) {
+		let myRoutine = new Routine().retrieve(Number(pId));
+		myRoutine.name=pName;
+		myRoutine.description = pDescription;
+		myRoutine.store();
+
+	}
+
+	static createRoutine(pName,pDescription) {
+		//generate some routines and save the to data store
+		return  new Routine(pName, pDescription, true).store();
+
+	}
+
 }
 
 DataControl.myUsers = new Set();
